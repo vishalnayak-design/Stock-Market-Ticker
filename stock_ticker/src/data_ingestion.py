@@ -19,6 +19,7 @@ class DataIngestor:
         self.data_dir = data_dir
         self.stocks_file = f"{data_dir}/equity_master.csv"
         self.session = self._get_stealth_session()
+        logging.info("DataIngestor v2: Session Removed (Fix Verified)")
 
     def get_nse_equity_list(self):
         """Fetches the list of all active equity stocks using nsepython or fallback."""
@@ -162,9 +163,12 @@ class DataIngestor:
         url = f"https://news.google.com/rss/search?q={encoded_query}+stock+india&hl=en-IN&gl=IN&ceid=IN:en"
         try:
             # Use requests to fetch then parse string to avoid feedparser User-Agent issues
-            response = requests.get(url, timeout=5, headers={'User-Agent': 'Mozilla/5.0'})
+            response = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
             feed = feedparser.parse(response.content)
             return [entry.title for entry in feed.entries[:5]]
+        except requests.exceptions.Timeout:
+            logging.warning(f"News fetch timed out for {query}")
+            return []
         except Exception as e:
             logging.error(f"Error fetching news for {query}: {e}")
             return []

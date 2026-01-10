@@ -49,7 +49,7 @@ def load_config():
         return yaml.safe_load(f)
 
 @st.cache_data(ttl=3600) 
-def load_data(data_dir):
+def load_data(data_dir, cache_buster):
     logging.info(f"Loading data from {data_dir}...")
     rec_path = os.path.join(data_dir, "recommendations.csv")
     full_path = os.path.join(data_dir, "full_analysis.csv")
@@ -360,18 +360,7 @@ def main():
             st.query_params["strategy"] = new_strat_key
             st.rerun()
 
-        # --- EXPORTS (GLOBAL SIDEBAR) ---
-        st.divider()
-        st.subheader("📤 Exports")
-        date_str = datetime.now().strftime("%Y-%m-%d")
-        
-        # We need data to export. Accessing globals loaded in main content is tricky if sidebar renders first.
-        # Streamlit re-runs top-to-bottom. Logic:
-        # load_data is called in main content (line 382). Sidebar is lines 255-360.
-        # Issue: 'full_list', 'ai_top' etc are defined LATER.
-        # Fix: We must access data inside sidebar AFTER it is loaded. 
-        # But Streamlit syntax: `with st.sidebar` can be called anytime!
-        # So we will inject this export block at the END of the script, appending to sidebar.
+
 
     # --- MAIN CONTENT ---
     
@@ -395,7 +384,8 @@ def main():
     st.caption(f"📅 Last Data Update: {data_date} | ⏳ Auto-Schedule: Daily 9:30 AM")
 
     # --- DATA LOADING ---
-    rec_list, full_list, hist_list = load_data(config['data_dir'])
+    # Trigger cache invalidation if file time changed
+    rec_list, full_list, hist_list = load_data(config['data_dir'], mtime if 'mtime' in locals() else 0)
 
     # --- HELPER: ALLOCATION ---
     def apply_allocation(stock_list, budget, score_key):
@@ -439,7 +429,7 @@ def main():
     # Resolve to display label
     active_tab = tabs_map.get(url_key, tabs[0])
     
-    selected_tab = st.radio("", tabs, index=tabs.index(active_tab), horizontal=True, label_visibility="collapsed")
+    selected_tab = st.radio("Navigation", tabs, index=tabs.index(active_tab), horizontal=True, label_visibility="collapsed")
     
     # Update URL if changed (save clean key)
     current_key = next((k for k, v in tabs_map.items() if v == selected_tab), "Recommendations")
@@ -522,8 +512,7 @@ def main():
             else:
                 st.warning("No stocks found for this strategy.")
 
-            else:
-                st.warning("No stocks found for this strategy.")
+
 
 
     if selected_tab == "📥 Raw Data":

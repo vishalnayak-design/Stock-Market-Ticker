@@ -1,11 +1,12 @@
 {
-    "status": "IDLE",
-    "stage": null,
-    "last_heartbeat": 1768057416.7322853,
-    "total_scanned": 2624,
-    "pid": null,
+    "status": "RUNNING",
+    "stage": "MODEL",
+    "last_heartbeat": 1768060973.6929262,
+    "total_scanned": 961,
+    "pid": 607,
     "flags": {
-        "fetch_complete": false,
+        "fetch_complete": true,
         "model_complete": false
-    }
+    },
+    "run_date": "2026-01-10"
 }

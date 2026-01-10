@@ -211,6 +211,23 @@ class Analyzer:
         
         return score / checks if checks > 0 else 0
 
+    def calculate_intrinsic_value(self, info):
+        """Calculates Intrinsic Value using Graham Number and Margin of Safety."""
+        try:
+            graham_num = self.calculate_graham_number(info)
+            current_price = info.get('currentPrice', info.get('previousClose', 0))
+            
+            if not current_price or current_price == 0:
+                return 0, 0
+                
+            if not graham_num:
+                return 0, 0
+                
+            margin_safety = ((graham_num - current_price) / current_price) * 100
+            return round(graham_num, 2), round(margin_safety, 2)
+        except:
+            return 0, 0
+
     def get_investment_thesis(self, row, info):
         """Generates a natural language explanation."""
         reasons = []
