@@ -1,11 +1,12 @@
 {
     "status": "RUNNING",
     "stage": "MODEL",
-    "last_heartbeat": 1768061801.3936732,
-    "total_scanned": 1414,
+    "last_heartbeat": 1768062440.117119,
+    "total_scanned": 1770,
     "pid": 607,
     "flags": {
         "fetch_complete": true,
         "model_complete": false
     },
     "run_date": "2026-01-10"
+}
