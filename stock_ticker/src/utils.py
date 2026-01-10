@@ -15,9 +15,17 @@ def save_to_csv(data_list, path, headers=None):
             
         ensure_dir(os.path.dirname(path))
         
-        # Determine headers if not provided
+        # Determine headers if not provided (Handle Schema Evolution)
         if not headers:
-            headers = data_list[0].keys()
+            # Start with keys from the first row to preserve preferred order
+            headers = list(data_list[0].keys())
+            # Check other rows for new columns (e.g., Sector, Industry)
+            current_keys = set(headers)
+            for row in data_list[1:]:
+                for k in row.keys():
+                    if k not in current_keys:
+                        headers.append(k)
+                        current_keys.add(k)
             
         with open(path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=headers)

@@ -61,6 +61,8 @@ class RecommendationEngine:
             return {
                 "Ticker": ticker,
                 "Name": name,
+                "Sector": funds.get('sector', 'Unknown'),
+                "Industry": funds.get('industry', 'Unknown'),
                 "Close": round(last_price, 2),
                 
                 # Scores
@@ -88,148 +90,151 @@ class RecommendationEngine:
             return None
 
     def run_fetch_only(self, limit=None):
-        """Downloads data only."""
-        logging.info("Starting Data Download...")
-        stocks_list = self.ingestor.get_nse_equity_list()
-        if limit:
-            stocks_list = stocks_list[:limit]
-            
-        import concurrent.futures
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            futures = []
-            for row in stocks_list:
-                futures.append(executor.submit(self.ingestor.fetch_stock_history, row['Ticker'], "2y"))
-                futures.append(executor.submit(self.ingestor.fetch_fundamentals, row['Ticker']))
-            
-            count = 0
-            total = len(futures)
-            
-            # State Manager Import
-            try:
-                import src.state_manager as sm
-            except ImportError:
-                 sm = None
-                 
-            for _ in tqdm(concurrent.futures.as_completed(futures), total=total, desc="Downloading Data"):
-                count += 1
-                
-                # Heartbeat
-                if sm: sm.update_heartbeat(count=count)
-                
-                if count % 20 == 0:
-                    logging.info(f"Downloading [{count}/{total}]...")
-        logging.info("Download Complete.")
+        """Downloads data and performs basic analysis (Reuses full pipeline)."""
+        logging.info("Starting Data Download & Basic Scan...")
+        # Use full analysis but skip the heavy forecast step
+        self.run_full_analysis(limit=limit, skip_forecast=True)
 
-    def run_full_analysis(self, limit=None, skip_fetch=False):
+    def run_full_analysis(self, limit=None, skip_fetch=False, skip_forecast=False):
         """Runs the E2E analysis pipeline with Parallel Processing."""
         logging.info("Starting Analysis...")
         
         import concurrent.futures
+        from src.utils import read_csv_to_list
         
         # 1. Get List
         stocks_list = self.ingestor.get_nse_equity_list()
         if limit:
             stocks_list = stocks_list[:limit]
         
+        # --- RESUME CAPABILITY ---
         results = []
-        
-        # 2. Parallel Execution
-        total = len(stocks_list)
-        logging.info(f"Scanning {total} stocks (Parallel Mode)...")
-        
-        # Use ThreadPoolExecutor for I/O bound tasks
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            # Map returns iterator in order
-            futures = {executor.submit(self.process_stock, row): row for row in stocks_list}
-            
-            count = 0
-            # Import State Manager safely
-            try:
-                import src.state_manager as sm
-            except ImportError:
-                sm = None
+        analysis_path = f"{self.config['data_dir']}/full_analysis.csv"
+        processed_tickers = set()
 
-            for future in tqdm(concurrent.futures.as_completed(futures), total=total, desc="Analyzing Stocks"):
+        if os.path.exists(analysis_path):
+            logging.info("Found existing analysis file. Resuming...")
+            try:
+                results = read_csv_to_list(analysis_path)
+                processed_tickers = {row['Ticker'] for row in results if row.get('Ticker')}
+                logging.info(f"Already processed {len(processed_tickers)} stocks.")
+            except Exception as e:
+                logging.warning(f"Failed to read existing analysis: {e}. Starting fresh.")
+        
+        # Filter stocks to process
+        stocks_to_process = [s for s in stocks_list if s['Ticker'] not in processed_tickers]
+        
+        if not stocks_to_process and not skip_fetch:
+            logging.info("All stocks already processed. Skipping analysis phase.")
+        else:
+            # 2. Parallel Execution
+            total_to_process = len(stocks_to_process)
+            logging.info(f"Scanning {total_to_process} remaining stocks (Parallel Mode)...")
+            
+            # Use ThreadPoolExecutor for I/O bound tasks
+            with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+                # Map returns iterator in order
+                futures = {executor.submit(self.process_stock, row): row for row in stocks_to_process}
+                
+                count = 0 
+                # Import State Manager safely
                 try:
-                    res = future.result()
-                    if res:
-                        results.append(res)
-                except Exception as e:
-                    logging.error(f"Analysis Crash for a stock: {e}")
+                    import src.state_manager as sm
+                except ImportError:
+                    sm = None
                 
-                count += 1
-                
-                # Heartbeat every item
-                if sm:
-                     sm.update_heartbeat(count=count)
-                     
-                if count % 10 == 0:
-                     logging.info(f"[{count}/{total}] Processed...")
-                     # Incremental save (optional, but good for safety)
-                     if len(results) > 0 and len(results) % 50 == 0:
-                         save_to_csv(results, f"{self.config['data_dir']}/full_analysis.csv")
+                # Update total scanned in state for UI
+                current_total = len(processed_tickers)
+
+                for future in tqdm(concurrent.futures.as_completed(futures), total=total_to_process, desc="Analyzing Stocks"):
+                    try:
+                        res = future.result()
+                        if res:
+                            results.append(res)
+                            current_total += 1
+                    except Exception as e:
+                        logging.error(f"Analysis Crash for a stock: {e}")
+                    
+                    count += 1
+                    
+                    # Heartbeat every item
+                    if sm:
+                         sm.update_heartbeat(count=current_total)
+                         
+                    if count % 10 == 0:
+                         logging.info(f"[{count}/{total_to_process}] Processed in this batch... Total: {current_total}")
+                         # Incremental save
+                         if len(results) > 0:
+                             save_to_csv(results, analysis_path)
 
         # Final Save of Pre-Analysis
-        save_to_csv(results, f"{self.config['data_dir']}/full_analysis.csv")
+        save_to_csv(results, analysis_path)
 
         # 3. Filter Top Candidates for LSTM
         if not results:
             return []
         
-        # Sort by Pre_Score Descending
-        results.sort(key=lambda x: x['Pre_Score'], reverse=True)
+        # Sort by Pre_Score Descending (Convert to float first to be safe)
+        for r in results:
+            try:
+                if 'Pre_Score' in r: r['Pre_Score'] = float(r['Pre_Score'])
+            except: pass
+
+        results.sort(key=lambda x: x.get('Pre_Score', 0), reverse=True)
         top_candidates = results[:20] 
 
-        # 4. Run Forecasting on Top Candidates
-        logging.info(f"Running Forecasting on Top {len(top_candidates)}...")
-        
-        updates = {}
-        for row in top_candidates:
-            ticker = row['Ticker']
-            hist = self.ingestor.fetch_stock_history(ticker)
+        # 4. Run Forecasting on Top Candidates (Optional)
+        if not skip_forecast:
+            logging.info(f"Running Forecasting on Top {len(top_candidates)}...")
             
-            # Forecast
-            forecast_score = self.forecaster.get_forecast_score(hist)
-            
-            # Final Score
-            final_score = row['Pre_Score'] + (self.weights.get('forecast', 0) * forecast_score)
-            
-            # Score Boosting
-            if final_score > 0.5:
-                # curve towards 0.99
-                final_score = min(0.99, final_score * 1.2) 
-            
-            updates[ticker] = {
-                'Forecast_Score': forecast_score,
-                'Final_Score': final_score
-            }
+            updates = {}
+            for row in top_candidates:
+                ticker = row['Ticker']
+                # Fetch history again for pure fresh forecast (or use cached if feasible, but history needs to be fresh)
+                # Forecaster internally uses standard logic.
+                # We already fetched history in process_stock but didn't save it to CSV to save space.
+                # So we fetch again.
+                hist = self.ingestor.fetch_stock_history(ticker)
+                
+                # Forecast
+                forecast_score = self.forecaster.get_forecast_score(hist)
+                
+                # Final Score
+                pre = row.get('Pre_Score', 0)
+                final_score = pre + (self.weights.get('forecast', 0) * forecast_score)
+                
+                # Score Boosting
+                if final_score > 0.5:
+                    final_score = min(0.99, final_score * 1.2) 
+                
+                updates[ticker] = {
+                    'Forecast_Score': forecast_score,
+                    'Final_Score': final_score
+                }
 
-        # 5. Merge Updates back into Results
-        for row in results:
-            if row['Ticker'] in updates:
-                row['Forecast_Score'] = updates[row['Ticker']]['Forecast_Score']
-                row['Final_Score'] = updates[row['Ticker']]['Final_Score']
-            else:
-                row['Final_Score'] = row['Pre_Score']
+            # 5. Merge Updates back into Results
+            for row in results:
+                if row['Ticker'] in updates:
+                    row['Forecast_Score'] = updates[row['Ticker']]['Forecast_Score']
+                    row['Final_Score'] = updates[row['Ticker']]['Final_Score']
+                else:
+                    row['Final_Score'] = row.get('Pre_Score', 0)
 
-        # Resort by Final Score
-        results.sort(key=lambda x: x['Final_Score'], reverse=True)
+            # Resort by Final Score
+            results.sort(key=lambda x: x.get('Final_Score', 0), reverse=True)
         
         # 6. Allocation (Top N)
         top_n = results[:self.config['top_n_stocks']]
         budget = self.config['monthly_budget']
         
         # Calculate Allocation manually
-        # Avoid setting reference, make copy if needed (dicts are mutable so new dict OK)
         final_recommendations = []
         if top_n:
             allocation_per_stock = budget / len(top_n)
             for item in top_n:
-                # Create a copy for recs to avoid polluting full analysis with allocation data if not desired
-                # But user wants full analysis. Let's add keys to top_n dicts
                 rec_item = item.copy()
                 rec_item['Allocation'] = allocation_per_stock
-                price = item['Close']
+                price = float(item.get('Close', 1))
                 if price > 0:
                     rec_item['Qty'] = int(allocation_per_stock / price)
                 else:
@@ -238,6 +243,6 @@ class RecommendationEngine:
         
         # Save results
         save_to_csv(final_recommendations, f"{self.config['data_dir']}/recommendations.csv")
-        save_to_csv(results, f"{self.config['data_dir']}/full_analysis.csv")
+        save_to_csv(results, analysis_path)
         
         return final_recommendations

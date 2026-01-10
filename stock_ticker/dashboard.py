@@ -289,7 +289,7 @@ def main():
             st.rerun()
 
         # Activity Log (Last 3 Events)
-        with st.expander("📜 Recent Activity", expanded=True):
+        with st.expander("📜 Recent Activity", expanded=is_running):
             # Read logs directly
             log_path = os.path.join(config['data_dir'], "app_activity.log")
             logs = []
@@ -301,8 +301,11 @@ def main():
 
             # Simple parser for recent "Started" or "Completed" events
             events = [line for line in logs if "Started" in line or "Complete" in line or "Error" in line or "Downloading" in line or "Processed" in line]
-            for event in reversed(events[-3:]): # Show last 3
-                 st.caption(event.split(' - ')[-1] if ' - ' in event else event)
+            if events:
+                for event in reversed(events[-3:]): # Show last 3
+                     st.caption(event.split(' - ')[-1] if ' - ' in event else event)
+            else:
+                st.caption("No recent significant events.")
 
         st.divider()
 
@@ -336,18 +339,58 @@ def main():
 
         # 3. STRATEGY SELECTION
         st.subheader("🎯 Strategy")
-        strategy = st.radio("Choose Strategy:", 
-                            ["AI Growth (Aggressive)", "Buffet Value (Deep Value)", "Blue Chip (Stability 🛡️)"])
+        
+        strat_map = {
+            "AI": "AI Growth (Aggressive)",
+            "Buffet": "Buffet Value (Deep Value)",
+            "BlueChip": "Blue Chip (Stability 🛡️)"
+        }
+        strat_options = list(strat_map.values())
+        
+        # Get from URL
+        saved_strat_key = st.query_params.get("strategy", "AI")
+        default_strat = strat_map.get(saved_strat_key, strat_options[0])
+        
+        # Widget
+        strategy = st.radio("Choose Strategy:", strat_options, index=strat_options.index(default_strat))
+        
+        # Sync to URL
+        new_strat_key = next((k for k, v in strat_map.items() if v == strategy), "AI")
+        if new_strat_key != saved_strat_key:
+            st.query_params["strategy"] = new_strat_key
+            st.rerun()
+
+        # --- EXPORTS (GLOBAL SIDEBAR) ---
+        st.divider()
+        st.subheader("📤 Exports")
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        
+        # We need data to export. Accessing globals loaded in main content is tricky if sidebar renders first.
+        # Streamlit re-runs top-to-bottom. Logic:
+        # load_data is called in main content (line 382). Sidebar is lines 255-360.
+        # Issue: 'full_list', 'ai_top' etc are defined LATER.
+        # Fix: We must access data inside sidebar AFTER it is loaded. 
+        # But Streamlit syntax: `with st.sidebar` can be called anytime!
+        # So we will inject this export block at the END of the script, appending to sidebar.
 
     # --- MAIN CONTENT ---
     
     # Data Freshness (Top of Main)
     # Data Freshness Check
     data_date = "Unknown"
+    data_date = "N/A"
     full_path = os.path.join(config['data_dir'], "full_analysis.csv")
     if os.path.exists(full_path):
         mtime = os.path.getmtime(full_path)
-        data_date = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+        dt_obj = datetime.fromtimestamp(mtime)
+        # Assuming system is UTC, add 5.5 hours for IST rough fix if needed, 
+        # but better to show relative time
+        time_diff = datetime.now() - dt_obj
+        hours = int(time_diff.total_seconds() // 3600)
+        minutes = int((time_diff.total_seconds() % 3600) // 60)
+        
+        rel_str = f"{hours}h {minutes}m ago" if hours > 0 else f"{minutes}m ago"
+        data_date = f"{dt_obj.strftime('%Y-%m-%d %H:%M')} ({rel_str})"
         
     st.caption(f"📅 Last Data Update: {data_date} | ⏳ Auto-Schedule: Daily 9:30 AM")
 
@@ -383,17 +426,25 @@ def main():
         return res
 
     # --- TAB NAVIGATION (Persistent) ---
-    tabs = ["🚀 Recommendations", "📥 Raw Data"]
+    # --- TAB NAVIGATION (Persistent) ---
+    tabs_map = {
+        "Recommendations": "🚀 Recommendations",
+        "RawData": "📥 Raw Data"
+    }
+    tabs = list(tabs_map.values())
     
-    # Get active tab from URL or default
-    active_tab = st.query_params.get("tab", "🚀 Recommendations")
-    if active_tab not in tabs: active_tab = tabs[0]
+    # Get active tab from URL (expecting clean key)
+    url_key = st.query_params.get("tab", "Recommendations")
+    
+    # Resolve to display label
+    active_tab = tabs_map.get(url_key, tabs[0])
     
     selected_tab = st.radio("", tabs, index=tabs.index(active_tab), horizontal=True, label_visibility="collapsed")
     
-    # Update URL if changed
-    if selected_tab != active_tab:
-        st.query_params["tab"] = selected_tab
+    # Update URL if changed (save clean key)
+    current_key = next((k for k, v in tabs_map.items() if v == selected_tab), "Recommendations")
+    if current_key != url_key:
+        st.query_params["tab"] = current_key
         st.rerun()
 
     # --- CONTENT ROUTING ---
@@ -471,34 +522,8 @@ def main():
             else:
                 st.warning("No stocks found for this strategy.")
 
-            # --- EXPORTS (SIDEBAR) ---
-            with st.sidebar:
-                st.divider()
-                st.subheader("📤 Exports")
-                date_str = datetime.now().strftime("%Y-%m-%d")
-
-                # AI Download
-                if ai_top:
-                    b_ai = to_excel_bytes(ai_top)
-                    if b_ai:
-                        st.download_button("💾 Download AI Picks", b_ai, f"Picks_AI_{date_str}.xlsx")
-                
-                # Buffett Download
-                if buffet_top:
-                    b_buf = to_excel_bytes(buffet_top)
-                    if b_buf:
-                        st.download_button("💾 Download Buffett Picks", b_buf, f"Picks_Buffett_{date_str}.xlsx")
-                        
-                # BlueChip Download
-                if blue_top:
-                    b_blue = to_excel_bytes(blue_top)
-                    if b_blue:
-                         st.download_button("💾 Download BlueChip Picks", b_blue, f"Picks_BlueChip_{date_str}.xlsx")
-
-                # Raw
-                b_raw = to_excel_bytes(full_list)
-                if b_raw:
-                     st.download_button("💾 Download Raw Data", b_raw, f"Raw_Data_{date_str}.xlsx")
+            else:
+                st.warning("No stocks found for this strategy.")
 
 
     if selected_tab == "📥 Raw Data":
@@ -527,10 +552,70 @@ def main():
             """)
             
         if full_list:
+            # --- PERSISTENT COLUMN VIEW ---
+            # 1. Get all available columns
+            all_cols = list(full_list[0].keys())
+            
+            # 2. Get saved columns from URL
+            saved_cols_str = st.query_params.get("cols", "")
+            default_cols = saved_cols_str.split(",") if saved_cols_str else all_cols
+            # Filter out invalid columns just in case data changed
+            valid_defaults = [c for c in default_cols if c in all_cols]
+            if not valid_defaults: valid_defaults = all_cols
+            
+            # 3. Widget
+            selected_cols = st.multiselect(
+                "Select Columns to View (Saved on Refresh)", 
+                options=all_cols, 
+                default=valid_defaults,
+                key="raw_data_cols"
+            )
+            
+            # 4. Sync to URL if changed
+            new_cols_str = ",".join(selected_cols)
+            if new_cols_str != saved_cols_str:
+                st.query_params["cols"] = new_cols_str
+                # No rerun needed strictly, but helps updates
+            
+            # 5. Filter Data
             st.caption(f"Showing all {len(full_list)} scanned stocks.")
-            st.dataframe(full_list)
+            
+            # Create subset list of dicts for safety
+            display_data = [{k: row.get(k) for k in selected_cols} for row in full_list]
+            st.dataframe(display_data, use_container_width=True)
         else:
             st.warning("No data found.")
+
+    # --- LATE RENDER: EXPORTS ---
+    # We render this last so 'full_list' and 'ai_top' are available
+    if full_list:
+        with st.sidebar:
+            st.divider()
+            st.subheader("📤 Exports")
+            date_str = datetime.now().strftime("%Y-%m-%d")
+
+            # AI Download
+            if ai_top:
+                b_ai = to_excel_bytes(ai_top)
+                if b_ai:
+                    st.download_button("💾 The AI Picks", b_ai, f"Picks_AI_{date_str}.xlsx")
+            
+            # Buffett Download
+            if buffet_top:
+                b_buf = to_excel_bytes(buffet_top)
+                if b_buf:
+                    st.download_button("💾 The Buffett Picks", b_buf, f"Picks_Buffett_{date_str}.xlsx")
+                    
+            # BlueChip Download
+            if blue_top:
+                b_blue = to_excel_bytes(blue_top)
+                if b_blue:
+                     st.download_button("💾 The Blue Chip Picks", b_blue, f"Picks_BlueChip_{date_str}.xlsx")
+
+            # Raw
+            b_raw = to_excel_bytes(full_list)
+            if b_raw:
+                 st.download_button("💾 The Raw Data", b_raw, f"Raw_Data_{date_str}.xlsx")
 
 logging.info(f"Script reached end. Name is {__name__}")
 try:

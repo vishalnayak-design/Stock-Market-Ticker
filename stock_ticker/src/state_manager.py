@@ -15,24 +15,28 @@ STAGE_FETCH = "FETCH"
 STAGE_MODEL = "MODEL"
 STAGE_ALLOCATION = "ALLOCATION"
 
+def _get_default_state():
+    return {
+        "status": STATUS_IDLE,
+        "stage": None,
+        "last_heartbeat": 0,
+        "total_scanned": 0,
+        "pid": None,
+        "flags": {
+            "fetch_complete": False,
+            "model_complete": False
+        }
+    }
+
 def load_state():
     if not os.path.exists(STATE_FILE):
-        return {
-            "status": STATUS_IDLE,
-            "stage": None,
-            "last_heartbeat": 0,
-            "total_scanned": 0,
-            "pid": None,
-            "flags": {
-                "fetch_complete": False,
-                "model_complete": False
-            }
-        }
+        return _get_default_state()
     try:
         with open(STATE_FILE, 'r') as f:
             return json.load(f)
     except:
-        return load_state() # Return default on corrupt file
+        # Prevent recursion by returning DEFAULT directly instead of calling load_state
+        return _get_default_state()
 
 def save_state(state):
     try:
