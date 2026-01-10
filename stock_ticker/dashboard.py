@@ -606,6 +606,11 @@ def main():
             if b_raw:
                  st.download_button("💾 The Raw Data", b_raw, f"Raw_Data_{date_str}.xlsx")
 
+    # --- AUTO-REFRESH FOR DYNAMIC LOGS ---
+    if is_running:
+        time.sleep(3)
+        st.rerun()
+
 logging.info(f"Script reached end. Name is {__name__}")
 try:
     logging.info("Calling main() directly...")
