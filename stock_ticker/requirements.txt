@@ -1,0 +1,15 @@
+yfinance
+pandas
+numpy
+ta
+nltk
+scikit-learn
+tensorflow
+streamlit
+schedule
+requests
+feedparser
+pyyaml
+plotly
+tqdm
+nselib

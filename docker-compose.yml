@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  stock-ticker:
+    build: .
+    container_name: stock-ticker-v4
+    restart: always # Auto-restart on crash or system reboot
+    ports:
+      - "8501:8501" # Streamlit Dashboard
+    volumes:
+      # PERSISTENT DATA: Map host folder to container folder
+      - ./stock_ticker/data:/app/stock_ticker/data
+      # LIVE CODE UPDATES: Optional, allows editing code without rebuilding
+      # - ./stock_ticker:/app/stock_ticker 
+    environment:
+      - TZ=Asia/Kolkata # Set Timezone for correct 9:30 AM scheduling
+    command: ["./docker-entrypoint.sh"]

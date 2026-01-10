@@ -1,0 +1,25 @@
+# General Settings
+monthly_budget: 8000
+top_n_stocks: 5
+data_dir: "data"
+
+# Data Fetching
+history_period: "2y"  # 2 years of data for analysis
+lookback_days: 60     # For LSTM model
+
+# Scoring Weights
+weights:
+  technical: 0.4
+  fundamental: 0.4
+  sentiment: 0.2
+  forecast: 0.0 # Initially 0 until model is robust
+
+# Filtering Thresholds
+min_price: 10
+max_price: 5000  # Avoid too expensive stocks for small SIPs if volume is low, but generally open
+min_volume: 10000
+
+# Telegram
+telegram:
+  bot_token: "YOUR_BOT_TOKEN"
+  chat_id: "YOUR_CHAT_ID"
