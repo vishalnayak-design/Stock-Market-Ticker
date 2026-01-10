@@ -1,92 +1,108 @@
 import numpy as np
-import pandas as pd
-import tensorflow as tf
-from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Input
+from sklearn.ensemble import RandomForestRegressor
 import logging
 
 class Forecaster:
     def __init__(self, lookback=60):
         self.lookback = lookback
         self.model = None
-        self.scaler = MinMaxScaler(feature_range=(0, 1))
 
-    def create_dataset(self, dataset):
-        """Converts array into X, y sequences."""
-        X, y = [], []
-        for i in range(len(dataset) - self.lookback):
-            X.append(dataset[i : i + self.lookback, 0])
-            y.append(dataset[i + self.lookback, 0])
-        return np.array(X), np.array(y)
-
-    def train_model(self, df):
-        """Trains an LSTM model on the 'Close' price."""
-        if len(df) < self.lookback + 20: 
-            logging.warning("Not enough data to train LSTM")
-            return None
-
-        data = df.filter(['Close']).values
-        scaled_data = self.scaler.fit_transform(data)
-
-        X, y = self.create_dataset(scaled_data)
-        X = np.reshape(X, (X.shape[0], X.shape[1], 1))
-
-        # Build Model
-        model = Sequential()
-        model.add(Input(shape=(X.shape[1], 1)))
-        model.add(LSTM(50, return_sequences=False))
-        model.add(Dense(25))
-        model.add(Dense(1))
-
-        model.compile(optimizer='adam', loss='mean_squared_error')
+    def _extract_features(self, window):
+        """Generates extended features from a price window."""
+        # 1. Raw Window (Autoregression)
+        features = list(window)
         
-        # Train
-        model.fit(X, y, batch_size=16, epochs=5, verbose=0) # Low epochs for speed
-        self.model = model
-        return model
+        # 2. Volatility (Standard Deviation) - Captures risk/noise
+        volatility = np.std(window)
+        features.append(volatility)
+        
+        # 3. Momentum (Rate of Change: Last vs First in window)
+        momentum = (window[-1] - window[0]) / (window[0] + 1e-9)
+        features.append(momentum)
+        
+        return np.array(features).reshape(1, -1)
 
-    def predict_next_days(self, df, days=7):
-        """Predicts the next N days price trend."""
+    def prepare_data(self, history_list):
+        """Creates training data with engineered features."""
+        try:
+            closes = [float(x['Close']) for x in history_list]
+            if len(closes) < self.lookback + 5:
+                return None, None
+            
+            X, y = [], []
+            for i in range(len(closes) - self.lookback):
+                window = np.array(closes[i : i + self.lookback])
+                target = closes[i + self.lookback]
+                
+                # Extract features for this window
+                # _extract_features returns (1, N), we need flat array for X list
+                feats = self._extract_features(window)[0]
+                
+                X.append(feats)
+                y.append(target)
+            
+            return np.array(X), np.array(y)
+        except Exception as e:
+            logging.error(f"Data prep error: {e}")
+            return None, None
+
+    def train_model(self, history_list):
+        """Trains a Robust Random Forest."""
+        X, y = self.prepare_data(history_list)
+        if X is None or len(X) < 10:
+            return None
+            
+        # Increased estimators for better accuracy (Stability)
+        self.model = RandomForestRegressor(n_estimators=100, max_depth=15, random_state=42, n_jobs=-1)
+        self.model.fit(X, y)
+        return self.model
+
+    def predict_next_days(self, history_list, days=7):
+        """Recursive prediction with feature recalculation."""
         if self.model is None:
-            self.train_model(df)
+            self.train_model(history_list)
             if self.model is None:
                 return []
 
-        data = df.filter(['Close']).values
-        scaled_data = self.scaler.transform(data)
-        
-        # Start with the last lookback window
-        last_window = scaled_data[-self.lookback:]
-        current_batch = last_window.reshape((1, self.lookback, 1))
+        # Initial Window
+        closes = [float(x['Close']) for x in history_list]
+        current_window = np.array(closes[-self.lookback:])
         
         predictions = []
         for _ in range(days):
-            pred_sub = self.model.predict(current_batch, verbose=0)
-            predictions.append(pred_sub[0, 0])
+            # Generate features for current state
+            feats = self._extract_features(current_window)
             
-            # Update batch: remove first, add new prediction
-            current_batch = np.append(current_batch[:, 1:, :], [[pred_sub[0]]], axis=1)
+            # Predict
+            pred = self.model.predict(feats)[0]
+            predictions.append(pred)
+            
+            # Update window using numpy roll
+            current_window = np.roll(current_window, -1)
+            current_window[-1] = pred
 
-        # Inverse transform
-        predictions = np.array(predictions).reshape(-1, 1)
-        return self.scaler.inverse_transform(predictions).flatten()
+        return predictions
 
-    def get_forecast_score(self, df):
-        """Simple strategy: 1 if forecast is bullish (next 7 days > current), else 0."""
+    def get_forecast_score(self, history_list):
+        """1 if bullish, 0 if bearish/neutral."""
         try:
-            current_price = df['Close'].iloc[-1]
-            preds = self.predict_next_days(df, days=5)
-            if len(preds) == 0:
+            if not history_list:
+                return 0.5
+                
+            current_price = float(history_list[-1]['Close'])
+            preds = self.predict_next_days(history_list, days=5)
+            
+            if not preds:
                 return 0.5
             
             avg_pred = np.mean(preds)
-            if avg_pred > current_price * 1.02: # >2% growth expected
-                return 1
+            
+            if avg_pred > current_price * 1.02: 
+                return 1.0
             elif avg_pred < current_price:
-                return 0
-            else:
-                return 0.5
+                return 0.0
+            
+            return 0.5
         except Exception as e:
             logging.error(f"Prediction error: {e}")
             return 0.5

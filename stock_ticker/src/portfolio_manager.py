@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import logging
 from datetime import datetime
-from src.utils import save_to_csv, load_from_parquet
+from src.utils import save_to_csv
 
 class PortfolioManager:
     def __init__(self, data_dir):

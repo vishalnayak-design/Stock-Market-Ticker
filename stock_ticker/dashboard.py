@@ -1,46 +1,110 @@
 import streamlit as st
-import pandas as pd
 import yaml
 import os
+import sys
 import time
 import subprocess
 import numpy as np
 from datetime import datetime
-import plotly.express as px
+import io
 import re
+import xlsxwriter
+import logging
+import math
+
+# --- Setup Logging to Stdout for Docker Debugging ---
+logging.basicConfig(level=logging.INFO)
+logging.info("Dashboard script started...")
 
 st.set_page_config(page_title="Stock SIP Dashboard", layout="wide")
 
+# --- Robust Imports ---
+try:
+    # Ensure 'src' is importable
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Try importing from 'src.utils' (standard)
+    try:
+        from src.utils import read_csv_to_list
+        logging.info("Imported read_csv_to_list from src.utils")
+    except ImportError:
+        # If 'src' not found, maybe we are inside 'src' or 'stock_ticker' is not in path?
+        # Add current dir to path to find 'src' if it is a subdir here
+        if current_dir not in sys.path:
+            sys.path.append(current_dir)
+        
+        from src.utils import read_csv_to_list
+        logging.info("Imported read_csv_to_list after path fix")
+
+except ImportError as e:
+    st.error(f"CRITICAL IMPORT ERROR: {e}")
+    logging.error(f"Import failed: {e}")
+    st.stop()
+
 # --- Helpers ---
 def load_config():
+    logging.info("Loading config...")
     config_path = os.path.join(os.path.dirname(__file__), "config.yaml")
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
 
+@st.cache_data(ttl=3600) 
 def load_data(data_dir):
+    logging.info(f"Loading data from {data_dir}...")
     rec_path = os.path.join(data_dir, "recommendations.csv")
     full_path = os.path.join(data_dir, "full_analysis.csv")
     hist_path = os.path.join(data_dir, "portfolio_history.csv")
     
-    rec_df = pd.read_csv(rec_path) if os.path.exists(rec_path) else pd.DataFrame()
-    full_df = pd.read_csv(full_path) if os.path.exists(full_path) else pd.DataFrame()
-    hist_df = pd.read_csv(hist_path) if os.path.exists(hist_path) else pd.DataFrame()
-    return rec_df, full_df, hist_df
+    # DEBUG: Return empty first to test UI
+    # return [], [], []
+    
+    try:
+        logging.info("Reading CSVs...")
+        rec_data = read_csv_to_list(rec_path)
+        full_data = read_csv_to_list(full_path)
+        hist_data = read_csv_to_list(hist_path)
+        logging.info(f"Read {len(full_data)} rows.")
+
+        # Convert numeric fields
+        logging.info("Converting numerics...")
+        # Optimization: REMOVED LIMIT as per user request for 1800+ stocks
+        # if len(full_data) > 500:
+        #      full_data = full_data[:500] 
+        
+        for row in rec_data + full_data:
+            for k, v in row.items():
+                try:
+                    # Basic check to avoid crashing on complex strings
+                    if k not in ['Ticker', 'Name', 'Reason', 'Date'] and v and isinstance(v, (str, int, float)):
+                        row[k] = float(v)
+                except:
+                    pass
+        logging.info("Data loaded successfully.")       
+        return rec_data, full_data, hist_data
+    except Exception as e:
+        logging.error(f"Data Load Error: {e}")
+        return [], [], []
 
 def get_pipeline_status(data_dir):
-    """Reads the watchdog log to get status and progress."""
-    log_path = os.path.join(data_dir, "watchdog_log.txt")
+    """Reads the centralized log to show what the system is doing."""
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Use centralized log
+    # Try multiple locations just in case
+    log_path = os.path.join(root_dir, "stock_ticker", "data", "app_activity.log")
     if not os.path.exists(log_path):
-        return "Not Started", 0, []
+        log_path = os.path.join(root_dir, "data", "app_activity.log") # Fallback
+
     
-    with open(log_path, "r") as f:
+    if not os.path.exists(log_path):
+        return "Waiting for logs...", 0, []
+    
+    with open(log_path, "r", encoding='utf-8') as f:
         lines = f.readlines()
     
     last_line = lines[-1].strip() if lines else "Waiting..."
     
     # Parse Progress
     progress = 0
-    # Look for [10/1800] pattern in recent lines (reverse search)
     for line in reversed(lines[-20:]):
         match = re.search(r"\[(\d+)/(\d+)\]", line)
         if match:
@@ -51,13 +115,18 @@ def get_pipeline_status(data_dir):
             
     return last_line, progress, lines[-10:]
 
-def run_pipeline_script():
-    """Triggers the watchdog script."""
-    # We call the wrapper batch file or powershell directly
-    # Assuming execution from root
+def run_pipeline_script(flags=[]):
+    """Triggers the pipeline with optional flags."""
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    script = os.path.join(root_dir, "watchdog.ps1")
-    subprocess.Popen(["powershell", "-ExecutionPolicy", "Bypass", "-File", script], cwd=root_dir)
+    
+    cmd = ["python", os.path.join(root_dir, "stock_ticker", "main.py")] + flags
+    
+    if os.name == 'nt':
+        # On Windows, using subprocess directly for better control
+        # Or us the watchdog shell script if preferred, but direct python is cleaner for flags
+        subprocess.Popen(cmd, cwd=root_dir)
+    else:
+        subprocess.Popen(cmd, cwd=root_dir)
 
 def calculate_future_wealth(monthly_investment, years, cagr):
     months = years * 12
@@ -66,171 +135,407 @@ def calculate_future_wealth(monthly_investment, years, cagr):
     total_invested = monthly_investment * months
     return total_invested, future_value
 
+import math 
+
+# ... (Previous imports)
+
+def to_excel_bytes(data_list):
+    """Generates Excel bytes for download using xlsxwriter."""
+    try:
+        if not data_list:
+            logging.warning("to_excel_bytes: No data list provided.")
+            return None
+            
+        logging.info(f"Generating Excel for {len(data_list)} rows...")
+        output = io.BytesIO()
+        workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+        worksheet = workbook.add_worksheet('Picks')
+        
+        headers = list(data_list[0].keys())
+        
+        # Formats
+        header_fmt = workbook.add_format({'bold': True, 'bg_color': '#D3D3D3', 'border': 1})
+        green_fmt = workbook.add_format({'bg_color': '#C6EFCE', 'font_color': '#006100'})
+        red_fmt = workbook.add_format({'bg_color': '#FFC7CE', 'font_color': '#9C0006'})
+        num_fmt = workbook.add_format({'num_format': '#,##0.00'})
+        
+        # Write Headers
+        for col_num, header in enumerate(headers):
+            worksheet.write(0, col_num, header, header_fmt)
+            
+            # Write Data and Format
+        # Define Color Rules: (Column Name, 'high_good' or 'low_good', Threshold Green, Threshold Red)
+        rules = [
+            ('Final_Score', 'high_good', 0.7, 0.4),
+            ('Pre_Score', 'high_good', 0.7, 0.4), # Added
+            ('Fund_Score', 'high_good', 0.6, 0.3),
+            ('Tech_Score', 'high_good', 0.7, 0.4),
+            ('Sent_Score', 'high_good', 0.5, 0.2),
+            ('Forecast_Score', 'high_good', 0.5, 0.0),
+            ('Intrinsic_Value', 'high_good', 0, 0), 
+            ('Margin_Safety', 'high_good', 20, -10),
+            ('PE_Ratio', 'low_good', 25, 50),
+            ('ROE', 'high_good', 0.15, 0.05),
+            ('Debt_to_Equity', 'low_good', 50, 200),
+            ('PEG_Ratio', 'low_good', 1.0, 2.0),
+            ('Div_Yield', 'high_good', 0.02, 0.0),
+            ('Market_Cap', 'high_good', 50000000000, 5000000000) # 5k Cr Green, 500Cr Red
+        ]
+        
+        # Map headers to indices
+        col_indices = {key: headers.index(key) for key in rules if key in headers}
+
+        for row_num, row_data in enumerate(data_list, start=1):
+            for col_num, key in enumerate(headers):
+                val = row_data.get(key)
+                
+                # Write with format if number
+                cell_fmt = None
+                if isinstance(val, (int, float)):
+                     if math.isnan(val) or math.isinf(val):
+                         worksheet.write(row_num, col_num, "N/A")
+                         continue
+                     else:
+                         cell_fmt = num_fmt
+                         
+                     # Check Rules
+                     for rule_key, rule_type, thresh_good, thresh_bad in rules:
+                         # Use lower case comparison to be safe
+                         if key.lower() == rule_key.lower():
+                             if rule_type == 'high_good':
+                                 if val >= thresh_good: cell_fmt = green_fmt
+                                 elif val <= thresh_bad: cell_fmt = red_fmt
+                             elif rule_type == 'low_good':
+                                 if val <= thresh_good: cell_fmt = green_fmt
+                                 elif val >= thresh_bad: cell_fmt = red_fmt
+                             break
+                     
+                     worksheet.write(row_num, col_num, val, cell_fmt)
+                else:
+                     worksheet.write(row_num, col_num, str(val) if val is not None else "")
+    
+        workbook.close()
+        size = output.tell()
+        logging.info(f"Excel generated. Size: {size} bytes")
+        return output.getvalue()
+        
+    except Exception as e:
+        logging.error(f"Excel Generation Failed: {e}", exc_info=True)
+        return None
+
 # --- Main ---
 def main():
+    logging.info("Entering main()...")
     config = load_config()
+    logging.info("Config loaded.")
+    
     base_dir = os.path.dirname(os.path.abspath(__file__))
     if not os.path.isabs(config['data_dir']):
         config['data_dir'] = os.path.join(base_dir, config['data_dir'])
         
     st.title("📈 Smart Stock SIP System")
+    logging.info("Title rendered.")
 
-    # --- ACTION BAR (Top) ---
-    col_btn, col_budget, col_status = st.columns([1, 2, 3])
-    
-    with col_btn:
-        if st.button("▶ Run Analysis Now"):
-            run_pipeline_script()
-            st.toast("Pipeline started! core 'CTO' monitoring active.")
-    
-    with col_budget:
-         user_budget = st.number_input("Monthly SIP (₹)", min_value=1000, value=config['monthly_budget'], step=500, label_visibility="collapsed")
+    # --- STATE MANAGER Check ---
+    try:
+        import src.state_manager as sm
+        pipeline_state = sm.load_state()
+    except ImportError:
+        pipeline_state = {}
 
-    with col_status:
-        status, progress, logs = get_pipeline_status(config['data_dir'])
-        if "Executing" in status or "Analyzing" in status:
-            st.info(f"⚙️ Running: {status}")
-            st.progress(progress if progress > 0 else 5, text=f"{progress}% Complete")
-        elif "SUCCESS" in status or "Completed" in status:
-            st.success(f"✅ Ready. Last: {status}")
-            st.progress(100)
+    status = pipeline_state.get('status', 'IDLE')
+    stage = pipeline_state.get('stage', '')
+    is_running = status == 'RUNNING'
+    
+    # Calculate Heartbeat Age
+    last_hb = pipeline_state.get('last_heartbeat', 0)
+    hb_age = time.time() - last_hb if last_hb else 0
+    
+    # --- SIDEBAR: CONTROL PANEL ---
+    with st.sidebar:
+        st.header("🎮 Control Panel")
+        
+        # 1. STATUS & ACTIVITY
+        st.subheader("📡 System Status")
+        
+        # Status Card
+        if is_running:
+            st.info(f"🤖 Auto-Pilot: {stage}\n\nLast Beat: {int(hb_age)}s ago")
         else:
-            st.warning(f"⚠️ {status}")
+            if status == 'FAILED':
+                st.error("⚠️ Pipeline Failed (Check Logs)")
+            elif status == 'COMPLETED':
+                st.success("✅ Cycle Completed")
+            else:
+                st.success("🟢 System Idle")
+
+
+        st.divider()
+        
+        # Progress Bar (from State)
+        count = pipeline_state.get('total_scanned', 0)
+        # Assuming ~1900 total
+        progress_val = min(100, int((count / 1900) * 100))
+        
+        if is_running:
+            st.progress(progress_val, text=f"{stage}: {count} Stocks Scanned")
+            
+        # Clear Cache Button
+
+        # Clear Cache Button
+        if st.button("Cleared Cached Data", help="Click if data looks stuck"):
+            st.cache_data.clear()
+            st.toast("Cache Cleared!")
+            st.rerun()
+
+        # Activity Log (Last 3 Events)
+        with st.expander("📜 Recent Activity", expanded=True):
+            # Read logs directly
+            log_path = os.path.join(config['data_dir'], "app_activity.log")
+            logs = []
+            if os.path.exists(log_path):
+                with open(log_path, "r") as f:
+                    logs = f.readlines()[-20:]
+            else:
+                logs = ["Waiting for logs..."]
+
+            # Simple parser for recent "Started" or "Completed" events
+            events = [line for line in logs if "Started" in line or "Complete" in line or "Error" in line or "Downloading" in line or "Processed" in line]
+            for event in reversed(events[-3:]): # Show last 3
+                 st.caption(event.split(' - ')[-1] if ' - ' in event else event)
+
+        st.divider()
+
+        # 2. ACTIONS (IMPORT)
+        st.subheader("⚡ Actions")
+        
+        c1, c2 = st.columns(2)
+        with c1:
+            if st.button("🔄 Fetch", disabled=is_running, help="Download latest data"):
+                run_pipeline_script(["--fetch-only"])
+                st.toast("Fetching Started...")
+                time.sleep(1)
+                st.rerun()
+                
+        with c2:
+            if st.button("🧠 Model", disabled=is_running, help="Run AI Analysis"):
+                run_pipeline_script(["--analyze-only"])
+                st.toast("Analysis Started...")
+                time.sleep(1)
+                st.rerun()
+
+        # Allocation / Budget
+        st.markdown("### 💰 Fund Allocation")
+        user_budget = st.number_input("Monthly Investment (₹)", min_value=1000, value=config['monthly_budget'], step=500, disabled=is_running)
+        
+        if st.button("Sync Allocation", disabled=is_running, use_container_width=True):
+             st.toast("Allocation Synced!")
+             st.rerun()
+
+        st.divider()
+
+        # 3. STRATEGY SELECTION
+        st.subheader("🎯 Strategy")
+        strategy = st.radio("Choose Strategy:", 
+                            ["AI Growth (Aggressive)", "Buffet Value (Deep Value)", "Blue Chip (Stability 🛡️)"])
+
+    # --- MAIN CONTENT ---
+    
+    # Data Freshness (Top of Main)
+    # Data Freshness Check
+    data_date = "Unknown"
+    full_path = os.path.join(config['data_dir'], "full_analysis.csv")
+    if os.path.exists(full_path):
+        mtime = os.path.getmtime(full_path)
+        data_date = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+        
+    st.caption(f"📅 Last Data Update: {data_date} | ⏳ Auto-Schedule: Daily 9:30 AM")
 
     # --- DATA LOADING ---
-    rec_df, full_df, hist_df = load_data(config['data_dir'])
+    rec_list, full_list, hist_list = load_data(config['data_dir'])
 
-    tab1, tab2, tab3, tab4 = st.tabs(["🚀 Top Recommendations", "🔮 Portfolio Growth", "📉 Daily Changes", "📥 Raw Data (1800+ Stocks)"])
+    # --- HELPER: ALLOCATION ---
+    def apply_allocation(stock_list, budget, score_key):
+        if not stock_list: return []
+        
+        # Calculate scores sum
+        scores = [x.get(score_key, 0) for x in stock_list]
+        total = sum(scores)
+        
+        res = []
+        for item in stock_list:
+            new_item = item.copy()
+            score = item.get(score_key, 0)
+            weight = score / total if total > 0 else 0
+            
+            # Weighted Allocation
+            raw_alloc = budget * weight
+            new_item['Allocation'] = int(round(raw_alloc / 10) * 10)
+            
+            price = new_item.get('Close', 1)
+            new_item['Qty'] = int(new_item['Allocation'] / price) if price > 0 else 0
+            
+            # Round floats
+            for k, v in new_item.items():
+                    if isinstance(v, float):
+                        new_item[k] = round(v, 2)
+            res.append(new_item)
+        return res
+
+    # --- TAB NAVIGATION (Persistent) ---
+    tabs = ["🚀 Recommendations", "📥 Raw Data"]
+    
+    # Get active tab from URL or default
+    active_tab = st.query_params.get("tab", "🚀 Recommendations")
+    if active_tab not in tabs: active_tab = tabs[0]
+    
+    selected_tab = st.radio("", tabs, index=tabs.index(active_tab), horizontal=True, label_visibility="collapsed")
+    
+    # Update URL if changed
+    if selected_tab != active_tab:
+        st.query_params["tab"] = selected_tab
+        st.rerun()
+
+    # --- CONTENT ROUTING ---
+    if selected_tab == "🚀 Recommendations":
+        # Placeholder for AI logic below
+        pass
+    else:
+        # Placeholder for Raw Data logic
+        pass
 
     # --- TAB 1: RECOMMENDATIONS ---
-    with tab1:
-        st.markdown("### 🎯 Investment Strategy")
+    if selected_tab == "🚀 Recommendations":
+        # Rename legacy tab1 var for diff compatibility
+        tab1_dummy = True
+    
+    # Pre-Calculate ALL Strategies
+    ai_top = []
+    buffet_top = []
+    blue_top = []
+    
+    if full_list:
+        # 1. AI Picks
+        ai_data = sorted(full_list, key=lambda x: x.get('Final_Score', 0), reverse=True)[:5]
+        ai_top = apply_allocation(ai_data, user_budget, 'Final_Score')
         
-        # Strategy Explainer
-        with st.expander("ℹ️ Understand the Columns & Strategies"):
-            st.markdown("""
-            - **Close**: Current Stock Price.
-            - **Tech_Score** (Technical): Price trend. High = Uptrend (Bullish).
-            - **Fund_Score** (Fundamental): Financial health. High = Strong Balance Sheet (Buffet style).
-            - **Sent_Score** (Sentiment): News positivity. High = Good News.
-            - **Final_Score**: Weighted average of all above + AI Forecast.
-            - **Strategies**:
-                - **🚀 AI Growth**: Aggressive. High Tech + Sentiment + Forecast. (High Risk/Reward).
-                - **🎩 Buffet Value**: Conservative. High Fundamentals (P/E, Debt, ROE). (Long Term).
-                - **🛡️ Blue Chip Stability**: Safe. Large Market Cap + Dividends + Stability. (Wealth Preservation).
-            """)
+        # 2. Buffett Picks
+        buff_data = sorted(full_list, key=lambda x: x.get('Fund_Score', 0), reverse=True)[:5]
+        buffet_top = apply_allocation(buff_data, user_budget, 'Fund_Score')
+        
+        # 3. Blue Chip
+        blue_data = []
+        if 'Market_Cap' in full_list[0]:
+            caps = [x.get('Market_Cap', 0) for x in full_list]
+            threshold = np.percentile(caps, 70) if caps else 0
+            large_caps = [x for x in full_list if x.get('Market_Cap', 0) >= threshold]
+            blue_data = sorted(large_caps, key=lambda x: x.get('Fund_Score', 0), reverse=True)[:5]
+        else:
+             blue_data = sorted(full_list, key=lambda x: (x.get('Fund_Score', 0), x.get('Close', 0)), reverse=True)[:5]
+        blue_top = apply_allocation(blue_data, user_budget, 'Fund_Score')
 
-        if not full_df.empty:
-            if 'Reason' not in full_df.columns: full_df['Reason'] = "Pending..."
-            
-            # Strategies
-            ai_picks = full_df.sort_values(by='Final_Score', ascending=False).head(5)
-            buffet_picks = full_df.sort_values(by='Fund_Score', ascending=False).head(5)
-            
-            # Blue Chip Logic: Top 30% Market Cap + Positive Fund Score
-            # If Market Cap is missing (0), we fall back to Fund Score filtering
-            if 'Market_Cap' in full_df.columns:
-                 blue_chips = full_df[full_df['Market_Cap'] > full_df['Market_Cap'].quantile(0.7)]
-                 blue_chips = blue_chips.sort_values(by='Fund_Score', ascending=False).head(5)
-            else:
-                 # Fallback if no market cap data yet
-                 blue_chips = full_df.sort_values(by=['Fund_Score', 'Close'], ascending=[False, False]).head(5)
-
-            # Selector
-            strategy = st.radio("Select Strategy:", 
-                                ["AI Growth (Aggressive)", "Buffet Value (Deep Value)", "Blue Chip (Stability 🛡️)"], 
-                                horizontal=True)
+    if selected_tab == "🚀 Recommendations":
+        st.markdown(f"### Results: {strategy}")
+        
+        if full_list:
+            # Selector Logic
+            active_display = []
+            score_key = 'Final_Score'
             
             if "AI" in strategy:
-                active_df = ai_picks
+                active_display = ai_top
+                score_key = 'Final_Score'
             elif "Buffet" in strategy:
-                active_df = buffet_picks
+                active_display = buffet_top
+                score_key = 'Fund_Score'
             else:
-                active_df = blue_chips
+                active_display = blue_top
+                score_key = 'Fund_Score'
             
-            # Calculations
-            if not active_df.empty:
-                active_df['Allocation'] = user_budget / len(active_df)
-                active_df['Qty'] = (active_df['Allocation'] / active_df['Close']).replace([np.inf, -np.inf], 0).fillna(0).astype(int)
-                avg_score = active_df['Final_Score'].mean() if "AI" in strategy else active_df['Fund_Score'].mean()
-                
+            if active_display:
                 # Metrics
+                scores = [x.get(score_key, 0) for x in active_display]
+                avg_score = sum(scores)/len(scores) if scores else 0
+                
                 c1, c2, c3 = st.columns(3)
-                c1.metric("Investment Required", f"₹{user_budget}")
-                c2.metric("Strategy Score", f"{avg_score:.2f}/1.0")
-                c3.metric("Top Pick", active_df.iloc[0]['Name'])
+                c1.metric("Investment", f"₹{user_budget}")
+                c2.metric("Score", f"{avg_score:.2f}/1.0")
+                with c3:
+                    st.caption("Top Pick")
+                    st.markdown(f"**{active_display[0]['Name']}**")
                 
                 # Table
-                display_cols = ['Name', 'Ticker', 'Close', 'Qty', 'Allocation', 'Reason']
-                if "AI" in strategy: display_cols.append('Final_Score')
-                else: display_cols.append('Fund_Score')
-                    
-                st.dataframe(active_df[display_cols].style.highlight_max(axis=0))
-                
-                # Download
-                csv = active_df.to_csv(index=False).encode('utf-8-sig')
-                st.download_button(f"📥 Download {strategy.split()[0]} Picks", csv, "picks.csv", "text/csv")
+                display_cols = ['Name', 'Ticker', 'Sector', 'Close', 'Intrinsic_Value', 'Margin_Safety', 'Qty', 'Allocation', 'Reason']
+                table_data = [{k: row.get(k) for k in display_cols if k in row} for row in active_display]
+                st.dataframe(table_data, use_container_width=True)
             else:
-                st.warning(f"⚠️ No stocks found matching '{strategy}'. Wait for more data analysis to complete.")
-            
-        else:
-            st.info("👋 Welcome! Click 'Run Analysis Now' to start scanning the market.")
+                st.warning("No stocks found for this strategy.")
 
-    # --- TAB 2: WEALTH SIMULATOR ---
-    with tab2:
-        st.header("Projected Returns")
-        if not rec_df.empty:
-            c1, c2 = st.columns([1, 2])
-            with c1:
-                years = st.slider("Duration (Years)", 5, 30, 10)
-                cagr_default = 18 if np.random.random() > 0.5 else 18 
-                cagr = st.slider("Expected CAGR (%)", 10, 30, cagr_default, help="AI Picks target ~18%+. Value picks target ~15%.")
-            
-            with c2:
-                invested, value = calculate_future_wealth(user_budget, years, cagr)
-                st.metric("Future Value", f"₹{value:,.0f}", delta=f"{(value-invested)/invested*100:.0f}% Gain")
+            # --- EXPORTS (SIDEBAR) ---
+            with st.sidebar:
+                st.divider()
+                st.subheader("📤 Exports")
+                date_str = datetime.now().strftime("%Y-%m-%d")
+
+                # AI Download
+                if ai_top:
+                    b_ai = to_excel_bytes(ai_top)
+                    if b_ai:
+                        st.download_button("💾 Download AI Picks", b_ai, f"Picks_AI_{date_str}.xlsx")
                 
-                chart_data = pd.DataFrame({
-                    "Year": range(1, years + 1),
-                    "Invested": [user_budget * 12 * i for i in range(1, years + 1)],
-                    "Portfolio Value": [calculate_future_wealth(user_budget, i, cagr)[1] for i in range(1, years + 1)]
-                })
-                st.area_chart(chart_data.set_index("Year"))
-        else:
-            st.warning("Run analysis first to get specific projections.")
+                # Buffett Download
+                if buffet_top:
+                    b_buf = to_excel_bytes(buffet_top)
+                    if b_buf:
+                        st.download_button("💾 Download Buffett Picks", b_buf, f"Picks_Buffett_{date_str}.xlsx")
+                        
+                # BlueChip Download
+                if blue_top:
+                    b_blue = to_excel_bytes(blue_top)
+                    if b_blue:
+                         st.download_button("💾 Download BlueChip Picks", b_blue, f"Picks_BlueChip_{date_str}.xlsx")
 
-    # --- TAB 3: HISTORY ---
-    with tab3:
-        st.caption("Daily Log of Entries & Exits")
-        if not hist_df.empty:
-            st.dataframe(hist_df.sort_values(by="Date", ascending=False))
-        else:
-            st.info("No history yet. This tab tracks changes over time.")
+                # Raw
+                b_raw = to_excel_bytes(full_list)
+                if b_raw:
+                     st.download_button("💾 Download Raw Data", b_raw, f"Raw_Data_{date_str}.xlsx")
 
-    # --- TAB 4: RAW DATA ---
-    with tab4:
+
+    if selected_tab == "📥 Raw Data":
         st.subheader(f"Full Market Scan Data")
-        st.markdown("This table contains the raw analysis for **every single stock** scanned today.")
         
-        if not full_df.empty:
-            # Reorder columns for better readability
-            cols = ['Ticker', 'Name', 'Close', 'Final_Score', 'Fund_Score', 'Tech_Score', 'Reason']
-            # Add missing if not present
-            cols = [c for c in cols if c in full_df.columns]
-            remaining = [c for c in full_df.columns if c not in cols]
-            
-            st.dataframe(full_df[cols + remaining])
-            
-            csv_full = full_df.to_csv(index=False).encode('utf-8')
-            st.download_button(
-                label="📥 Download Full Dataset (CSV)",
-                data=csv_full,
-                file_name=f"full_market_analysis_{datetime.now().strftime('%Y%m%d')}.csv",
-                mime="text/csv",
-                type="primary"
-            )
+        # Count Metric
+        if full_list:
+             st.metric("Total Stocks Scanned", f"{len(full_list)}")
         else:
-            st.warning("No data found. Please run the analysis.")
+             st.metric("Total Stocks Scanned", "0")
+        
+        with st.expander("ℹ️ Data Glossary"):
+             st.markdown("""
+            **Fundamental Metrics:**
+            - **PE_Ratio**: Price to Earnings. Lower is "Cheaper". (Under 30 is good for Value).
+            - **ROE**: Return on Equity. Higher is "Efficient". (>15% is great).
+            - **Debt_to_Equity**: Debt %. Lower is Safer. (<100% is safe).
+            - **PEG_Ratio**: Price/Earnings to Growth. <1.0 is Undervalued Growth.
+            - **Div_Yield**: Dividend %. Cash back to you.
+            
+            **Scores (0.0 - 1.0)**:
+            - **Tech**: Chart patterns.
+            - **Fund**: Financial health.
+            - **Sent**: News sentiment.
+            - **Forecast**: AI Prediction.
+            """)
+            
+        if full_list:
+            st.caption(f"Showing all {len(full_list)} scanned stocks.")
+            st.dataframe(full_list)
+        else:
+            st.warning("No data found.")
 
-if __name__ == "__main__":
+logging.info(f"Script reached end. Name is {__name__}")
+try:
+    logging.info("Calling main() directly...")
     main()
+except Exception as e:
+    st.error(f"An error occurred: {e}")
+    logging.error(f"Dashboard Crash: {e}", exc_info=True)

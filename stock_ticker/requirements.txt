@@ -1,10 +1,7 @@
 yfinance
-pandas
 numpy
-ta
 nltk
 scikit-learn
-tensorflow
 streamlit
 schedule
 requests
@@ -13,3 +10,5 @@ pyyaml
 plotly
 tqdm
 nselib
+xlsxwriter
+openpyxl
