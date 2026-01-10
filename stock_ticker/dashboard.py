@@ -391,15 +391,17 @@ def main():
     def apply_allocation(stock_list, budget, score_key):
         if not stock_list: return []
         
-        # Calculate scores sum
-        scores = [x.get(score_key, 0) for x in stock_list]
+        # Calculate scores sum (Use Exponential Weighting to differentiate)
+        scores = [x.get(score_key, 0) ** 3 for x in stock_list]
         total = sum(scores)
         
         res = []
         for item in stock_list:
             new_item = item.copy()
             score = item.get(score_key, 0)
-            weight = score / total if total > 0 else 0
+            
+            # Exaggerate differences
+            weight = (score ** 3) / total if total > 0 else 0
             
             # Weighted Allocation
             raw_alloc = budget * weight
