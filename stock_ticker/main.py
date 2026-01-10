@@ -119,5 +119,12 @@ def main():
     # 4. Notify
     notifier.send_recommendation(rec_df)
 
+    # 5. Cloud Sync
+    try:
+        from src.utils import push_to_github
+        push_to_github(f"Auto-update: {len(rec_df)} recommendations")
+    except Exception as e:
+        logging.warning(f"Cloud sync module failed: {e}")
+
 if __name__ == "__main__":
     main()

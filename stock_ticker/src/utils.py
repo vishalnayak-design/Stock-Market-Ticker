@@ -1,6 +1,27 @@
 import csv
 import os
 import logging
+import subprocess
+from datetime import datetime
+
+def push_to_github(message="Auto-update data"):
+    """Auto-commits and pushes changes to GitHub."""
+    try:
+        # Check if git is available and repo is configured
+        subprocess.check_call(['git', 'status'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        logging.info("Syncing to GitHub...")
+        subprocess.run(['git', 'add', '.'], check=True)
+        
+        # Commit (ignore error if nothing to commit)
+        subprocess.run(['git', 'commit', '-m', message], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        # Push
+        subprocess.run(['git', 'push'], check=True)
+        logging.info("Successfully pushed to GitHub.")
+        
+    except Exception as e:
+        logging.warning(f"Git Auto-Sync failed: {e}")
 import xlsxwriter
 
 def ensure_dir(directory):
