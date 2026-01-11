@@ -81,7 +81,17 @@ class RecommendationEngine:
                 "Debt_to_Equity": funds.get('debtToEquity', 0), 
                 "PEG_Ratio": funds.get('pegRatio', 0),
                 "Market_Cap": funds.get('marketCap', 0),
+                "Market_Cap": funds.get('marketCap', 0),
                 "Div_Yield": funds.get('dividendYield', 0),
+                
+                # Big Bets Fields (Mapped)
+                "ROCE": funds.get('returnOnCapitalEmployed', 0), 
+                "OPM": funds.get('operatingMargins', 0) * 100 if funds.get('operatingMargins') else 0,
+                "FreeCashFlow": funds.get('freeCashflow', 0) / 10000000 if funds.get('freeCashflow') else 0, # Convert to Cr
+                "SalesGrowth3Y": 0, # Not avaialble in standard yF info
+                "ProfitGrowth3Y": 0, # Not available in standard yF info
+                "QtrSalesGrowth": funds.get('revenueGrowth', 0) * 100 if funds.get('revenueGrowth') else 0,
+                "QtrProfitGrowth": funds.get('earningsGrowth', 0) * 100 if funds.get('earningsGrowth') else 0,
                 
                 "Reason": reason
             }
@@ -104,6 +114,11 @@ class RecommendationEngine:
         
         # 1. Get List
         stocks_list = self.ingestor.get_nse_equity_list()
+        
+        # Shuffle to ensure diverse partial results
+        import random
+        random.shuffle(stocks_list)
+        
         if limit:
             stocks_list = stocks_list[:limit]
         

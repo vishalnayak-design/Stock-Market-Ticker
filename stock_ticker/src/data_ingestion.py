@@ -142,7 +142,40 @@ class DataIngestor:
                 info = stock.info
                 if info is None:
                     return {}
-                    
+                
+                # ROCE Fallback: If missing, calculate from Financials
+                if not info.get('returnOnCapitalEmployed'):
+                    try:
+                        # Fetch Financials (Income Statement) & Balance Sheet
+                        # Note: This increases API calls, so only done if ROCE is critical and missing
+                        fin = stock.financials
+                        bs = stock.balance_sheet
+                        
+                        if not fin.empty and not bs.empty:
+                            # 1. Get EBIT
+                            ebit = 0
+                            if 'EBIT' in fin.index:
+                                ebit = fin.loc['EBIT'].iloc[0]
+                            elif 'Net Income' in fin.index and 'Interest Expense' in fin.index and 'Tax Provision' in fin.index:
+                                # Approx EBIT = Net Income + Interest + Tax
+                                ebit = fin.loc['Net Income'].iloc[0] + fin.loc['Interest Expense'].iloc[0] + fin.loc['Tax Provision'].iloc[0]
+                            
+                            # 2. Get Capital Employed
+                            cap_employed = 0
+                            if 'Invested Capital' in bs.index:
+                                cap_employed = bs.loc['Invested Capital'].iloc[0]
+                            elif 'Total Assets' in bs.index and 'Current Liabilities' in bs.index:
+                                cap_employed = bs.loc['Total Assets'].iloc[0] - bs.loc['Current Liabilities'].iloc[0]
+                                
+                            # 3. Calculate ROCE
+                            if cap_employed > 0:
+                                roce = (ebit / cap_employed) * 100
+                                info['returnOnCapitalEmployed'] = roce
+                                
+                    except Exception as fallback_err:
+                        # Fail silently on fallback to avoid log spam, just keep ROCE as None/0
+                        pass
+
                 info['Ticker'] = ticker
                 return info
             except Exception as e:

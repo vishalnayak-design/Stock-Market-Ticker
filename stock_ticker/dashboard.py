@@ -25,7 +25,7 @@ try:
     
     # Try importing from 'src.utils' (standard)
     try:
-        from src.utils import read_csv_to_list
+        from src.utils import read_csv_to_list, push_to_github
         logging.info("Imported read_csv_to_list from src.utils")
     except ImportError:
         # If 'src' not found, maybe we are inside 'src' or 'stock_ticker' is not in path?
@@ -33,7 +33,7 @@ try:
         if current_dir not in sys.path:
             sys.path.append(current_dir)
         
-        from src.utils import read_csv_to_list
+        from src.utils import read_csv_to_list, push_to_github
         logging.info("Imported read_csv_to_list after path fix")
 
 except ImportError as e:
@@ -168,6 +168,9 @@ def to_excel_bytes(data_list):
         rules = [
             ('Final_Score', 'high_good', 0.7, 0.4),
             ('Pre_Score', 'high_good', 0.7, 0.4), # Added
+            ('ROI_6to12_Score', 'high_good', 12, 6), # Big Bets
+            ('QualityScore', 'high_good', 8, 4), # Big Bets
+            ('WinProbability', 'high_good', 0.7, 0.4), # Big Bets
             ('Fund_Score', 'high_good', 0.6, 0.3),
             ('Tech_Score', 'high_good', 0.7, 0.4),
             ('Sent_Score', 'high_good', 0.5, 0.2),
@@ -381,7 +384,7 @@ def main():
         rel_str = f"{hours}h {minutes}m ago" if hours > 0 else f"{minutes}m ago"
         data_date = f"{dt_obj.strftime('%Y-%m-%d %H:%M')} ({rel_str})"
         
-    st.caption(f"📅 Last Data Update: {data_date} | ⏳ Auto-Schedule: Daily 9:30 AM")
+    st.caption(f"📅 Last Data Update: {data_date} | ⏳ Auto-Schedule: Daily 12:00 AM (Midnight)")
 
     # --- DATA LOADING ---
     # Trigger cache invalidation if file time changed
@@ -392,7 +395,7 @@ def main():
         if not stock_list: return []
         
         # Calculate scores sum (Use Exponential Weighting to differentiate)
-        scores = [x.get(score_key, 0) ** 3 for x in stock_list]
+        scores = [x.get(score_key, 0) ** 5 for x in stock_list]
         total = sum(scores)
         
         res = []
@@ -401,7 +404,7 @@ def main():
             score = item.get(score_key, 0)
             
             # Exaggerate differences
-            weight = (score ** 3) / total if total > 0 else 0
+            weight = (score ** 5) / total if total > 0 else 0
             
             # Weighted Allocation
             raw_alloc = budget * weight
@@ -421,6 +424,7 @@ def main():
     # --- TAB NAVIGATION (Persistent) ---
     tabs_map = {
         "Recommendations": "🚀 Recommendations",
+        "BigBets": "🎯 Big Bets",
         "RawData": "📥 Raw Data"
     }
     tabs = list(tabs_map.values())
@@ -458,12 +462,23 @@ def main():
     blue_top = []
     
     if full_list:
-        # 1. AI Picks
+        # 1. AI Picks (Growth + Value + Tech)
         ai_data = sorted(full_list, key=lambda x: x.get('Final_Score', 0), reverse=True)[:5]
         ai_top = apply_allocation(ai_data, user_budget, 'Final_Score')
         
-        # 2. Buffett Picks
-        buff_data = sorted(full_list, key=lambda x: x.get('Fund_Score', 0), reverse=True)[:5]
+        # 2. Buffett Picks (Deep Value ONLY)
+        # Filter: Must be undervalued (Margin > 0)
+        # Handle potential string values safely
+        def safe_float(v):
+            try: return float(v)
+            except: return 0.0
+            
+        value_stocks = [x for x in full_list if safe_float(x.get('Margin_Safety', 0)) > 0]
+        # If no value stocks, fallback to top Fund_Score
+        if not value_stocks:
+             value_stocks = full_list
+        
+        buff_data = sorted(value_stocks, key=lambda x: x.get('Fund_Score', 0), reverse=True)[:5]
         buffet_top = apply_allocation(buff_data, user_budget, 'Fund_Score')
         
         # 3. Blue Chip
@@ -514,6 +529,171 @@ def main():
             else:
                 st.warning("No stocks found for this strategy.")
 
+
+
+
+    # --- TAB: BIG BETS (NEW) ---
+    if selected_tab == "🎯 Big Bets":
+        st.subheader("🦁 Big Bets (Medium Term Momentum)")
+        import pandas as pd # Required for data loading
+        st.info("Upload your Screener.in CSV export to find high-conviction medium-term picks (4-24 Months).")
+
+        # Inputs
+        c1, c2 = st.columns(2)
+        with c1:
+             big_budget = st.number_input("Investment Amount (₹)", min_value=100000, value=200000, step=10000)
+        with c2:
+             duration = st.selectbox("Duration", ["4-6 Months (Momentum)", "6-12 Months (Value+Growth)", "12-24 Months (Structural)"])
+        
+        duration_map = {"4-6 Months (Momentum)": 6, "6-12 Months (Value+Growth)": 12, "12-24 Months (Structural)": 24}
+
+        # Data Source Selection
+        data_source = st.radio("Data Source", ["📂 Upload File", "💽 Use Recent System Scan"], horizontal=True)
+        
+        df_raw = None
+        
+        if data_source == "📂 Upload File":
+            uploaded_file = st.file_uploader("Upload Data (CSV/Excel)", type=["csv", "xlsx"])
+            if uploaded_file:
+                if uploaded_file.name.endswith('.csv'):
+                     try:
+                        df_raw = pd.read_csv(uploaded_file)
+                     except:
+                        # Fallback for bad encoding
+                        import io
+                        stringio = io.StringIO(uploaded_file.getvalue().decode("latin1"))
+                        df_raw = pd.read_csv(stringio)
+                else:
+                     df_raw = pd.read_excel(uploaded_file)
+        else:
+            # Use System Data
+            system_path = os.path.join(config['data_dir'], "full_analysis.csv")
+            if os.path.exists(system_path):
+                st.info(f"Using system data from: {system_path}")
+                try:
+                    df_raw = pd.read_csv(system_path)
+                except Exception as e:
+                    st.error(f"Error reading system data: {e}")
+            else:
+                st.warning("No system scan data found. Please run a fetch or upload a file.")
+
+        
+        # --- PERSISTENCE LOGIC START ---
+        # Check if previous results exist and load them automatically
+        saved_results_path = os.path.join(config['data_dir'], "big_bets_results.csv")
+        loaded_results = None
+        
+        if os.path.exists(saved_results_path):
+             try:
+                 loaded_results = pd.read_csv(saved_results_path)
+                 mtime = os.path.getmtime(saved_results_path)
+                 dt_str = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d %H:%M')
+                 st.caption(f"📜 Showing cached analysis from: {dt_str}")
+             except Exception as e:
+                 st.warning(f"Failed to load cached results: {e}")
+
+        # If we have loaded results and NO new run is triggered, use them
+        # We use session state to track if a new run just happened
+        if 'big_bets_run' not in st.session_state:
+             st.session_state.big_bets_run = False
+
+        # Prepare variables for display
+        display_results = None
+        display_picks = None
+        
+        # LOGIC: Run New Analysis OR Use Cached
+        if df_raw is not None and st.button("Run Big Bet Model 🚀"):
+             st.session_state.big_bets_run = True
+             try:
+                 import importlib
+                 import src.medium_term_strategy
+                 importlib.reload(src.medium_term_strategy)
+                 from src.medium_term_strategy import MediumTermEngine
+                 
+                 engine = MediumTermEngine()
+                 
+                 with st.spinner("Training Neural/ML Model & Scoring Candidates..."):
+                     top_picks, full_results, missing_cols = engine.run_analysis(df_raw, big_budget, duration_map[duration])
+                 
+                 # 1. Missing Column Feedback
+                 if missing_cols:
+                     st.warning(f"⚠️ **Missing Data Warning**: The following columns were not found in your data. The model assumed 0/Neutral for them.\n\n`{', '.join(missing_cols)}`\n\n*Please add these columns to your CSV for better accuracy.*")
+                 else:
+                     st.success("Analysis Complete! All required data points found.")
+                 
+                 # Save Results for Persistence
+                 save_path = os.path.join(config['data_dir'], "big_bets_results.csv")
+                 full_results.to_csv(save_path, index=False)
+                 st.toast(f"✅ Analysis Saved!")
+                 
+                 
+                 display_results = full_results
+                 display_picks = top_picks
+
+                 
+             except Exception as e:
+                 st.error(f"Model Execution Failed: {e}")
+                 logging.error(f"Big Bets Error: {e}", exc_info=True)
+                 
+        elif loaded_results is not None:
+             # Use Cached Data
+             display_results = loaded_results
+             # Re-construct Top Picks from the DF (Top 3 by Rank)
+             if 'Rank' in display_results.columns:
+                 top_df = display_results.sort_values("Rank").head(3)
+                 display_picks = top_df.to_dict('records')
+        
+        # --- SHARED DISPLAY BLOCK ---
+        if display_results is not None:
+             
+             # FILTER UI (User Request)
+             use_strict = st.checkbox("💎 Filter: Super High Conviction Only (Quality>8, ROI>10, Win>0.88)", value=False)
+             
+             final_display_df = display_results.copy()
+             
+             if use_strict:
+                 # Apply Filters
+                 mask = (final_display_df['QualityScore'] > 8) & (final_display_df['ROI_6to12_Score'] > 10) & (final_display_df['WinProbability'] > 0.88)
+                 final_display_df = final_display_df[mask]
+                 if final_display_df.empty:
+                     st.warning("No stocks found matching these strict criteria.")
+                 else:
+                     st.success(f"Found {len(final_display_df)} Super High Conviction stocks!")
+
+             if not final_display_df.empty:
+                 # Download Button Removed from here as per user request
+                 # It will be handled in Sidebar
+                 pass
+
+                 # Display Top 3 Cards
+                 st.markdown("### 🏆 Top 3 High Conviction Picks")
+                 
+                 cols = st.columns(3)
+                 for i, pick in enumerate(display_picks):
+                     with cols[i]:
+                         st.markdown(f"""
+                         <div style="padding: 20px; border-radius: 10px; background-color: {'#0E1117' if i==0 else '#262730'}; border: 1px solid {'#4CAF50' if i==0 else '#444'}; color: white;">
+                            <h3 style="color: white; margin-bottom: 0px;">#{pick.get('Rank')} {pick.get('Name')}</h3>
+                            <h2 style="color: #4CAF50; margin-top: 5px;">₹{pick.get('Allocation', 0):,}</h2>
+                            <p style="color: #e0e0e0;"><b>Target:</b> {pick.get('Expected_Return')}</p>
+                            <p style="color: #cccccc;"><i>"{pick.get('Reason')}"</i></p>
+                            <small style="color: #888;">ROI Score: {pick.get('ROI_Score')} | Win Prob: {float(pick.get('Win_Prob', 0)):.2f}</small>
+                         </div>
+                         """, unsafe_allow_html=True)
+                 
+                 # Detailed Table
+                 st.markdown("### 📋 Detailed Analysis")
+                 
+                 # Defensive Column Selection
+                 target_cols = ['Name', 'CMP', 'ROI_6to12_Score', 'QualityScore', 'WinProbability', 'Reason', 'ExpectedReturn']
+                 # Add some input columns for context
+                 context_cols = ['SalesGrowth3Y', 'ProfitGrowth3Y', 'ROCE', 'PE']
+                 feature_cols = [c for c in context_cols if c in final_display_df.columns]
+                 
+                 final_cols = target_cols + feature_cols
+                 available_cols = [c for c in final_cols if c in final_display_df.columns]
+                 
+                 st.dataframe(final_display_df[available_cols].head(20), use_container_width=True)
 
 
 
@@ -582,31 +762,64 @@ def main():
     if full_list:
         with st.sidebar:
             st.divider()
-            st.subheader("📤 Exports")
+            st.subheader("📤 Export Reports")
             date_str = datetime.now().strftime("%Y-%m-%d")
-
-            # AI Download
-            if ai_top:
-                b_ai = to_excel_bytes(ai_top)
-                if b_ai:
-                    st.download_button("💾 The AI Picks", b_ai, f"Picks_AI_{date_str}.xlsx")
             
-            # Buffett Download
-            if buffet_top:
-                b_buf = to_excel_bytes(buffet_top)
-                if b_buf:
-                    st.download_button("💾 The Buffett Picks", b_buf, f"Picks_Buffett_{date_str}.xlsx")
-                    
-            # BlueChip Download
-            if blue_top:
-                b_blue = to_excel_bytes(blue_top)
-                if b_blue:
-                     st.download_button("💾 The Blue Chip Picks", b_blue, f"Picks_BlueChip_{date_str}.xlsx")
-
-            # Raw
-            b_raw = to_excel_bytes(full_list)
-            if b_raw:
-                 st.download_button("💾 The Raw Data", b_raw, f"Raw_Data_{date_str}.xlsx")
+            export_options = [
+                "Select a Report...",
+                "🤖 The AI Picks", 
+                "🍔 The Buffett Picks", 
+                "💎 The Blue Chip Picks", 
+                "🦁 Big Bets Analysis",
+                "📊 Full Market Scan (Raw)"
+            ]
+            
+            selected_export = st.selectbox("Choose Report to Download", export_options)
+            
+            if selected_export != "Select a Report...":
+                data_to_export = None
+                file_label = "Report"
+                
+                if selected_export == "🤖 The AI Picks":
+                    data_to_export = ai_top
+                    file_label = "Picks_AI"
+                elif selected_export == "🍔 The Buffett Picks":
+                    data_to_export = buffet_top
+                    file_label = "Picks_Buffett"
+                elif selected_export == "💎 The Blue Chip Picks":
+                    data_to_export = blue_top
+                    file_label = "Picks_BlueChip"
+                elif selected_export == "📊 Full Market Scan (Raw)":
+                    data_to_export = full_list
+                    file_label = "Raw_Market_Data"
+                elif selected_export == "🦁 Big Bets Analysis":
+                    # Smart Logic: Use filtered data if available on screen
+                    if 'final_display_df' in locals() and final_display_df is not None and not final_display_df.empty:
+                         data_to_export = final_display_df.to_dict('records')
+                         file_label = "Big_Bets_Filtered" if 'use_strict' in locals() and use_strict else "Big_Bets_Analysis"
+                    else:
+                        # Fallback: Load from disk
+                        bb_path = os.path.join(config['data_dir'], "big_bets_results.csv")
+                        if os.path.exists(bb_path):
+                            try:
+                                import pandas as pd
+                                df_load = pd.read_csv(bb_path)
+                                data_to_export = df_load.to_dict('records')
+                                file_label = "Big_Bets_Analysis"
+                            except:
+                                st.error("Failed to load Big Bets data.")
+                        else:
+                            st.warning("No Big Bets analysis found. Run the model first.")
+                
+                if data_to_export:
+                    excel_data = to_excel_bytes(data_to_export)
+                    if excel_data:
+                        st.download_button(
+                            label=f"⬇️ Download {file_label}.xlsx",
+                            data=excel_data,
+                            file_name=f"{file_label}_{date_str}.xlsx",
+                            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                        )
 
     # --- AUTO-REFRESH FOR DYNAMIC LOGS ---
     if is_running:

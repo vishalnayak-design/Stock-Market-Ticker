@@ -42,66 +42,74 @@ def kill_process(pid):
     except Exception as e:
         logging.error(f"Failed to kill {pid}: {e}")
 
+def start_new_day():
+    """Resets the state to trigger a new pipeline run."""
+    logging.info("Midnight Triggered! Starting new day...")
+    try:
+        state = sm.load_state()
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        
+        # Reset Logic
+        state['run_date'] = current_date
+        state['flags'] = {'fetch_complete': False, 'model_complete': False}
+        state['total_scanned'] = 0
+        state['status'] = sm.STATUS_IDLE
+        sm.save_state(state)
+        logging.info(f"State reset for {current_date}. Pipeline should pick this up shortly.")
+        
+    except Exception as e:
+        logging.error(f"Failed to reset state at midnight: {e}")
+
 def main_loop():
-    logging.info("Auto-Pilot Started. Monitoring pipeline...")
+    logging.info("Auto-Pilot Started. Schedule: Daily at 12:00 AM (Midnight).")
+    
+    # 1. Schedule the Reset
+    import schedule
+    schedule.every().day.at("00:00").do(start_new_day)
+    
+    logging.info(f"Next run scheduled for: {schedule.next_run()}")
     
     while True:
         try:
+            # Run pending schedule jobs
+            schedule.run_pending()
+            
+            # Existing Pipeline Supervision Logic (Stays active to monitor the job once started)
             state = sm.load_state()
             status = state['status']
-            stage = state.get('stage')
             
-            # 1. DAILY RESET Check
-            current_date = datetime.now().strftime("%Y-%m-%d")
-            saved_date = state.get('run_date', '')
-            
-            if current_date != saved_date:
-                logging.info(f"New Day Detected! Resetting flags. ({saved_date} -> {current_date})")
-                state['run_date'] = current_date
-                state['flags'] = {'fetch_complete': False, 'model_complete': False}
-                state['total_scanned'] = 0
-                state['status'] = sm.STATUS_IDLE
-                sm.save_state(state)
-                status = sm.STATUS_IDLE # Update local var
-            
-            # 2. WATCHDOG: Check if stuck
-            is_stuck, stuck_pid = sm.check_stuck(timeout_seconds=1800) # 30 mins
+            # WATCHDOG
+            is_stuck, stuck_pid = sm.check_stuck(timeout_seconds=1800)
             if is_stuck:
-                logging.error(f"Watchdog Triggered! Process {stuck_pid} stuck for >30m.")
+                logging.error(f"Watchdog Triggered! Process {stuck_pid} stuck.")
                 kill_process(stuck_pid)
                 sm.set_status(sm.STATUS_FAILED)
                 status = sm.STATUS_FAILED 
-            
-            # 3. AUTO-RESTART / NEXT STAGE logic
-            if status in [sm.STATUS_IDLE, sm.STATUS_COMPLETED, sm.STATUS_FAILED]:
-                
-                # Logic: Fetch -> Model
-                fetch_done = state['flags'].get('fetch_complete', False)
-                model_done = state['flags'].get('model_complete', False)
-                total_scanned = state.get('total_scanned', 0)
-                
-                # If Fetch not done OR count is suspicious (low count but marked done?)
-                # Actually, user said 1800+
-                if total_scanned > 1800:
-                    if not fetch_done: sm.mark_flag("fetch_complete", True)
-                    fetch_done = True
-                
-                if not fetch_done:
-                    logging.info("Triggering FETCH...")
-                    run_main(["--fetch-only"])
-                    time.sleep(60) # Wait for startup
-                
-                elif not model_done:
-                    logging.info("Triggering MODEL...")
-                    run_main(["--analyze-only"])
-                    time.sleep(60)
-                    
-                else:
-                    # All Done
-                    # Maybe check time? Reset flags next day?
-                    # For now, just idle if done.
-                    pass
 
+            # PIPELINE EXECUTION LOGIC
+            # Only act if we have work to do (flags are False)
+            fetch_done = state['flags'].get('fetch_complete', False)
+            model_done = state['flags'].get('model_complete', False)
+            
+            # Check if we should be running
+            # If date matches today (meaning start_new_day ran), proceed.
+            # If date is old, we DO NOT Run (Strict Midnight requirement)
+            current_date = datetime.now().strftime("%Y-%m-%d")
+            run_date = state.get('run_date', '')
+            
+            if run_date == current_date:
+                # We are in the active day
+                if status in [sm.STATUS_IDLE, sm.STATUS_COMPLETED, sm.STATUS_FAILED]:
+                     if not fetch_done:
+                         logging.info("Triggering FETCH...")
+                         run_main(["--fetch-only"])
+                         time.sleep(60) 
+                     
+                     elif not model_done:
+                         logging.info("Triggering MODEL...")
+                         run_main(["--analyze-only"])
+                         time.sleep(60)
+            
             time.sleep(60) # Check every minute
             
         except Exception as e:
