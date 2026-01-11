@@ -143,38 +143,65 @@ class DataIngestor:
                 if info is None:
                     return {}
                 
-                # ROCE Fallback: If missing, calculate from Financials
-                if not info.get('returnOnCapitalEmployed'):
-                    try:
-                        # Fetch Financials (Income Statement) & Balance Sheet
-                        # Note: This increases API calls, so only done if ROCE is critical and missing
-                        fin = stock.financials
-                        bs = stock.balance_sheet
-                        
+                # Standardize Metrics
+                info['OPM'] = info.get('operatingMargins', 0) * 100 if info.get('operatingMargins') else 0
+                info['FreeCashFlow'] = info.get('freeCashflow', 0)
+                
+                # Fetch Financials for Growth Calcs
+                try:
+                    fin = stock.financials
+                    bs = stock.balance_sheet
+                    q_fin = stock.quarterly_financials
+                    
+                    # 1. ROCE Fallback
+                    if not info.get('returnOnCapitalEmployed'):
                         if not fin.empty and not bs.empty:
-                            # 1. Get EBIT
                             ebit = 0
-                            if 'EBIT' in fin.index:
-                                ebit = fin.loc['EBIT'].iloc[0]
-                            elif 'Net Income' in fin.index and 'Interest Expense' in fin.index and 'Tax Provision' in fin.index:
-                                # Approx EBIT = Net Income + Interest + Tax
-                                ebit = fin.loc['Net Income'].iloc[0] + fin.loc['Interest Expense'].iloc[0] + fin.loc['Tax Provision'].iloc[0]
+                            if 'EBIT' in fin.index: ebit = fin.loc['EBIT'].iloc[0]
+                            elif 'Net Income' in fin.index: ebit = fin.loc['Net Income'].iloc[0] # Approx
                             
-                            # 2. Get Capital Employed
-                            cap_employed = 0
-                            if 'Invested Capital' in bs.index:
-                                cap_employed = bs.loc['Invested Capital'].iloc[0]
+                            cap_emp = 0
+                            if 'Invested Capital' in bs.index: cap_emp = bs.loc['Invested Capital'].iloc[0]
                             elif 'Total Assets' in bs.index and 'Current Liabilities' in bs.index:
-                                cap_employed = bs.loc['Total Assets'].iloc[0] - bs.loc['Current Liabilities'].iloc[0]
-                                
-                            # 3. Calculate ROCE
-                            if cap_employed > 0:
-                                roce = (ebit / cap_employed) * 100
-                                info['returnOnCapitalEmployed'] = roce
-                                
-                    except Exception as fallback_err:
-                        # Fail silently on fallback to avoid log spam, just keep ROCE as None/0
-                        pass
+                                cap_emp = bs.loc['Total Assets'].iloc[0] - bs.loc['Current Liabilities'].iloc[0]
+                            
+                            if cap_emp > 0: info['returnOnCapitalEmployed'] = (ebit / cap_emp) * 100
+
+                    # 2. Sales Growth 3Y
+                    if not fin.empty and 'Total Revenue' in fin.index:
+                        revs = fin.loc['Total Revenue']
+                        if len(revs) >= 4: # Need 4 points for 3Y CAGR
+                            cagr = ((revs.iloc[0] / revs.iloc[3])**(1/3)) - 1
+                            info['SalesGrowth3Y'] = cagr * 100
+                    
+                    # 3. Profit Growth 3Y
+                    if not fin.empty and 'Net Income' in fin.index:
+                        profits = fin.loc['Net Income']
+                        if len(profits) >= 4:
+                            # Handle negative base requiring abs
+                            start_val = abs(profits.iloc[3])
+                            if start_val > 0:
+                                cagr = ((profits.iloc[0] / start_val)**(1/3)) - 1
+                                info['ProfitGrowth3Y'] = cagr * 100
+
+                    # 4. Quarterly Growth (YoY)
+                    if not q_fin.empty:
+                        # Qtr Sales
+                        if 'Total Revenue' in q_fin.index and len(q_fin.columns) >= 5:
+                            # Compare Q1 (Current) vs Q5 (Same Qtr Last Year)
+                            curr = q_fin.loc['Total Revenue'].iloc[0]
+                            prev = q_fin.loc['Total Revenue'].iloc[4]
+                            if prev > 0: info['QtrSalesGrowth'] = ((curr - prev) / prev) * 100
+                        
+                        # Qtr Profit
+                        if 'Net Income' in q_fin.index and len(q_fin.columns) >= 5:
+                            curr = q_fin.loc['Net Income'].iloc[0]
+                            prev = q_fin.loc['Net Income'].iloc[4] 
+                            # Handle negative base
+                            if abs(prev) > 0: info['QtrProfitGrowth'] = ((curr - prev) / abs(prev)) * 100
+
+                except Exception as calc_err:
+                    logging.warning(f"Error calculating adv metrics for {ticker}: {calc_err}")
 
                 info['Ticker'] = ticker
                 return info
