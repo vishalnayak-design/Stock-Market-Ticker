@@ -45,6 +45,17 @@ def kill_process(pid):
     except Exception as e:
         logging.error(f"Failed to kill {pid}: {e}")
 
+def sync_from_github():
+    """Pulls the latest data from GitHub to stay in sync with Cloud."""
+    try:
+        logging.info("Syncing FROM GitHub (Pull)...")
+        # Use --rebase to avoid merge commits if local state diverged slightly
+        subprocess.run(['git', 'pull', '--rebase'], check=True)
+        logging.info("Successfully pulled from GitHub.")
+    except Exception as e:
+        # Don't crash if network is down, just log
+        logging.warning(f"Git Pull Failed: {e}")
+
 def start_new_day():
     """Resets the state to trigger a new pipeline run."""
     logging.info("Midnight Triggered! Starting new day...")
@@ -115,6 +126,9 @@ def main_loop():
     
     while True:
         try:
+            # Sync with Cloud first!
+            sync_from_github()
+
             # Run pending schedule jobs
             schedule.run_pending()
             
