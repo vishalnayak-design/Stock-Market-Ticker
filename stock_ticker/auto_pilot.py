@@ -109,7 +109,7 @@ def main_loop():
     
     # 1. Schedule the Reset
     import schedule
-    schedule.every().day.at("16:00").do(start_new_day)
+    schedule.every().day.at("00:00").do(start_new_day)
     
     logging.info(f"Next run scheduled for: {schedule.next_run()}")
     
