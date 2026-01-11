@@ -665,21 +665,27 @@ def main():
                  # It will be handled in Sidebar
                  pass
 
+
                  # Display Top 3 Cards
-                 st.markdown("### 🏆 Top 3 High Conviction Picks")
-                 
-                 cols = st.columns(3)
-                 for i, pick in enumerate(display_picks):
-                     with cols[i]:
-                         st.markdown(f"""
-                         <div style="padding: 20px; border-radius: 10px; background-color: {'#0E1117' if i==0 else '#262730'}; border: 1px solid {'#4CAF50' if i==0 else '#444'}; color: white;">
-                            <h3 style="color: white; margin-bottom: 0px;">#{pick.get('Rank')} {pick.get('Name')}</h3>
-                            <h2 style="color: #4CAF50; margin-top: 5px;">₹{pick.get('Allocation', 0):,}</h2>
-                            <p style="color: #e0e0e0;"><b>Target:</b> {pick.get('Expected_Return')}</p>
-                            <p style="color: #cccccc;"><i>"{pick.get('Reason')}"</i></p>
-                            <small style="color: #888;">ROI Score: {pick.get('ROI_Score')} | Win Prob: {float(pick.get('Win_Prob', 0)):.2f}</small>
-                         </div>
-                         """, unsafe_allow_html=True)
+                 if display_picks:
+                     st.markdown("### 🏆 Top 3 High Conviction Picks")
+                     
+                     # Ensure we don't exceed 3 columns if we have fewer picks
+                     num_picks = min(len(display_picks), 3)
+                     cols = st.columns(3)
+                     
+                     for i in range(num_picks):
+                         pick = display_picks[i]
+                         with cols[i]:
+                             st.markdown(f"""
+                             <div style="padding: 20px; border-radius: 10px; background-color: {'#0E1117' if i==0 else '#262730'}; border: 1px solid {'#4CAF50' if i==0 else '#444'}; color: white;">
+                                <h3 style="color: white; margin-bottom: 0px;">#{pick.get('Rank', i+1)} {pick.get('Name')}</h3>
+                                <h2 style="color: #4CAF50; margin-top: 5px;">₹{pick.get('Allocation', 0):,}</h2>
+                                <p style="color: #e0e0e0;"><b>Target:</b> {pick.get('Expected_Return')}</p>
+                                <p style="color: #cccccc;"><i>"{pick.get('Reason')}"</i></p>
+                                <small style="color: #888;">ROI Score: {pick.get('ROI_Score')} | Win Prob: {float(pick.get('Win_Prob', 0)):.2f}</small>
+                             </div>
+                             """, unsafe_allow_html=True)
                  
                  # Detailed Table
                  st.markdown("### 📋 Detailed Analysis")
