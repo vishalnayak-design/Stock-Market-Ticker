@@ -6,7 +6,8 @@
     "pid": 12084,
     "flags": {
         "fetch_complete": true,
-        "model_complete": true
+        "model_complete": true,
+        "big_bets_complete": true
     },
     "run_date": "2026-01-11"
 }

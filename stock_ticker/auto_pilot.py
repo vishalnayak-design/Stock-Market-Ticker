@@ -8,6 +8,9 @@ from datetime import datetime
 # Setup paths
 sys.path.append(os.path.dirname(__file__))
 import src.state_manager as sm
+from src.medium_term_strategy import MediumTermEngine
+from src.utils import push_to_github
+import pandas as pd
 
 # Config
 PYTHON_EXE = sys.executable
@@ -51,7 +54,7 @@ def start_new_day():
         
         # Reset Logic
         state['run_date'] = current_date
-        state['flags'] = {'fetch_complete': False, 'model_complete': False}
+        state['flags'] = {'fetch_complete': False, 'model_complete': False, 'big_bets_complete': False}
         state['total_scanned'] = 0
         state['status'] = sm.STATUS_IDLE
         sm.save_state(state)
@@ -60,12 +63,53 @@ def start_new_day():
     except Exception as e:
         logging.error(f"Failed to reset state at midnight: {e}")
 
+def run_big_bets_task():
+    """Runs the Big Bets Analysis and marks it complete."""
+    try:
+        logging.info("Starting Big Bets Analysis...")
+        
+        # Paths
+        data_dir = os.path.join(os.path.dirname(__file__), "data")
+        input_path = os.path.join(data_dir, "full_analysis.csv")
+        output_path = os.path.join(data_dir, "big_bets_results.csv")
+        
+        if not os.path.exists(input_path):
+            logging.error("Big Bets Skipped: full_analysis.csv not found.")
+            return
+
+        # Load Data
+        df = pd.read_csv(input_path)
+        
+        # Run Engine
+        engine = MediumTermEngine()
+        # Using default settings: 2L investment, 12 months duration (Value+Growth)
+        top_picks, full_results, _ = engine.run_analysis(df, amount=200000, duration_months=12)
+        
+        # Save Results
+        full_results.to_csv(output_path, index=False)
+        logging.info(f"Big Bets Results Saved to {output_path}")
+        
+        # Update State Flag
+        state = sm.load_state()
+        state['flags']['big_bets_complete'] = True
+        sm.save_state(state)
+        
+        # Auto-Push Data (Since this is backend automation, we can push results to repo)
+        try:
+            push_to_github("Auto-Pilot: Daily Data Sync (All Files)")
+            logging.info("Pushed All Data results to GitHub.")
+        except Exception as ge:
+            logging.warning(f"Git Push Failed: {ge}")
+            
+    except Exception as e:
+        logging.error(f"Big Bets Task Failed: {e}")
+
 def main_loop():
     logging.info("Auto-Pilot Started. Schedule: Daily at 12:00 AM (Midnight).")
     
     # 1. Schedule the Reset
     import schedule
-    schedule.every().day.at("00:00").do(start_new_day)
+    schedule.every().day.at("16:00").do(start_new_day)
     
     logging.info(f"Next run scheduled for: {schedule.next_run()}")
     
@@ -90,6 +134,7 @@ def main_loop():
             # Only act if we have work to do (flags are False)
             fetch_done = state['flags'].get('fetch_complete', False)
             model_done = state['flags'].get('model_complete', False)
+            big_bets_done = state['flags'].get('big_bets_complete', False)
             
             # Check if we should be running
             # If date matches today (meaning start_new_day ran), proceed.
@@ -108,6 +153,11 @@ def main_loop():
                      elif not model_done:
                          logging.info("Triggering MODEL...")
                          run_main(["--analyze-only"])
+                         time.sleep(60)
+
+                     elif not big_bets_done:
+                         logging.info("Triggering BIG BETS...")
+                         run_big_bets_task()
                          time.sleep(60)
             
             time.sleep(60) # Check every minute
