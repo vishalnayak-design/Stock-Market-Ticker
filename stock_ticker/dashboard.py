@@ -25,7 +25,7 @@ try:
     
     # Try importing from 'src.utils' (standard)
     try:
-        from src.utils import read_csv_to_list, push_to_github
+        from src.utils import read_csv_to_list
         logging.info("Imported read_csv_to_list from src.utils")
     except ImportError:
         # If 'src' not found, maybe we are inside 'src' or 'stock_ticker' is not in path?
@@ -33,7 +33,7 @@ try:
         if current_dir not in sys.path:
             sys.path.append(current_dir)
         
-        from src.utils import read_csv_to_list, push_to_github
+        from src.utils import read_csv_to_list
         logging.info("Imported read_csv_to_list after path fix")
 
 except ImportError as e:
