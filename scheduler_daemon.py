@@ -34,10 +34,10 @@ def run_analysis():
 
 def main():
     logging.info("🚀 Stock Analysis Scheduler Started.")
-    logging.info("📅 Schedule set for daily at 09:30 AM.")
+    logging.info("📅 Schedule set for daily at 12:00 PM.")
     
     # Schedule the job
-    schedule.every().day.at("09:30").do(run_analysis)
+    schedule.every().day.at("12:00").do(run_analysis)
     
     # Also run once specifically on startup if needed (Optional, user might prefer wait)
     # logging.info("Running initial check...")

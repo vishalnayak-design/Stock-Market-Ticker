@@ -1,13 +1,13 @@
 {
     "status": "COMPLETED",
-    "stage": "FETCH",
-    "last_heartbeat": 1768119470.0429256,
-    "total_scanned": 3,
-    "pid": 12084,
+    "stage": "MODEL",
+    "last_heartbeat": 1768249784.915019,
+    "total_scanned": 2213,
+    "pid": 3545,
     "flags": {
         "fetch_complete": true,
         "model_complete": true,
         "big_bets_complete": true
     },
-    "run_date": "2026-01-11"
+    "run_date": "2026-01-12"
 }

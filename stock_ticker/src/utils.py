@@ -11,6 +11,9 @@ def push_to_github(message="Auto-update data"):
         subprocess.check_call(['git', 'status'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         
         logging.info("Syncing to GitHub...")
+        # Pull latest changes to avoid conflicts
+        subprocess.run(['git', 'pull', '--rebase'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
         subprocess.run(['git', 'add', '.'], check=True)
         
         # Commit (ignore error if nothing to commit)

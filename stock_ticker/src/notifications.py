@@ -23,16 +23,29 @@ class Notifier:
         except Exception as e:
             logging.error(f"Failed to send Telegram alert: {e}")
 
-    def send_recommendation(self, df):
-        if df.empty:
-            self.send_message("No SIP recommendations found for this month.")
-            return
+    def send_recommendation(self, data):
+        # Convert to list of dicts if DataFrame
+        import pandas as pd
+        if isinstance(data, pd.DataFrame):
+            if data.empty:
+                self.send_message("No SIP recommendations found for this month.")
+                return
+            records = data.to_dict('records')
+        else:
+            if not data:
+                self.send_message("No SIP recommendations found for this month.")
+                return
+            records = data
 
         msg = "*🚀 Monthly SIP Recommendations*\n\n"
-        for _, row in df.iterrows():
+        for row in records:
+            close_price = float(row.get('Close', 0))
+            score = float(row.get('Final_Score', 0))
+            allocation = float(row.get('Allocation', 0))
+            
             msg += f"✅ *{row['Name']}* ({row['Ticker']})\n"
-            msg += f"   💰 Price: ₹{row['Close']:.2f}\n"
-            msg += f"   📊 Score: {row['Final_Score']:.2f}\n"
-            msg += f"   🛒 Buy Amount: ₹{row['Allocation']:.2f}\n\n"
+            msg += f"   💰 Price: ₹{close_price:.2f}\n"
+            msg += f"   📊 Score: {score:.2f}\n"
+            msg += f"   🛒 Buy Amount: ₹{allocation:.2f}\n\n"
         
         self.send_message(msg)

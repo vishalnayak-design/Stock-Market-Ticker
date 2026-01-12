@@ -21,13 +21,24 @@ class PortfolioManager:
     def save_daily_snapshot(self, full_df, rec_df):
         """Saves the full analysis for the day."""
         today = datetime.now().strftime('%Y-%m-%d')
-        # Save full analysis
-        save_to_csv(full_df, os.path.join(self.daily_log_dir, f"analysis_{today}.csv"))
+        # Save full analysis - Use pandas to_csv if it's a DataFrame
+        if isinstance(full_df, pd.DataFrame):
+            full_df.to_csv(os.path.join(self.daily_log_dir, f"analysis_{today}.csv"), index=False)
+        else:
+            save_to_csv(full_df, os.path.join(self.daily_log_dir, f"analysis_{today}.csv"))
+            
         # Save recommendations
-        save_to_csv(rec_df, os.path.join(self.daily_log_dir, f"recommendations_{today}.csv"))
+        if isinstance(rec_df, pd.DataFrame):
+             rec_df.to_csv(os.path.join(self.daily_log_dir, f"recommendations_{today}.csv"), index=False)
+        else:
+             save_to_csv(rec_df, os.path.join(self.daily_log_dir, f"recommendations_{today}.csv"))
 
     def update_portfolio(self, current_rec_df):
         """Compares current recommendations with history to detect changes."""
+        # Convert list to DataFrame if necessary
+        if isinstance(current_rec_df, list):
+            current_rec_df = pd.DataFrame(current_rec_df)
+            
         today = datetime.now().strftime('%Y-%m-%d')
         history_df = self.load_history()
         
@@ -79,6 +90,6 @@ class PortfolioManager:
         
         # Append and Save
         updated_history = pd.concat([history_df, new_df], ignore_index=True)
-        save_to_csv(updated_history, self.history_file)
+        updated_history.to_csv(self.history_file, index=False)
         
         return new_df # Return today's changes for notification
