@@ -43,19 +43,20 @@ class MediumTermEngine:
             "MarketCap": ["marcap", "marketcap", "mcap"],
             "ROCE": ["roce", "returnoncapital"],
             "ROE": ["roe", "returnonequity"],
-            "Sales": ["sales", "revenue"],
             "DebtToEquity": ["debteq", "debtoequity", "debttoequity", "gearing"],
             "SalesGrowth3Y": ["salesvar3yr", "salesgrowth3yr", "salescagr3yr", "sales var 3"],
             "ProfitGrowth3Y": ["profitvar3yr", "profitgrowth3yr", "profitcagr3yr", "profit var 3"],
+            "QtrSalesGrowth": ["qtrsales", "quartersales", "qtr sales", "quarter sales"],
+            "QtrProfitGrowth": ["qtrprofit", "quarterprofit", "qtr profit", "quarter profit"],
             "OPM": ["opm", "operatingmargin"],
             "InterestCoverage": ["intcoverage", "interestcoverage"],
             "PromoterHolding": ["promhold", "promoterhold"],
             "PromoterHoldingChange3Y": ["chginprom", "promchange", "chg in prom"],
             "FreeCashFlow": ["freecash", "fcf"],
-            "QtrSalesGrowth": ["qtrsales", "quartersales", "qtr sales", "quarter sales"],
-            "QtrProfitGrowth": ["qtrprofit", "quarterprofit", "qtr profit", "quarter profit"],
             "DMA_200": ["200dma", "dma200", "200 dma"],
-            "RSI": ["rsi"]
+            "RSI": ["rsi"],
+            # Generic matches last to avoid greedy collision
+            "Sales": ["sales", "revenue"]
         }
         
         # Existing columns in dataframe (lowercase for matching)

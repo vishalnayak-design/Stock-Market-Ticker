@@ -7,6 +7,7 @@ import pandas as pd
 from src.strategy import RecommendationEngine
 from src.notifications import Notifier
 from src.portfolio_manager import PortfolioManager
+from src.medium_term_strategy import MediumTermEngine
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 # Debugging Start
 import sys
@@ -103,6 +104,39 @@ def main():
     sm.set_status(sm.STATUS_COMPLETED)
 
     full_df = pd.read_csv(os.path.join(config['data_dir'], "full_analysis.csv"))
+    logging.info(f"DEBUG: full_df columns: {list(full_df.columns)}")
+    
+    # --- AUTO-PILOT: Run Big Bets (Medium Term) Strategy ---
+    logging.info("Running Big Bets (Medium Term) Strategy...")
+    mt_engine = MediumTermEngine()
+    
+    # 1. Run Analysis
+    big_bets_recs, detailed_df, missing_cols = mt_engine.run_analysis(full_df, amount=config['monthly_budget'], duration_months=12)
+    
+    # 2. Log Warnings
+    if missing_cols:
+        logging.warning("⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.")
+        for col in missing_cols:
+            logging.warning(f"  - {col}")
+        logging.warning("Please add these columns to your CSV for better accuracy.")
+
+    # 3. Save Results
+    if big_bets_recs:
+        logging.info(f"Big Bets: Found {len(big_bets_recs)} recommendations.")
+        import csv
+        keys = big_bets_recs[0].keys()
+        bb_file = os.path.join(config['data_dir'], "big_bets_results.csv")
+        with open(bb_file, 'w', newline='', encoding='utf-8') as f:
+            dict_writer = csv.DictWriter(f, fieldnames=keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(big_bets_recs)
+        logging.info(f"Saved Big Bets to {bb_file}")
+    else:
+        logging.info("Big Bets: No stocks met the strict criteria this time.")
+
+    # 4. Integrate into Daily Snapshot (Optional - save detailed view)
+    mt_detailed_path = os.path.join(config['data_dir'], "big_bets_detailed.csv")
+    detailed_df.to_csv(mt_detailed_path, index=False)
     
     # 2. Save Snapshots
     pm.save_daily_snapshot(full_df, rec_df)

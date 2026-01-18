@@ -45,7 +45,7 @@ except ImportError as e:
 def load_config():
     logging.info("Loading config...")
     config_path = os.path.join(os.path.dirname(__file__), "config.yaml")
-    with open(config_path, "r") as f:
+    with open(config_path, "r", encoding='utf-8') as f:
         return yaml.safe_load(f)
 
 @st.cache_data(ttl=3600) 
@@ -297,7 +297,7 @@ def main():
             log_path = os.path.join(config['data_dir'], "app_activity.log")
             logs = []
             if os.path.exists(log_path):
-                with open(log_path, "r") as f:
+                with open(log_path, "r", encoding='utf-8') as f:
                     logs = f.readlines()[-20:]
             else:
                 logs = ["Waiting for logs..."]

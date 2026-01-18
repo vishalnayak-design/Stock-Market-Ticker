@@ -88,8 +88,8 @@ class RecommendationEngine:
                 "ROCE": funds.get('returnOnCapitalEmployed', 0), 
                 "OPM": funds.get('operatingMargins', 0) * 100 if funds.get('operatingMargins') else 0,
                 "FreeCashFlow": funds.get('freeCashflow', 0) / 10000000 if funds.get('freeCashflow') else 0, # Convert to Cr
-                "SalesGrowth3Y": 0, # Not avaialble in standard yF info
-                "ProfitGrowth3Y": 0, # Not available in standard yF info
+                "SalesGrowth3Y": funds.get('SalesGrowth3Y', 0), 
+                "ProfitGrowth3Y": funds.get('ProfitGrowth3Y', 0),
                 "QtrSalesGrowth": funds.get('revenueGrowth', 0) * 100 if funds.get('revenueGrowth') else 0,
                 "QtrProfitGrowth": funds.get('earningsGrowth', 0) * 100 if funds.get('earningsGrowth') else 0,
                 
