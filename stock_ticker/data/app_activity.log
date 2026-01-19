@@ -109756,3 +109756,73 @@
 2026-01-18 07:01:02,646 - INFO - Analysis Complete. Updating Portfolio History...
 2026-01-18 07:01:02,651 - WARNING - Telegram not configured.
 2026-01-18 07:01:02,830 - INFO - Syncing to GitHub...
+2026-01-19 07:45:42,587 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-01-19 07:45:42,590 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-01-19 07:45:42,600 - INFO - Starting Daily Analysis Pipeline...
+2026-01-19 07:45:42,600 - INFO - Mode: Fetch Only
+2026-01-19 07:45:42,600 - INFO - Starting Data Download & Basic Scan...
+2026-01-19 07:45:42,600 - INFO - Starting Analysis...
+2026-01-19 07:45:42,601 - INFO - Attempting to fetch via nsepython...
+2026-01-19 07:45:42,601 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-01-19 07:45:42,601 - INFO - Attempting direct CSV download...
+2026-01-19 07:45:43,373 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-01-19 07:45:43,373 - INFO - Direct download fetched 2247 stocks.
+2026-01-19 07:45:43,375 - INFO - Found existing analysis file. Resuming...
+2026-01-19 07:45:43,388 - INFO - Already processed 2216 stocks.
+2026-01-19 07:45:43,389 - INFO - Scanning 32 remaining stocks (Parallel Mode)...
+2026-01-19 07:45:43,391 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-01-19 07:45:44,841 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:45:45,090 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:45:46,772 - INFO - [10/32] Processed in this batch... Total: 2216
+2026-01-19 07:45:46,804 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:45:49,104 - INFO - [20/32] Processed in this batch... Total: 2216
+2026-01-19 07:45:49,129 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:45:49,133 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:45:49,391 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:45:51,910 - INFO - [30/32] Processed in this batch... Total: 2216
+2026-01-19 07:45:51,928 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:45:55,312 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:45:55,464 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:45:56,254 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:45:56,255 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-01-19 07:45:56,274 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:45:57,791 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-01-19 07:45:57,794 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-01-19 07:45:57,802 - INFO - Starting Daily Analysis Pipeline...
+2026-01-19 07:45:57,802 - INFO - Mode: Analysis Only
+2026-01-19 07:45:57,803 - INFO - Starting Analysis...
+2026-01-19 07:45:57,803 - INFO - Attempting to fetch via nsepython...
+2026-01-19 07:45:57,803 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-01-19 07:45:57,803 - INFO - Attempting direct CSV download...
+2026-01-19 07:45:58,297 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-01-19 07:45:58,297 - INFO - Direct download fetched 2247 stocks.
+2026-01-19 07:45:58,299 - INFO - Found existing analysis file. Resuming...
+2026-01-19 07:45:58,312 - INFO - Already processed 2216 stocks.
+2026-01-19 07:45:58,313 - INFO - Scanning 32 remaining stocks (Parallel Mode)...
+2026-01-19 07:46:00,374 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:46:00,382 - INFO - [10/32] Processed in this batch... Total: 2216
+2026-01-19 07:46:00,400 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:46:00,530 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:46:02,217 - INFO - [20/32] Processed in this batch... Total: 2216
+2026-01-19 07:46:02,237 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:46:03,538 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:46:03,881 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:46:04,096 - INFO - [30/32] Processed in this batch... Total: 2216
+2026-01-19 07:46:04,114 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:46:08,928 - ERROR - $ADVAIT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-19 07:46:09,059 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADVAIT.NS"}}}
+2026-01-19 07:46:09,652 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:46:09,654 - INFO - Running Forecasting on Top 20...
+2026-01-19 07:46:14,937 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-01-19 07:46:14,957 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-01-19 07:46:14,970 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-01-19 07:46:14,970 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-01-19 07:46:15,207 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-01-19 07:46:15,207 - WARNING -   - SalesGrowth3Y
+2026-01-19 07:46:15,207 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-01-19 07:46:15,207 - INFO - Big Bets: Found 3 recommendations.
+2026-01-19 07:46:15,207 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-01-19 07:46:15,244 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-01-19.csv
+2026-01-19 07:46:15,244 - INFO - Analysis Complete. Updating Portfolio History...
+2026-01-19 07:46:15,249 - WARNING - Telegram not configured.
+2026-01-19 07:46:15,429 - INFO - Syncing to GitHub...
