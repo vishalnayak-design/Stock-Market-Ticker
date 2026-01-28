@@ -35,3 +35,10 @@ stock_ticker/data/app_activity.log
 
 # VS Code
 .vscode/
+
+
+# Secrets
+.env
+stock_ticker/data/upstox_token.json
+stock_ticker/data/nse_master.csv
+stock_ticker/data/nse_master.csv.gz

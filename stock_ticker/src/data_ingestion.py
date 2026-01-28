@@ -11,15 +11,22 @@ import os
 
 try:
     from src.utils import save_to_csv
+    from src.upstox_client import UpstoxDataClient
 except ImportError:
     from utils import save_to_csv
+    from upstox_client import UpstoxDataClient
+
 
 class DataIngestor:
     def __init__(self, data_dir="data"):
         self.data_dir = data_dir
         self.stocks_file = f"{data_dir}/equity_master.csv"
         self.session = self._get_stealth_session()
+        self.upstox = UpstoxDataClient()
         logging.info("DataIngestor v2: Session Removed (Fix Verified)")
+        if self.upstox.access_token:
+            logging.info("Upstox Client: Authenticated")
+
 
     def get_nse_equity_list(self):
         """Fetches the list of all active equity stocks using nsepython or fallback."""
@@ -91,7 +98,37 @@ class DataIngestor:
         return session
 
     def fetch_stock_history(self, ticker, period="2y", retries=3):
-        """Fetches history with retries."""
+        """Fetches history with retries. Prioritizes Upstox if available."""
+        
+        # 0. Try Upstox First
+        if self.upstox.access_token:
+            try:
+                # Ticker format: RELIANCE.NS -> RELIANCE
+                clean_symbol = ticker.split('.')[0]
+                inst_key = self.upstox.get_instrument_key_by_symbol(clean_symbol)
+                
+                if inst_key:
+                    # Calculate start date based on period
+                    days = 730 # 2y default
+                    if "mo" in period:
+                        days = int(period.replace("mo", "")) * 30
+                    elif "y" in period:
+                        days = int(period.replace("y", "")) * 365
+                    elif "d" in period:
+                        days = int(period.replace("d", ""))
+                    
+                    from_date = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
+                    
+                    df = self.upstox.fetch_historical_candles(inst_key, from_date=from_date)
+                    if df is not None and not df.empty:
+                        # Convert to dict format expected by callers
+                        # Upstox DF Date is already YYYY-MM-DD
+                        df['Date'] = df['Date'].astype(str)
+                        return df.to_dict('records')
+            except Exception as e:
+                logging.warning(f"Upstox fetch failed for {ticker}: {e}. Falling back to yfinance.")
+
+        # Fallback to yfinance
         for attempt in range(retries):
             try:
                 # Use shared session for persistency, but rotate UA on retry
@@ -129,6 +166,7 @@ class DataIngestor:
                     if attempt == retries - 1:
                         return []
         return []
+
 
     def fetch_fundamentals(self, ticker, retries=2):
         """Fetches key fundamentals with retries."""
@@ -205,6 +243,12 @@ class DataIngestor:
 
                 info['Ticker'] = ticker
                 return info
+            except (requests.exceptions.HTTPError, urllib.error.HTTPError) as http_err:
+                if "404" in str(http_err):
+                    logging.warning(f"Ticker {ticker} not found (404). Skipping.")
+                    return {} # Stop retrying
+                time.sleep(1) # Retry other HTTP errors
+                
             except Exception as e:
                 msg = str(e).lower()
                 if "429" in msg or "too many requests" in msg:
