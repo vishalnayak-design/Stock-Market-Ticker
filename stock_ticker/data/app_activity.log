@@ -110937,3 +110937,69 @@
 2026-02-08 07:13:11,572 - INFO - Analysis Complete. Updating Portfolio History...
 2026-02-08 07:13:11,578 - WARNING - Telegram not configured.
 2026-02-08 07:13:11,804 - INFO - Syncing to GitHub...
+2026-02-09 07:38:03,486 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-09 07:38:03,489 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-09 07:38:03,497 - INFO - Starting Daily Analysis Pipeline...
+2026-02-09 07:38:03,497 - INFO - Mode: Fetch Only
+2026-02-09 07:38:03,498 - INFO - Starting Data Download & Basic Scan...
+2026-02-09 07:38:03,498 - INFO - Starting Analysis...
+2026-02-09 07:38:03,498 - INFO - Attempting to fetch via nsepython...
+2026-02-09 07:38:03,498 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-09 07:38:03,498 - INFO - Attempting direct CSV download...
+2026-02-09 07:38:05,688 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-09 07:38:05,688 - INFO - Direct download fetched 2248 stocks.
+2026-02-09 07:38:05,690 - INFO - Found existing analysis file. Resuming...
+2026-02-09 07:38:05,704 - INFO - Already processed 2227 stocks.
+2026-02-09 07:38:05,704 - INFO - Scanning 29 remaining stocks (Parallel Mode)...
+2026-02-09 07:38:05,706 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-02-09 07:38:08,028 - INFO - [10/29] Processed in this batch... Total: 2228
+2026-02-09 07:38:08,046 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:08,145 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:08,344 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:11,052 - INFO - [20/29] Processed in this batch... Total: 2229
+2026-02-09 07:38:11,070 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:12,161 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:12,325 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:17,727 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:17,871 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:18,680 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:18,681 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-09 07:38:18,700 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:20,099 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-09 07:38:20,102 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-09 07:38:20,110 - INFO - Starting Daily Analysis Pipeline...
+2026-02-09 07:38:20,110 - INFO - Mode: Analysis Only
+2026-02-09 07:38:20,110 - INFO - Starting Analysis...
+2026-02-09 07:38:20,110 - INFO - Attempting to fetch via nsepython...
+2026-02-09 07:38:20,111 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-09 07:38:20,111 - INFO - Attempting direct CSV download...
+2026-02-09 07:38:21,846 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-09 07:38:21,847 - INFO - Direct download fetched 2248 stocks.
+2026-02-09 07:38:21,848 - INFO - Found existing analysis file. Resuming...
+2026-02-09 07:38:21,861 - INFO - Already processed 2229 stocks.
+2026-02-09 07:38:21,862 - INFO - Scanning 27 remaining stocks (Parallel Mode)...
+2026-02-09 07:38:23,737 - INFO - [10/27] Processed in this batch... Total: 2229
+2026-02-09 07:38:23,782 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:24,976 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:25,256 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:26,377 - INFO - [20/27] Processed in this batch... Total: 2229
+2026-02-09 07:38:26,403 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:28,769 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:28,916 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:33,817 - ERROR - $ADANIENPP1.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-09 07:38:33,956 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADANIENPP1.NS"}}}
+2026-02-09 07:38:34,472 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:34,473 - INFO - Running Forecasting on Top 20...
+2026-02-09 07:38:39,747 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-09 07:38:39,766 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-09 07:38:39,777 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-02-09 07:38:39,777 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-02-09 07:38:40,037 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-02-09 07:38:40,037 - WARNING -   - SalesGrowth3Y
+2026-02-09 07:38:40,037 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-02-09 07:38:40,037 - INFO - Big Bets: Found 3 recommendations.
+2026-02-09 07:38:40,037 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-02-09 07:38:40,085 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-02-09.csv
+2026-02-09 07:38:40,085 - INFO - Analysis Complete. Updating Portfolio History...
+2026-02-09 07:38:40,091 - WARNING - Telegram not configured.
+2026-02-09 07:38:40,318 - INFO - Syncing to GitHub...
