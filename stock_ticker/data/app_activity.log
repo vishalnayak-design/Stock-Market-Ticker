@@ -111224,3 +111224,63 @@
 2026-02-13 07:33:06,847 - INFO - Analysis Complete. Updating Portfolio History...
 2026-02-13 07:33:06,853 - WARNING - Telegram not configured.
 2026-02-13 07:33:07,088 - INFO - Syncing to GitHub...
+2026-02-14 07:10:47,739 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-14 07:10:47,742 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-14 07:10:47,751 - INFO - Starting Daily Analysis Pipeline...
+2026-02-14 07:10:47,751 - INFO - Mode: Fetch Only
+2026-02-14 07:10:47,751 - INFO - Starting Data Download & Basic Scan...
+2026-02-14 07:10:47,751 - INFO - Starting Analysis...
+2026-02-14 07:10:47,752 - INFO - Attempting to fetch via nsepython...
+2026-02-14 07:10:47,752 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-14 07:10:47,752 - INFO - Attempting direct CSV download...
+2026-02-14 07:10:48,230 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-14 07:10:48,230 - INFO - Direct download fetched 2232 stocks.
+2026-02-14 07:10:48,232 - INFO - Found existing analysis file. Resuming...
+2026-02-14 07:10:48,246 - INFO - Already processed 2233 stocks.
+2026-02-14 07:10:48,246 - INFO - Scanning 23 remaining stocks (Parallel Mode)...
+2026-02-14 07:10:48,248 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-02-14 07:10:50,734 - INFO - [10/23] Processed in this batch... Total: 2233
+2026-02-14 07:10:50,753 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:10:51,189 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:10:53,586 - INFO - [20/23] Processed in this batch... Total: 2233
+2026-02-14 07:10:53,625 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:10:55,055 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:11:00,871 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:11:01,747 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:01,749 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-14 07:11:01,767 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:03,227 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-14 07:11:03,230 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-14 07:11:03,244 - INFO - Starting Daily Analysis Pipeline...
+2026-02-14 07:11:03,244 - INFO - Mode: Analysis Only
+2026-02-14 07:11:03,244 - INFO - Starting Analysis...
+2026-02-14 07:11:03,244 - INFO - Attempting to fetch via nsepython...
+2026-02-14 07:11:03,245 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-14 07:11:03,245 - INFO - Attempting direct CSV download...
+2026-02-14 07:11:04,103 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-14 07:11:04,103 - INFO - Direct download fetched 2232 stocks.
+2026-02-14 07:11:04,105 - INFO - Found existing analysis file. Resuming...
+2026-02-14 07:11:04,118 - INFO - Already processed 2233 stocks.
+2026-02-14 07:11:04,118 - INFO - Scanning 23 remaining stocks (Parallel Mode)...
+2026-02-14 07:11:04,611 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:11:06,761 - INFO - [10/23] Processed in this batch... Total: 2233
+2026-02-14 07:11:06,779 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:07,187 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:11:08,959 - INFO - [20/23] Processed in this batch... Total: 2233
+2026-02-14 07:11:08,976 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:13,264 - ERROR - $KWIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-14 07:11:13,886 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:13,887 - INFO - Running Forecasting on Top 20...
+2026-02-14 07:11:21,191 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-14 07:11:21,211 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-14 07:11:21,223 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-02-14 07:11:21,224 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-02-14 07:11:21,481 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-02-14 07:11:21,481 - WARNING -   - SalesGrowth3Y
+2026-02-14 07:11:21,481 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-02-14 07:11:21,481 - INFO - Big Bets: Found 3 recommendations.
+2026-02-14 07:11:21,482 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-02-14 07:11:21,530 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-02-14.csv
+2026-02-14 07:11:21,530 - INFO - Analysis Complete. Updating Portfolio History...
+2026-02-14 07:11:21,536 - WARNING - Telegram not configured.
+2026-02-14 07:11:21,773 - INFO - Syncing to GitHub...
