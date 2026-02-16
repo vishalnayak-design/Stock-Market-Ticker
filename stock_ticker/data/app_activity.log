@@ -111344,3 +111344,68 @@
 2026-02-15 07:14:02,577 - INFO - Analysis Complete. Updating Portfolio History...
 2026-02-15 07:14:02,583 - WARNING - Telegram not configured.
 2026-02-15 07:14:02,676 - INFO - Syncing to GitHub...
+2026-02-16 07:36:31,441 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-16 07:36:31,444 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-16 07:36:31,453 - INFO - Starting Daily Analysis Pipeline...
+2026-02-16 07:36:31,453 - INFO - Mode: Fetch Only
+2026-02-16 07:36:31,453 - INFO - Starting Data Download & Basic Scan...
+2026-02-16 07:36:31,453 - INFO - Starting Analysis...
+2026-02-16 07:36:31,453 - INFO - Attempting to fetch via nsepython...
+2026-02-16 07:36:31,454 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-16 07:36:31,454 - INFO - Attempting direct CSV download...
+2026-02-16 07:36:32,091 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-16 07:36:32,091 - INFO - Direct download fetched 2251 stocks.
+2026-02-16 07:36:32,093 - INFO - Found existing analysis file. Resuming...
+2026-02-16 07:36:32,106 - INFO - Already processed 2233 stocks.
+2026-02-16 07:36:32,106 - INFO - Scanning 27 remaining stocks (Parallel Mode)...
+2026-02-16 07:36:34,684 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:35,862 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:36,282 - INFO - [10/27] Processed in this batch... Total: 2233
+2026-02-16 07:36:36,300 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:37,929 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:38,249 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:39,912 - INFO - [20/27] Processed in this batch... Total: 2233
+2026-02-16 07:36:39,930 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:43,953 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:44,327 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:45,073 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:45,075 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-16 07:36:45,094 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:46,466 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-16 07:36:46,469 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-16 07:36:46,477 - INFO - Starting Daily Analysis Pipeline...
+2026-02-16 07:36:46,477 - INFO - Mode: Analysis Only
+2026-02-16 07:36:46,477 - INFO - Starting Analysis...
+2026-02-16 07:36:46,477 - INFO - Attempting to fetch via nsepython...
+2026-02-16 07:36:46,477 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-16 07:36:46,477 - INFO - Attempting direct CSV download...
+2026-02-16 07:36:46,852 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-16 07:36:46,852 - INFO - Direct download fetched 2251 stocks.
+2026-02-16 07:36:46,854 - INFO - Found existing analysis file. Resuming...
+2026-02-16 07:36:46,867 - INFO - Already processed 2233 stocks.
+2026-02-16 07:36:46,867 - INFO - Scanning 27 remaining stocks (Parallel Mode)...
+2026-02-16 07:36:48,555 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:48,559 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:49,834 - INFO - [10/27] Processed in this batch... Total: 2233
+2026-02-16 07:36:49,853 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:51,092 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:52,395 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:52,682 - INFO - [20/27] Processed in this batch... Total: 2233
+2026-02-16 07:36:52,700 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:56,790 - ERROR - $DSFCL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:57,897 - ERROR - $DCMSIL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-16 07:36:58,617 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:36:58,618 - INFO - Running Forecasting on Top 20...
+2026-02-16 07:37:04,877 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-16 07:37:04,897 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-16 07:37:04,909 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-02-16 07:37:04,910 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-02-16 07:37:05,159 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-02-16 07:37:05,160 - WARNING -   - SalesGrowth3Y
+2026-02-16 07:37:05,160 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-02-16 07:37:05,160 - INFO - Big Bets: Found 3 recommendations.
+2026-02-16 07:37:05,160 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-02-16 07:37:05,218 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-02-16.csv
+2026-02-16 07:37:05,218 - INFO - Analysis Complete. Updating Portfolio History...
+2026-02-16 07:37:05,225 - WARNING - Telegram not configured.
+2026-02-16 07:37:05,481 - INFO - Syncing to GitHub...
