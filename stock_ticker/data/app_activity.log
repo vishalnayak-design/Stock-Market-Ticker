@@ -111840,3 +111840,77 @@
 2026-02-23 07:37:49,682 - INFO - Analysis Complete. Updating Portfolio History...
 2026-02-23 07:37:49,688 - WARNING - Telegram not configured.
 2026-02-23 07:37:49,932 - INFO - Syncing to GitHub...
+2026-02-24 07:33:06,398 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-24 07:33:06,402 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-24 07:33:06,410 - INFO - Starting Daily Analysis Pipeline...
+2026-02-24 07:33:06,410 - INFO - Mode: Fetch Only
+2026-02-24 07:33:06,411 - INFO - Starting Data Download & Basic Scan...
+2026-02-24 07:33:06,411 - INFO - Starting Analysis...
+2026-02-24 07:33:06,411 - INFO - Attempting to fetch via nsepython...
+2026-02-24 07:33:06,411 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-24 07:33:06,411 - INFO - Attempting direct CSV download...
+2026-02-24 07:33:09,035 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-24 07:33:09,035 - INFO - Direct download fetched 2240 stocks.
+2026-02-24 07:33:09,037 - INFO - Found existing analysis file. Resuming...
+2026-02-24 07:33:09,051 - INFO - Already processed 2238 stocks.
+2026-02-24 07:33:09,051 - INFO - Scanning 28 remaining stocks (Parallel Mode)...
+2026-02-24 07:33:09,053 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-02-24 07:33:10,218 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCC.NS"}}}
+2026-02-24 07:33:10,755 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:14,026 - INFO - [10/28] Processed in this batch... Total: 2238
+2026-02-24 07:33:14,044 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:14,512 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCC.NS"}}}
+2026-02-24 07:33:14,981 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:17,262 - INFO - [20/28] Processed in this batch... Total: 2238
+2026-02-24 07:33:17,280 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:17,840 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:19,477 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:19,801 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCC.NS"}}}
+2026-02-24 07:33:20,694 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:25,150 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:25,430 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AARNAV.NS"}}}
+2026-02-24 07:33:26,495 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:26,496 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-24 07:33:26,515 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:27,908 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-02-24 07:33:27,911 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-02-24 07:33:27,919 - INFO - Starting Daily Analysis Pipeline...
+2026-02-24 07:33:27,919 - INFO - Mode: Analysis Only
+2026-02-24 07:33:27,919 - INFO - Starting Analysis...
+2026-02-24 07:33:27,919 - INFO - Attempting to fetch via nsepython...
+2026-02-24 07:33:27,920 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-02-24 07:33:27,920 - INFO - Attempting direct CSV download...
+2026-02-24 07:33:31,927 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-02-24 07:33:31,927 - INFO - Direct download fetched 2240 stocks.
+2026-02-24 07:33:31,929 - INFO - Found existing analysis file. Resuming...
+2026-02-24 07:33:31,942 - INFO - Already processed 2238 stocks.
+2026-02-24 07:33:31,943 - INFO - Scanning 28 remaining stocks (Parallel Mode)...
+2026-02-24 07:33:32,956 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AARNAV.NS"}}}
+2026-02-24 07:33:33,465 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:35,659 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCC.NS"}}}
+2026-02-24 07:33:36,241 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:36,445 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:37,586 - INFO - [10/28] Processed in this batch... Total: 2238
+2026-02-24 07:33:37,605 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:38,956 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:42,340 - ERROR - $AARNAV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:42,547 - INFO - [20/28] Processed in this batch... Total: 2238
+2026-02-24 07:33:42,565 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:42,636 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AARNAV.NS"}}}
+2026-02-24 07:33:44,789 - ERROR - $TCC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-24 07:33:45,068 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCC.NS"}}}
+2026-02-24 07:33:45,911 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:45,912 - INFO - Running Forecasting on Top 20...
+2026-02-24 07:33:54,751 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-02-24 07:33:54,771 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-02-24 07:33:54,782 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-02-24 07:33:54,782 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-02-24 07:33:55,037 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-02-24 07:33:55,037 - WARNING -   - SalesGrowth3Y
+2026-02-24 07:33:55,037 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-02-24 07:33:55,037 - INFO - Big Bets: Found 3 recommendations.
+2026-02-24 07:33:55,037 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-02-24 07:33:55,085 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-02-24.csv
+2026-02-24 07:33:55,085 - INFO - Analysis Complete. Updating Portfolio History...
+2026-02-24 07:33:55,091 - WARNING - Telegram not configured.
+2026-02-24 07:33:55,338 - INFO - Syncing to GitHub...
