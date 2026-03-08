@@ -112599,3 +112599,73 @@
 2026-03-07 07:05:12,867 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-07 07:05:12,874 - WARNING - Telegram not configured.
 2026-03-07 07:05:13,162 - INFO - Syncing to GitHub...
+2026-03-08 07:07:15,957 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-08 07:07:15,960 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-08 07:07:15,970 - INFO - Starting Daily Analysis Pipeline...
+2026-03-08 07:07:15,970 - INFO - Mode: Fetch Only
+2026-03-08 07:07:15,970 - INFO - Starting Data Download & Basic Scan...
+2026-03-08 07:07:15,970 - INFO - Starting Analysis...
+2026-03-08 07:07:15,970 - INFO - Attempting to fetch via nsepython...
+2026-03-08 07:07:15,971 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-08 07:07:15,971 - INFO - Attempting direct CSV download...
+2026-03-08 07:07:16,670 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-08 07:07:16,670 - INFO - Direct download fetched 2249 stocks.
+2026-03-08 07:07:16,672 - INFO - Found existing analysis file. Resuming...
+2026-03-08 07:07:16,686 - INFO - Already processed 2244 stocks.
+2026-03-08 07:07:16,686 - INFO - Scanning 31 remaining stocks (Parallel Mode)...
+2026-03-08 07:07:16,688 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-03-08 07:07:18,910 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:19,265 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:20,644 - INFO - [10/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:20,663 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:21,730 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:21,976 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:23,494 - INFO - [20/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:23,517 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:26,580 - INFO - [30/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:26,599 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:28,015 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:28,204 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:29,137 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:29,138 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-08 07:07:29,157 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:30,750 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-08 07:07:30,753 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-08 07:07:30,762 - INFO - Starting Daily Analysis Pipeline...
+2026-03-08 07:07:30,762 - INFO - Mode: Analysis Only
+2026-03-08 07:07:30,762 - INFO - Starting Analysis...
+2026-03-08 07:07:30,762 - INFO - Attempting to fetch via nsepython...
+2026-03-08 07:07:30,763 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-08 07:07:30,763 - INFO - Attempting direct CSV download...
+2026-03-08 07:07:31,372 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-08 07:07:31,372 - INFO - Direct download fetched 2249 stocks.
+2026-03-08 07:07:31,374 - INFO - Found existing analysis file. Resuming...
+2026-03-08 07:07:31,388 - INFO - Already processed 2244 stocks.
+2026-03-08 07:07:31,389 - INFO - Scanning 31 remaining stocks (Parallel Mode)...
+2026-03-08 07:07:33,873 - INFO - [10/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:33,916 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:35,862 - INFO - [20/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:35,890 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:36,342 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:36,766 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:38,165 - INFO - [30/31] Processed in this batch... Total: 2244
+2026-03-08 07:07:38,184 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:39,477 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:39,723 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:45,159 - ERROR - $INA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-08 07:07:45,352 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INA.NS"}}}
+2026-03-08 07:07:45,963 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:45,965 - INFO - Running Forecasting on Top 20...
+2026-03-08 07:07:52,698 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-08 07:07:52,719 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-08 07:07:52,733 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-08 07:07:52,734 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-08 07:07:53,000 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-08 07:07:53,000 - WARNING -   - SalesGrowth3Y
+2026-03-08 07:07:53,000 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-08 07:07:53,000 - INFO - Big Bets: Found 3 recommendations.
+2026-03-08 07:07:53,001 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-08 07:07:53,053 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-08.csv
+2026-03-08 07:07:53,053 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-08 07:07:53,060 - WARNING - Telegram not configured.
+2026-03-08 07:07:53,188 - INFO - Syncing to GitHub...
