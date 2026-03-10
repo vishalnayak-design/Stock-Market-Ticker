@@ -112727,3 +112727,72 @@
 2026-03-09 07:34:10,983 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-09 07:34:10,991 - WARNING - Telegram not configured.
 2026-03-09 07:34:11,264 - INFO - Syncing to GitHub...
+2026-03-10 07:24:44,375 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-10 07:24:44,377 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-10 07:24:44,385 - INFO - Starting Daily Analysis Pipeline...
+2026-03-10 07:24:44,386 - INFO - Mode: Fetch Only
+2026-03-10 07:24:44,386 - INFO - Starting Data Download & Basic Scan...
+2026-03-10 07:24:44,386 - INFO - Starting Analysis...
+2026-03-10 07:24:44,386 - INFO - Attempting to fetch via nsepython...
+2026-03-10 07:24:44,386 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-10 07:24:44,386 - INFO - Attempting direct CSV download...
+2026-03-10 07:24:45,257 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-10 07:24:45,257 - INFO - Direct download fetched 2251 stocks.
+2026-03-10 07:24:45,259 - INFO - Found existing analysis file. Resuming...
+2026-03-10 07:24:45,271 - INFO - Already processed 2244 stocks.
+2026-03-10 07:24:45,272 - INFO - Scanning 33 remaining stocks (Parallel Mode)...
+2026-03-10 07:24:48,970 - INFO - [10/33] Processed in this batch... Total: 2244
+2026-03-10 07:24:48,988 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:24:52,024 - INFO - [20/33] Processed in this batch... Total: 2244
+2026-03-10 07:24:52,042 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:24:53,370 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:24:53,864 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:24:56,194 - INFO - [30/33] Processed in this batch... Total: 2244
+2026-03-10 07:24:56,212 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:24:56,320 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:24:56,755 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:25:02,919 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:25:03,145 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:25:04,119 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:04,121 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-10 07:25:04,139 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:05,411 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-10 07:25:05,414 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-10 07:25:05,422 - INFO - Starting Daily Analysis Pipeline...
+2026-03-10 07:25:05,422 - INFO - Mode: Analysis Only
+2026-03-10 07:25:05,422 - INFO - Starting Analysis...
+2026-03-10 07:25:05,422 - INFO - Attempting to fetch via nsepython...
+2026-03-10 07:25:05,422 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-10 07:25:05,422 - INFO - Attempting direct CSV download...
+2026-03-10 07:25:06,159 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-10 07:25:06,159 - INFO - Direct download fetched 2251 stocks.
+2026-03-10 07:25:06,161 - INFO - Found existing analysis file. Resuming...
+2026-03-10 07:25:06,174 - INFO - Already processed 2245 stocks.
+2026-03-10 07:25:06,174 - INFO - Scanning 32 remaining stocks (Parallel Mode)...
+2026-03-10 07:25:07,940 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:25:08,329 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:25:08,802 - INFO - [10/32] Processed in this batch... Total: 2245
+2026-03-10 07:25:08,834 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:10,670 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:25:10,979 - INFO - [20/32] Processed in this batch... Total: 2245
+2026-03-10 07:25:10,996 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:11,081 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:25:13,942 - INFO - [30/32] Processed in this batch... Total: 2245
+2026-03-10 07:25:13,959 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:16,087 - ERROR - $HCG-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-10 07:25:16,307 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HCG-RE.NS"}}}
+2026-03-10 07:25:16,978 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:16,979 - INFO - Running Forecasting on Top 20...
+2026-03-10 07:25:24,857 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-10 07:25:24,877 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-10 07:25:24,888 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-10 07:25:24,888 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-10 07:25:25,147 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-10 07:25:25,148 - WARNING -   - SalesGrowth3Y
+2026-03-10 07:25:25,148 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-10 07:25:25,148 - INFO - Big Bets: Found 3 recommendations.
+2026-03-10 07:25:25,148 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-10 07:25:25,206 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-10.csv
+2026-03-10 07:25:25,206 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-10 07:25:25,213 - WARNING - Telegram not configured.
+2026-03-10 07:25:25,502 - INFO - Syncing to GitHub...
