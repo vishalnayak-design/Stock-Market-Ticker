@@ -112866,3 +112866,73 @@
 2026-03-11 07:27:33,056 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-11 07:27:33,063 - WARNING - Telegram not configured.
 2026-03-11 07:27:33,334 - INFO - Syncing to GitHub...
+2026-03-12 07:28:44,602 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-12 07:28:44,605 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-12 07:28:44,614 - INFO - Starting Daily Analysis Pipeline...
+2026-03-12 07:28:44,614 - INFO - Mode: Fetch Only
+2026-03-12 07:28:44,615 - INFO - Starting Data Download & Basic Scan...
+2026-03-12 07:28:44,615 - INFO - Starting Analysis...
+2026-03-12 07:28:44,615 - INFO - Attempting to fetch via nsepython...
+2026-03-12 07:28:44,615 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-12 07:28:44,615 - INFO - Attempting direct CSV download...
+2026-03-12 07:28:45,839 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-12 07:28:45,839 - INFO - Direct download fetched 2251 stocks.
+2026-03-12 07:28:45,841 - INFO - Found existing analysis file. Resuming...
+2026-03-12 07:28:45,855 - INFO - Already processed 2247 stocks.
+2026-03-12 07:28:45,856 - INFO - Scanning 32 remaining stocks (Parallel Mode)...
+2026-03-12 07:28:45,858 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-03-12 07:28:48,028 - INFO - [10/32] Processed in this batch... Total: 2247
+2026-03-12 07:28:48,046 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:28:49,117 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:28:49,343 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:28:50,968 - INFO - [20/32] Processed in this batch... Total: 2247
+2026-03-12 07:28:50,986 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:28:52,603 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:28:52,798 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:28:52,956 - INFO - [30/32] Processed in this batch... Total: 2247
+2026-03-12 07:28:52,974 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:28:56,912 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:28:57,041 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:28:58,039 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:28:58,040 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-12 07:28:58,059 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:28:59,528 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-12 07:28:59,531 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-12 07:28:59,539 - INFO - Starting Daily Analysis Pipeline...
+2026-03-12 07:28:59,539 - INFO - Mode: Analysis Only
+2026-03-12 07:28:59,540 - INFO - Starting Analysis...
+2026-03-12 07:28:59,540 - INFO - Attempting to fetch via nsepython...
+2026-03-12 07:28:59,540 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-12 07:28:59,540 - INFO - Attempting direct CSV download...
+2026-03-12 07:28:59,945 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-12 07:28:59,945 - INFO - Direct download fetched 2251 stocks.
+2026-03-12 07:28:59,947 - INFO - Found existing analysis file. Resuming...
+2026-03-12 07:28:59,961 - INFO - Already processed 2247 stocks.
+2026-03-12 07:28:59,962 - INFO - Scanning 32 remaining stocks (Parallel Mode)...
+2026-03-12 07:29:01,895 - INFO - [10/32] Processed in this batch... Total: 2247
+2026-03-12 07:29:01,913 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:29:03,622 - INFO - [20/32] Processed in this batch... Total: 2247
+2026-03-12 07:29:03,641 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:29:04,542 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:29:04,734 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:29:05,835 - INFO - [30/32] Processed in this batch... Total: 2247
+2026-03-12 07:29:05,853 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:29:08,468 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:29:08,612 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:29:14,717 - ERROR - $MARSONS.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-12 07:29:14,836 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MARSONS.NS"}}}
+2026-03-12 07:29:15,323 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:29:15,325 - INFO - Running Forecasting on Top 20...
+2026-03-12 07:29:20,395 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-12 07:29:20,414 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-12 07:29:20,427 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-12 07:29:20,427 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-12 07:29:20,688 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-12 07:29:20,688 - WARNING -   - SalesGrowth3Y
+2026-03-12 07:29:20,689 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-12 07:29:20,689 - INFO - Big Bets: Found 3 recommendations.
+2026-03-12 07:29:20,689 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-12 07:29:20,741 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-12.csv
+2026-03-12 07:29:20,741 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-12 07:29:20,749 - WARNING - Telegram not configured.
+2026-03-12 07:29:21,023 - INFO - Syncing to GitHub...
