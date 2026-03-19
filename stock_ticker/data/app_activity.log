@@ -113295,3 +113295,81 @@
 2026-03-18 07:36:25,921 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-18 07:36:25,928 - WARNING - Telegram not configured.
 2026-03-18 07:36:26,109 - INFO - Syncing to GitHub...
+2026-03-19 07:31:14,600 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-19 07:31:14,602 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-19 07:31:14,611 - INFO - Starting Daily Analysis Pipeline...
+2026-03-19 07:31:14,611 - INFO - Mode: Fetch Only
+2026-03-19 07:31:14,611 - INFO - Starting Data Download & Basic Scan...
+2026-03-19 07:31:14,611 - INFO - Starting Analysis...
+2026-03-19 07:31:14,611 - INFO - Attempting to fetch via nsepython...
+2026-03-19 07:31:14,611 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-19 07:31:14,611 - INFO - Attempting direct CSV download...
+2026-03-19 07:31:17,343 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-19 07:31:17,343 - INFO - Direct download fetched 2250 stocks.
+2026-03-19 07:31:17,345 - INFO - Found existing analysis file. Resuming...
+2026-03-19 07:31:17,357 - INFO - Already processed 2247 stocks.
+2026-03-19 07:31:17,357 - INFO - Scanning 34 remaining stocks (Parallel Mode)...
+2026-03-19 07:31:17,359 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-03-19 07:31:20,781 - INFO - [10/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:20,799 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:23,497 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PRABHA-RE.NS"}}}
+2026-03-19 07:31:23,512 - INFO - [20/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:23,529 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:23,906 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:26,483 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PRABHA-RE.NS"}}}
+2026-03-19 07:31:26,853 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:26,907 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:27,570 - INFO - [30/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:27,588 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:29,522 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:33,147 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:33,345 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PRABHA-RE.NS"}}}
+2026-03-19 07:31:35,572 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:35,760 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SINGERIND.NS"}}}
+2026-03-19 07:31:36,784 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:36,785 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-19 07:31:36,804 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:38,112 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-19 07:31:38,115 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-19 07:31:38,123 - INFO - Starting Daily Analysis Pipeline...
+2026-03-19 07:31:38,123 - INFO - Mode: Analysis Only
+2026-03-19 07:31:38,123 - INFO - Starting Analysis...
+2026-03-19 07:31:38,123 - INFO - Attempting to fetch via nsepython...
+2026-03-19 07:31:38,123 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-19 07:31:38,123 - INFO - Attempting direct CSV download...
+2026-03-19 07:31:39,753 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-19 07:31:39,753 - INFO - Direct download fetched 2250 stocks.
+2026-03-19 07:31:39,755 - INFO - Found existing analysis file. Resuming...
+2026-03-19 07:31:39,767 - INFO - Already processed 2247 stocks.
+2026-03-19 07:31:39,768 - INFO - Scanning 34 remaining stocks (Parallel Mode)...
+2026-03-19 07:31:41,725 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SINGERIND.NS"}}}
+2026-03-19 07:31:42,160 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:43,190 - INFO - [10/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:43,207 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:44,629 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SINGERIND.NS"}}}
+2026-03-19 07:31:45,018 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:45,475 - INFO - [20/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:45,493 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:47,706 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:48,493 - INFO - [30/34] Processed in this batch... Total: 2247
+2026-03-19 07:31:48,510 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:51,197 - ERROR - $SINGERIND.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:51,428 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SINGERIND.NS"}}}
+2026-03-19 07:31:51,829 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:57,590 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-19 07:31:57,802 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PRABHA-RE.NS"}}}
+2026-03-19 07:31:58,593 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:31:58,594 - INFO - Running Forecasting on Top 20...
+2026-03-19 07:32:06,016 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-19 07:32:06,035 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-19 07:32:06,047 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-19 07:32:06,047 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-19 07:32:06,309 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-19 07:32:06,309 - WARNING -   - SalesGrowth3Y
+2026-03-19 07:32:06,310 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-19 07:32:06,310 - INFO - Big Bets: Found 3 recommendations.
+2026-03-19 07:32:06,310 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-19 07:32:06,368 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-19.csv
+2026-03-19 07:32:06,368 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-19 07:32:06,376 - WARNING - Telegram not configured.
+2026-03-19 07:32:06,678 - INFO - Syncing to GitHub...
