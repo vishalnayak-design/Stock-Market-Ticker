@@ -113373,3 +113373,67 @@
 2026-03-19 07:32:06,368 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-19 07:32:06,376 - WARNING - Telegram not configured.
 2026-03-19 07:32:06,678 - INFO - Syncing to GitHub...
+2026-03-20 07:29:23,978 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-20 07:29:23,981 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-20 07:29:23,990 - INFO - Starting Daily Analysis Pipeline...
+2026-03-20 07:29:23,990 - INFO - Mode: Fetch Only
+2026-03-20 07:29:23,990 - INFO - Starting Data Download & Basic Scan...
+2026-03-20 07:29:23,991 - INFO - Starting Analysis...
+2026-03-20 07:29:23,991 - INFO - Attempting to fetch via nsepython...
+2026-03-20 07:29:23,991 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-20 07:29:23,991 - INFO - Attempting direct CSV download...
+2026-03-20 07:29:24,572 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-20 07:29:24,573 - INFO - Direct download fetched 2250 stocks.
+2026-03-20 07:29:24,575 - INFO - Found existing analysis file. Resuming...
+2026-03-20 07:29:24,588 - INFO - Already processed 2247 stocks.
+2026-03-20 07:29:24,588 - INFO - Scanning 34 remaining stocks (Parallel Mode)...
+2026-03-20 07:29:24,591 - ERROR - Error fetching history for SIGMAADV.NS: database is locked
+2026-03-20 07:29:28,647 - INFO - [10/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:28,665 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:30,639 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:31,197 - INFO - [20/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:31,215 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:34,000 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:34,312 - INFO - [30/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:34,330 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:39,801 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:40,659 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:40,660 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-20 07:29:40,679 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:42,148 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-20 07:29:42,151 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-20 07:29:42,159 - INFO - Starting Daily Analysis Pipeline...
+2026-03-20 07:29:42,160 - INFO - Mode: Analysis Only
+2026-03-20 07:29:42,160 - INFO - Starting Analysis...
+2026-03-20 07:29:42,160 - INFO - Attempting to fetch via nsepython...
+2026-03-20 07:29:42,160 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-20 07:29:42,160 - INFO - Attempting direct CSV download...
+2026-03-20 07:29:42,539 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-20 07:29:42,539 - INFO - Direct download fetched 2250 stocks.
+2026-03-20 07:29:42,541 - INFO - Found existing analysis file. Resuming...
+2026-03-20 07:29:42,555 - INFO - Already processed 2247 stocks.
+2026-03-20 07:29:42,555 - INFO - Scanning 34 remaining stocks (Parallel Mode)...
+2026-03-20 07:29:44,729 - INFO - [10/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:44,747 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:46,741 - INFO - [20/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:46,770 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:48,423 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:49,444 - INFO - [30/34] Processed in this batch... Total: 2247
+2026-03-20 07:29:49,465 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:51,152 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:55,470 - ERROR - $PRABHA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-20 07:29:56,117 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:29:56,118 - INFO - Running Forecasting on Top 20...
+2026-03-20 07:30:02,893 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-20 07:30:02,914 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-20 07:30:02,926 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-20 07:30:02,926 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-20 07:30:03,191 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-20 07:30:03,191 - WARNING -   - SalesGrowth3Y
+2026-03-20 07:30:03,191 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-20 07:30:03,191 - INFO - Big Bets: Found 3 recommendations.
+2026-03-20 07:30:03,192 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-20 07:30:03,240 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-20.csv
+2026-03-20 07:30:03,240 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-20 07:30:03,248 - WARNING - Telegram not configured.
+2026-03-20 07:30:03,538 - INFO - Syncing to GitHub...
