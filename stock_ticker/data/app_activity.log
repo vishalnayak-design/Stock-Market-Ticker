@@ -113668,3 +113668,81 @@
 2026-03-24 07:35:45,768 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-24 07:35:45,776 - WARNING - Telegram not configured.
 2026-03-24 07:35:46,107 - INFO - Syncing to GitHub...
+2026-03-25 07:35:07,588 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-25 07:35:07,591 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-25 07:35:07,601 - INFO - Starting Daily Analysis Pipeline...
+2026-03-25 07:35:07,601 - INFO - Mode: Fetch Only
+2026-03-25 07:35:07,602 - INFO - Starting Data Download & Basic Scan...
+2026-03-25 07:35:07,602 - INFO - Starting Analysis...
+2026-03-25 07:35:07,602 - INFO - Attempting to fetch via nsepython...
+2026-03-25 07:35:07,602 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-25 07:35:07,602 - INFO - Attempting direct CSV download...
+2026-03-25 07:35:08,876 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-25 07:35:08,877 - INFO - Direct download fetched 2253 stocks.
+2026-03-25 07:35:08,880 - INFO - Found existing analysis file. Resuming...
+2026-03-25 07:35:08,899 - INFO - Already processed 2247 stocks.
+2026-03-25 07:35:08,900 - INFO - Scanning 37 remaining stocks (Parallel Mode)...
+2026-03-25 07:35:08,902 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-03-25 07:35:12,115 - INFO - [10/37] Processed in this batch... Total: 2247
+2026-03-25 07:35:12,135 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:14,418 - INFO - [20/37] Processed in this batch... Total: 2248
+2026-03-25 07:35:14,437 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:15,034 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 5PAISA-RE.NS"}}}
+2026-03-25 07:35:15,292 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:16,423 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BCPL.NS"}}}
+2026-03-25 07:35:16,618 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:17,366 - INFO - [30/37] Processed in this batch... Total: 2248
+2026-03-25 07:35:17,384 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:18,690 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:20,277 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:24,054 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:24,184 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 5PAISA-RE.NS"}}}
+2026-03-25 07:35:25,206 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:25,386 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BCPL.NS"}}}
+2026-03-25 07:35:26,130 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:26,132 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-25 07:35:26,151 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:27,702 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-25 07:35:27,704 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-25 07:35:27,713 - INFO - Starting Daily Analysis Pipeline...
+2026-03-25 07:35:27,713 - INFO - Mode: Analysis Only
+2026-03-25 07:35:27,714 - INFO - Starting Analysis...
+2026-03-25 07:35:27,714 - INFO - Attempting to fetch via nsepython...
+2026-03-25 07:35:27,714 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-25 07:35:27,714 - INFO - Attempting direct CSV download...
+2026-03-25 07:35:28,851 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-25 07:35:28,851 - INFO - Direct download fetched 2253 stocks.
+2026-03-25 07:35:28,853 - INFO - Found existing analysis file. Resuming...
+2026-03-25 07:35:28,867 - INFO - Already processed 2249 stocks.
+2026-03-25 07:35:28,868 - INFO - Scanning 35 remaining stocks (Parallel Mode)...
+2026-03-25 07:35:29,207 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 5PAISA-RE.NS"}}}
+2026-03-25 07:35:29,440 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:30,153 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BCPL.NS"}}}
+2026-03-25 07:35:30,341 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:31,615 - INFO - [10/35] Processed in this batch... Total: 2249
+2026-03-25 07:35:31,633 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:32,360 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:32,600 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:34,420 - INFO - [20/35] Processed in this batch... Total: 2249
+2026-03-25 07:35:34,438 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:37,052 - INFO - [30/35] Processed in this batch... Total: 2249
+2026-03-25 07:35:37,071 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:37,648 - ERROR - $BCPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:37,778 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BCPL.NS"}}}
+2026-03-25 07:35:38,098 - ERROR - $5PAISA-RE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-25 07:35:38,241 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 5PAISA-RE.NS"}}}
+2026-03-25 07:35:38,708 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:38,710 - INFO - Running Forecasting on Top 20...
+2026-03-25 07:35:44,040 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-25 07:35:44,060 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-25 07:35:44,074 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-25 07:35:44,074 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-25 07:35:44,342 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-25 07:35:44,342 - WARNING -   - SalesGrowth3Y
+2026-03-25 07:35:44,342 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-25 07:35:44,342 - INFO - Big Bets: Found 3 recommendations.
+2026-03-25 07:35:44,342 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-25 07:35:44,395 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-25.csv
+2026-03-25 07:35:44,396 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-25 07:35:44,403 - WARNING - Telegram not configured.
+2026-03-25 07:35:44,692 - INFO - Syncing to GitHub...
