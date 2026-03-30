@@ -114034,3 +114034,73 @@
 2026-03-29 07:34:37,720 - INFO - Analysis Complete. Updating Portfolio History...
 2026-03-29 07:34:37,727 - WARNING - Telegram not configured.
 2026-03-29 07:34:38,037 - INFO - Syncing to GitHub...
+2026-03-30 08:08:52,244 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-30 08:08:52,247 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-30 08:08:52,257 - INFO - Starting Daily Analysis Pipeline...
+2026-03-30 08:08:52,257 - INFO - Mode: Fetch Only
+2026-03-30 08:08:52,257 - INFO - Starting Data Download & Basic Scan...
+2026-03-30 08:08:52,257 - INFO - Starting Analysis...
+2026-03-30 08:08:52,257 - INFO - Attempting to fetch via nsepython...
+2026-03-30 08:08:52,258 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-30 08:08:52,258 - INFO - Attempting direct CSV download...
+2026-03-30 08:08:53,632 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-30 08:08:53,632 - INFO - Direct download fetched 2278 stocks.
+2026-03-30 08:08:53,634 - INFO - Found existing analysis file. Resuming...
+2026-03-30 08:08:53,647 - INFO - Already processed 2249 stocks.
+2026-03-30 08:08:53,648 - INFO - Scanning 38 remaining stocks (Parallel Mode)...
+2026-03-30 08:08:53,650 - ERROR - Error fetching history for GAUDIUMIVF.NS: database is locked
+2026-03-30 08:08:56,598 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:08:56,805 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:08:57,197 - INFO - [10/38] Processed in this batch... Total: 2249
+2026-03-30 08:08:57,222 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:00,160 - INFO - [20/38] Processed in this batch... Total: 2249
+2026-03-30 08:09:00,178 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:01,009 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:09:01,184 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:09:02,830 - INFO - [30/38] Processed in this batch... Total: 2249
+2026-03-30 08:09:02,855 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:05,992 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:09:06,138 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:09:06,942 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:06,943 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-30 08:09:06,962 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:08,403 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-03-30 08:09:08,406 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-03-30 08:09:08,414 - INFO - Starting Daily Analysis Pipeline...
+2026-03-30 08:09:08,415 - INFO - Mode: Analysis Only
+2026-03-30 08:09:08,415 - INFO - Starting Analysis...
+2026-03-30 08:09:08,415 - INFO - Attempting to fetch via nsepython...
+2026-03-30 08:09:08,415 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-03-30 08:09:08,415 - INFO - Attempting direct CSV download...
+2026-03-30 08:09:08,971 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-03-30 08:09:08,971 - INFO - Direct download fetched 2278 stocks.
+2026-03-30 08:09:08,973 - INFO - Found existing analysis file. Resuming...
+2026-03-30 08:09:08,986 - INFO - Already processed 2250 stocks.
+2026-03-30 08:09:08,986 - INFO - Scanning 37 remaining stocks (Parallel Mode)...
+2026-03-30 08:09:10,822 - INFO - [10/37] Processed in this batch... Total: 2250
+2026-03-30 08:09:10,843 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:11,094 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:09:11,332 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:09:13,121 - INFO - [20/37] Processed in this batch... Total: 2250
+2026-03-30 08:09:13,146 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:14,756 - INFO - [30/37] Processed in this batch... Total: 2250
+2026-03-30 08:09:14,790 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:15,467 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:09:15,657 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:09:20,315 - ERROR - $RMC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-30 08:09:20,459 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RMC.NS"}}}
+2026-03-30 08:09:21,028 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:21,029 - INFO - Running Forecasting on Top 20...
+2026-03-30 08:09:26,340 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-03-30 08:09:26,360 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-03-30 08:09:26,374 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-03-30 08:09:26,374 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-03-30 08:09:26,649 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-03-30 08:09:26,649 - WARNING -   - SalesGrowth3Y
+2026-03-30 08:09:26,649 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-03-30 08:09:26,649 - INFO - Big Bets: Found 3 recommendations.
+2026-03-30 08:09:26,649 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-03-30 08:09:26,702 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-03-30.csv
+2026-03-30 08:09:26,702 - INFO - Analysis Complete. Updating Portfolio History...
+2026-03-30 08:09:26,710 - WARNING - Telegram not configured.
+2026-03-30 08:09:27,003 - INFO - Syncing to GitHub...
