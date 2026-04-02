@@ -81,6 +81,7 @@ AHCL.NS,Anlon Healthcare Limited
 AHLADA.NS,Ahlada Engineers Limited
 AHLEAST.NS,Asian Hotels (East) Limited
 AHLUCONT.NS,Ahluwalia Contracts (India) Limited
+AHLWEST.NS,Asian Hotels (West) Limited
 AIAENG.NS,AIA Engineering Limited
 AIIL.NS,Authum Investment & Infrastructure Limited
 AIRAN.NS,Airan Limited
@@ -120,6 +121,7 @@ AMBICAAGAR.NS,Ambica Agarbathies & Aroma industries Limited
 AMBIKCO.NS,Ambika Cotton Mills Limited
 AMBUJACEM.NS,Ambuja Cements Limited
 AMDIND.NS,AMD Industries Limited
+AMIRCHAND.NS,Amir Chand Jagdish Kumar (Exports) Limited
 AMJLAND.NS,Amj Land Holdings Limited
 AMNPLST.NS,Amines & Plasticizers Limited
 AMRUTANJAN.NS,Amrutanjan Health Care Limited
@@ -622,7 +624,6 @@ EUROPRATIK.NS,Euro Pratik Sales Limited
 EUROTEXIND.NS,Eurotex Industries and Exports Limited
 EVEREADY.NS,Eveready Industries India Limited
 EVERESTIND.NS,Everest Industries Limited
-EXCEL.NS,Excel Realty N Infra Limited
 EXCELINDUS.NS,Excel Industries Limited
 EXCELSOFT.NS,Excelsoft Technologies Limited
 EXICOM.NS,Exicom Tele-Systems Limited
@@ -1139,6 +1140,7 @@ LALPATHLAB.NS,Dr. Lal Path Labs Ltd.
 LAMBODHARA.NS,Lambodhara Textiles Limited
 LANCORHOL.NS,Lancor Holdings Limited
 LANDMARK.NS,Landmark Cars Limited
+LANDSMILL.NS,Landsmill Green Limited
 LAOPALA.NS,La Opala RG Limited
 LASA.NS,Lasa Supergenerics Limited
 LATENTVIEW.NS,Latent View Analytics Limited
@@ -1389,6 +1391,7 @@ NIITMTS.NS,NIIT Learning Systems Limited
 NILAINFRA.NS,Nila Infrastructures Limited
 NILASPACES.NS,Nila Spaces Limited
 NILKAMAL.NS,Nilkamal Limited
+NIMBSPROJ.NS,Nimbus Projects Limited
 NINSYS.NS,NINtec Systems Limited
 NIPPOBATRY.NS,Indo-National Limited
 NIRAJ.NS,Niraj Cement Structurals Limited
@@ -1541,6 +1544,7 @@ POLYPLEX.NS,Polyplex Corporation Limited
 PONNIERODE.NS,Ponni Sugars (Erode) Limited
 POONAWALLA.NS,Poonawalla Fincorp Limited
 POWERGRID.NS,Power Grid Corporation of India Limited
+POWERICA.NS,Powerica Limited
 POWERINDIA.NS,Hitachi Energy India Limited
 POWERMECH.NS,Power Mech Projects Limited
 PPAP.NS,PPAP Automotive Limited
@@ -1713,6 +1717,7 @@ SAGILITY.NS,SAGILITY LIMITED
 SAHYADRI.NS,Sahyadri Industries Limited
 SAIL.NS,Steel Authority of India Limited
 SAILIFE.NS,Sai Life Sciences Limited
+SAIPARENT.NS,Sai Parenterals Limited
 SAKAR.NS,Sakar Healthcare Limited
 SAKHTISUG.NS,Sakthi Sugars Limited
 SAKSOFT.NS,Saksoft Limited
@@ -2038,7 +2043,6 @@ TIIL.NS,Technocraft Industries (India) Limited
 TIINDIA.NS,Tube Investments of India Limited
 TIJARIA.NS,Tijaria Polypipes Limited
 TIL.NS,TIL Limited
-TIL-RE1.NS,TIL Limited-RE
 TIMETECHNO.NS,Time Technoplast Limited
 TIMKEN.NS,Timken India Limited
 TINNARUBR.NS,Tinna Rubber and Infrastructure Limited
