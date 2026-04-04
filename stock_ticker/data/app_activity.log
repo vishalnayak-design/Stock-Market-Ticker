@@ -114384,3 +114384,72 @@
 2026-04-03 07:44:45,889 - INFO - Analysis Complete. Updating Portfolio History...
 2026-04-03 07:44:45,897 - WARNING - Telegram not configured.
 2026-04-03 07:44:46,199 - INFO - Syncing to GitHub...
+2026-04-04 07:33:02,827 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-04 07:33:02,830 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-04 07:33:02,840 - INFO - Starting Daily Analysis Pipeline...
+2026-04-04 07:33:02,840 - INFO - Mode: Fetch Only
+2026-04-04 07:33:02,840 - INFO - Starting Data Download & Basic Scan...
+2026-04-04 07:33:02,840 - INFO - Starting Analysis...
+2026-04-04 07:33:02,840 - INFO - Attempting to fetch via nsepython...
+2026-04-04 07:33:02,841 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-04 07:33:02,841 - INFO - Attempting direct CSV download...
+2026-04-04 07:33:04,128 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-04 07:33:04,128 - INFO - Direct download fetched 2265 stocks.
+2026-04-04 07:33:04,130 - INFO - Found existing analysis file. Resuming...
+2026-04-04 07:33:04,143 - INFO - Already processed 2253 stocks.
+2026-04-04 07:33:04,144 - INFO - Scanning 39 remaining stocks (Parallel Mode)...
+2026-04-04 07:33:06,752 - INFO - [10/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:06,770 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:08,799 - INFO - [20/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:08,818 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:09,049 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:09,302 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:11,560 - INFO - [30/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:11,585 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:11,621 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:11,794 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:16,537 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:16,681 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:17,358 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:17,359 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-04 07:33:17,378 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:18,860 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-04 07:33:18,863 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-04 07:33:18,872 - INFO - Starting Daily Analysis Pipeline...
+2026-04-04 07:33:18,872 - INFO - Mode: Analysis Only
+2026-04-04 07:33:18,873 - INFO - Starting Analysis...
+2026-04-04 07:33:18,873 - INFO - Attempting to fetch via nsepython...
+2026-04-04 07:33:18,873 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-04 07:33:18,873 - INFO - Attempting direct CSV download...
+2026-04-04 07:33:19,339 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-04 07:33:19,339 - INFO - Direct download fetched 2265 stocks.
+2026-04-04 07:33:19,341 - INFO - Found existing analysis file. Resuming...
+2026-04-04 07:33:19,354 - INFO - Already processed 2253 stocks.
+2026-04-04 07:33:19,355 - INFO - Scanning 39 remaining stocks (Parallel Mode)...
+2026-04-04 07:33:21,219 - INFO - [10/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:21,241 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:22,841 - INFO - [20/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:22,864 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:22,909 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:23,132 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:25,178 - INFO - [30/39] Processed in this batch... Total: 2253
+2026-04-04 07:33:25,201 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:27,191 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:27,395 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:31,692 - ERROR - $NIMBSPROJ.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-04 07:33:31,880 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NIMBSPROJ.NS"}}}
+2026-04-04 07:33:32,423 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:32,424 - INFO - Running Forecasting on Top 20...
+2026-04-04 07:33:37,641 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-04 07:33:37,661 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-04 07:33:37,672 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-04-04 07:33:37,672 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-04-04 07:33:37,957 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-04-04 07:33:37,957 - WARNING -   - SalesGrowth3Y
+2026-04-04 07:33:37,957 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-04-04 07:33:37,957 - INFO - Big Bets: Found 3 recommendations.
+2026-04-04 07:33:37,957 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-04-04 07:33:38,010 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-04-04.csv
+2026-04-04 07:33:38,010 - INFO - Analysis Complete. Updating Portfolio History...
+2026-04-04 07:33:38,018 - WARNING - Telegram not configured.
+2026-04-04 07:33:38,319 - INFO - Syncing to GitHub...
