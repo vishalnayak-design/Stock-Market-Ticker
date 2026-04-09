@@ -114696,3 +114696,73 @@
 2026-04-08 07:59:29,058 - INFO - Analysis Complete. Updating Portfolio History...
 2026-04-08 07:59:29,066 - WARNING - Telegram not configured.
 2026-04-08 07:59:29,392 - INFO - Syncing to GitHub...
+2026-04-09 08:02:07,391 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-09 08:02:07,394 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-09 08:02:07,403 - INFO - Starting Daily Analysis Pipeline...
+2026-04-09 08:02:07,403 - INFO - Mode: Fetch Only
+2026-04-09 08:02:07,404 - INFO - Starting Data Download & Basic Scan...
+2026-04-09 08:02:07,404 - INFO - Starting Analysis...
+2026-04-09 08:02:07,404 - INFO - Attempting to fetch via nsepython...
+2026-04-09 08:02:07,404 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-09 08:02:07,404 - INFO - Attempting direct CSV download...
+2026-04-09 08:02:07,967 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-09 08:02:07,967 - INFO - Direct download fetched 2265 stocks.
+2026-04-09 08:02:07,969 - INFO - Found existing analysis file. Resuming...
+2026-04-09 08:02:07,983 - INFO - Already processed 2255 stocks.
+2026-04-09 08:02:07,983 - INFO - Scanning 37 remaining stocks (Parallel Mode)...
+2026-04-09 08:02:07,985 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-04-09 08:02:10,524 - INFO - [10/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:10,546 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:12,621 - INFO - [20/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:12,659 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:14,025 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:14,230 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:15,654 - INFO - [30/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:15,672 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:16,804 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:16,970 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:21,331 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:21,474 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:22,238 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:22,239 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-09 08:02:22,258 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:23,788 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-09 08:02:23,791 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-09 08:02:23,866 - INFO - Starting Daily Analysis Pipeline...
+2026-04-09 08:02:23,866 - INFO - Mode: Analysis Only
+2026-04-09 08:02:23,866 - INFO - Starting Analysis...
+2026-04-09 08:02:23,866 - INFO - Attempting to fetch via nsepython...
+2026-04-09 08:02:23,867 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-09 08:02:23,867 - INFO - Attempting direct CSV download...
+2026-04-09 08:02:24,217 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-09 08:02:24,217 - INFO - Direct download fetched 2265 stocks.
+2026-04-09 08:02:24,219 - INFO - Found existing analysis file. Resuming...
+2026-04-09 08:02:24,233 - INFO - Already processed 2255 stocks.
+2026-04-09 08:02:24,234 - INFO - Scanning 37 remaining stocks (Parallel Mode)...
+2026-04-09 08:02:26,119 - INFO - [10/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:26,138 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:27,395 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:27,624 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:28,015 - INFO - [20/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:28,041 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:30,326 - INFO - [30/37] Processed in this batch... Total: 2255
+2026-04-09 08:02:30,345 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:30,973 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:31,205 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:35,753 - ERROR - $SAHLIBHFI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-09 08:02:35,894 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAHLIBHFI.NS"}}}
+2026-04-09 08:02:36,461 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:36,462 - INFO - Running Forecasting on Top 20...
+2026-04-09 08:02:42,104 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-09 08:02:42,125 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-09 08:02:42,137 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-04-09 08:02:42,137 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-04-09 08:02:42,397 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-04-09 08:02:42,397 - WARNING -   - SalesGrowth3Y
+2026-04-09 08:02:42,397 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-04-09 08:02:42,397 - INFO - Big Bets: Found 3 recommendations.
+2026-04-09 08:02:42,397 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-04-09 08:02:42,448 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-04-09.csv
+2026-04-09 08:02:42,449 - INFO - Analysis Complete. Updating Portfolio History...
+2026-04-09 08:02:42,456 - WARNING - Telegram not configured.
+2026-04-09 08:02:42,766 - INFO - Syncing to GitHub...
