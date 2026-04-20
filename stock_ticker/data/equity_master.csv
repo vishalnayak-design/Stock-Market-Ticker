@@ -2,6 +2,7 @@ Ticker,Name
 20MICRONS.NS,20 Microns Limited
 21STCENMGM.NS,21st Century Management Services Limited
 360ONE.NS,360 ONE WAM LIMITED
+3BBLACKBIO.NS,3B Blackbio Dx Limited
 3IINFOLTD.NS,3i Infotech Limited
 3MINDIA.NS,3M India Limited
 3PLAND.NS,3P Land Holdings Limited
@@ -21,6 +22,8 @@ AARTIPHARM.NS,Aarti Pharmalabs Limited
 AARTISURF.NS,Aarti Surfactants Limited
 AARVI.NS,Aarvi Encon Limited
 AAVAS.NS,Aavas Financiers Limited
+ABAN.NS,Aban Offshore Limited
+ABANSENT.NS,Abans Enterprises Limited
 ABB.NS,ABB India Limited
 ABBOTINDIA.NS,Abbott India Limited
 ABCAPITAL.NS,Aditya Birla Capital Limited
@@ -30,6 +33,7 @@ ABFRL.NS,Aditya Birla Fashion and Retail Limited
 ABINFRA.NS,A B Infrabuild Limited
 ABLBL.NS,Aditya Birla Lifestyle Brands Limited
 ABMINTLLTD.NS,ABM International Limited
+ABMKNO.NS,ABM Knowledgeware Limited
 ABREL.NS,Aditya Birla Real Estate Limited
 ABSLAMC.NS,Aditya Birla Sun Life AMC Limited
 ACC.NS,ACC Limited
@@ -40,6 +44,7 @@ ACEINTEG.NS,Ace Integrated Solutions Limited
 ACI.NS,Archean Chemical Industries Limited
 ACL.NS,Andhra Cements Limited
 ACMESOLAR.NS,Acme Solar Holdings Limited
+ACSTECH.NS,ACS Technologies Limited
 ACUTAAS.NS,Acutaas Chemicals Limited
 ADANIENSOL.NS,Adani Energy Solutions Limited
 ADANIENT.NS,Adani Enterprises Limited
@@ -75,6 +80,7 @@ AGI.NS,AGI Greenpac Limited
 AGIIL.NS,Agi Infra Limited
 AGRITECH.NS,Agri-Tech (India) Limited
 AGROPHOS.NS,Agro Phos India Limited
+AGSTRA.NS,AGS Transact Technologies Limited
 AHCL.NS,Anlon Healthcare Limited
 AHLADA.NS,Ahlada Engineers Limited
 AHLEAST.NS,Asian Hotels (East) Limited
@@ -89,6 +95,7 @@ AJAXENGG.NS,Ajax Engineering Limited
 AJMERA.NS,Ajmera Realty & Infra India Limited
 AJOONI.NS,Ajooni Biotech Limited
 AKASH.NS,Akash Infra-Projects Limited
+AKCAPIT.NS,AK Capital Services Limited
 AKG.NS,Akg Exim Limited
 AKI.NS,AKI India Limited
 AKSHAR.NS,Akshar Spintex Limited
@@ -113,6 +120,7 @@ ALPA.NS,Alpa Laboratories Limited
 ALPHAGEO.NS,Alphageo (India) Limited
 AMAGI.NS,Amagi Media Labs Limited
 AMANTA.NS,Amanta Healthcare Limited
+AMBALALSA.NS,Ambalal Sarabhai Enterprises Limited
 AMBER.NS,Amber Enterprises India Limited
 AMBICAAGAR.NS,Ambica Agarbathies & Aroma industries Limited
 AMBIKCO.NS,Ambika Cotton Mills Limited
@@ -157,6 +165,7 @@ ARE&M.NS,Amara Raja Energy & Mobility Limited
 ARENTERP.NS,Rajdarshan Industries Limited
 ARFIN.NS,Arfin India Limited
 ARIES.NS,Aries Agro Limited
+ARIHANT.NS,Arihant Foundations & Housing Limited
 ARIHANTCAP.NS,Arihant Capital Markets Limited
 ARIHANTSUP.NS,Arihant Superstructures Limited
 ARIS.NS,Arisinfra Solutions Limited
@@ -178,6 +187,7 @@ ASAL.NS,Automotive Stampings and Assemblies Limited
 ASALCBR.NS,Associated Alcohols & Breweries Ltd.
 ASHAPURMIN.NS,Ashapura Minechem Limited
 ASHIANA.NS,Ashiana Housing Limited
+ASHIKA.NS,Ashika Credit Capital Limited
 ASHIMASYN.NS,Ashima Limited
 ASHOKA.NS,Ashoka Buildcon Limited
 ASHOKAMET.NS,Ashoka Metcast Limited
@@ -189,6 +199,7 @@ ASIANTILES.NS,Asian Granito India Limited
 ASKAUTOLTD.NS,ASK Automotive Limited
 ASMS.NS,Bartronics India Limited
 ASPINWALL.NS,Aspinwall and Company Limited
+ASTAR.NS,Asian Star Company Limited
 ASTEC.NS,Astec LifeSciences Limited
 ASTERDM.NS,Aster DM Healthcare Limited
 ASTRAL.NS,Astral Limited
@@ -214,6 +225,7 @@ AUSOMENT.NS,Ausom Enterprise Limited
 AUTOAXLES.NS,Automotive Axles Limited
 AUTOIND.NS,Autoline Industries Limited
 AVADHSUGAR.NS,Avadh Sugar & Energy Limited
+AVAILFC.NS,Available Finance Limited
 AVALON.NS,Avalon Technologies Limited
 AVANTEL.NS,Avantel Limited
 AVANTIFEED.NS,Avanti Feeds Limited
@@ -243,6 +255,7 @@ BAJAJHFL.NS,Bajaj Housing Finance Limited
 BAJAJHIND.NS,Bajaj Hindusthan Sugar Limited
 BAJAJHLDNG.NS,Bajaj Holdings & Investment Limited
 BAJAJINDEF.NS,Indef Manufacturing Limited
+BAJAJST.NS,Bajaj Steel Industries Limited
 BAJEL.NS,Bajel Projects Limited
 BAJFINANCE.NS,Bajaj Finance Limited
 BALAJEE.NS,Shree Tirupati Balajee Agro Trading Company Limited
@@ -268,6 +281,7 @@ BANSWRAS.NS,Banswara Syntex Limited
 BASF.NS,BASF India Limited
 BASML.NS,Bannari Amman Spinning Mills Limited
 BATAINDIA.NS,Bata India Limited
+BATLIBOI.NS,Batliboi Limited
 BAYERCROP.NS,Bayer Cropscience Limited
 BBL.NS,Bharat Bijlee Limited
 BBOX.NS,Black Box Limited
@@ -281,16 +295,19 @@ BDL.NS,Bharat Dynamics Limited
 BEARDSELL.NS,Beardsell Limited
 BECTORFOOD.NS,Mrs. Bectors Food Specialities Limited
 BEDMUTHA.NS,Bedmutha Industries Limited
+BEEKAY.NS,Beekay Steel Industries Limited
 BEL.NS,Bharat Electronics Limited
 BELLACASA.NS,Bella Casa Fashion & Retail Limited
 BELRISE.NS,Belrise Industries Limited
 BEML.NS,BEML Limited
+BENGALASM.NS,Bengal & Assam Company Limited
 BEPL.NS,Bhansali Engineering Polymers Limited
 BERGEPAINT.NS,Berger Paints (I) Limited
 BESTAGRO.NS,Best Agrolife Limited
 BETA.NS,Beta Drugs Limited
 BFINVEST.NS,BF Investment Limited
 BFUTILITIE.NS,BF Utilities Limited
+BGLOBAL.NS,Bharatiya Global Infomedia Limited
 BGRENERGY.NS,BGR Energy Systems Limited
 BHAGCHEM.NS,Bhagiradha Chemicals & Industries Limited
 BHAGERIA.NS,Bhageria Industries Limited
@@ -305,18 +322,24 @@ BHARATWIRE.NS,Bharat Wire Ropes Limited
 BHARTIARTL.NS,Bharti Airtel Limited
 BHARTIHEXA.NS,Bharti Hexacom Limited
 BHEL.NS,Bharat Heavy Electricals Limited
+BI.NS,Bilcare Limited
 BIGBLOC.NS,Bigbloc Construction Limited
 BIKAJI.NS,Bikaji Foods International Limited
 BIL.NS,Bhartiya International Limited
+BILVYAPAR.NS,BIL VYAPAR LIMITED
+BIMETAL.NS,Bimetal Bearings Limited
 BIOCON.NS,Biocon Limited
 BIOFILCHEM.NS,Biofil Chemicals & Pharmaceuticals Limited
 BIRLACABLE.NS,Birla Cable Limited
 BIRLACORPN.NS,Birla Corporation Limited
 BIRLAMONEY.NS,Aditya Birla Money Limited
 BIRLANU.NS,BirlaNu Limited
+BIRLAPREC.NS,Birla Precision Technologies Limited
 BLACKBUCK.NS,BLACKBUCK LIMITED
+BLACKROSE.NS,Black Rose Inds. Limited
 BLAL.NS,BEML Land Assets Limited
 BLBLIMITED.NS,BLB Limited
+BLIL.NS,Balmer Lawrie Investments Limited
 BLISSGVS.NS,Bliss GVS Pharma Limited
 BLKASHYAP.NS,B. L. Kashyap and Sons Limited
 BLS.NS,BLS International Services Limited
@@ -329,6 +352,8 @@ BLUESTARCO.NS,Blue Star Limited
 BLUESTONE.NS,BlueStone Jewellery and Lifestyle Limited
 BLUSPRING.NS,Bluspring Enterprises Limited
 BMWVENTLTD.NS,BMW Ventures Limited
+BNAGROCHEM.NS,BN Agrochem Limited
+BNALTD.NS,B & A Limited
 BODALCHEM.NS,Bodal Chemicals Limited
 BOHRAIND.NS,Bohra Industries Limited
 BOMDYEING.NS,Bombay Dyeing & Mfg Company Limited
@@ -351,6 +376,7 @@ BSHSL.NS,Bombay Super Hybrid Seeds Limited
 BSL.NS,BSL Limited
 BSOFT.NS,BIRLASOFT LIMITED
 BTML.NS,Bodhi Tree Multimedia Limited
+BTTL.NS,Bhilwara Technical Textiles Limited
 BUILDPRO.NS,Shankara Buildpro Limited
 BUTTERFLY.NS,Butterfly Gandhimathi Appliances Limited
 BVCL.NS,Barak Valley Cements Limited
@@ -415,20 +441,24 @@ CIGNITITEC.NS,Cigniti Technologies Limited
 CINELINE.NS,Cineline India Limited
 CINEVISTA.NS,Cinevista Limited
 CIPLA.NS,Cipla Limited
+CLCIND.NS,CLC Industries Limited
 CLEAN.NS,Clean Science and Technology Limited
 CLEANMAX.NS,Clean Max Enviro Energy Solutions Limited
 CLEDUCATE.NS,CL Educate Limited
 CLSEL.NS,Chaman Lal Setia Exports Limited
+CMICABLES.NS,CMI Limited
 CMPDI.NS,Central Mine Planning & Design Institute Limited
 CMSINFO.NS,CMS Info Systems Limited
 CNL.NS,Creative Newtech Limited
 COALINDIA.NS,Coal India Limited
 COASTCORP.NS,Coastal Corporation Limited
 COCHINSHIP.NS,Cochin Shipyard Limited
+COCKERILL.NS,John Cockerill India Limited
 COFFEEDAY.NS,Coffee Day Enterprises Limited
 COFORGE.NS,Coforge Limited
 COHANCE.NS,Cohance Lifesciences Limited
 COLPAL.NS,Colgate Palmolive (India) Limited
+COMFINTE.NS,Comfort Intech Limited
 COMPINFO.NS,Compuage Infocom Limited
 COMPUSOFT.NS,Compucom Software Limited
 COMSYN.NS,Commercial Syn Bags Limited
@@ -468,6 +498,7 @@ CYBERTECH.NS,Cybertech Systems And Software Limited
 CYIENT.NS,Cyient Limited
 CYIENTDLM.NS,Cyient DLM Limited
 DABUR.NS,Dabur India Limited
+DAICHI.NS,Dai-Ichi Karkaria Limited
 DALBHARAT.NS,Dalmia Bharat Limited
 DALMIASUG.NS,Dalmia Bharat Sugar and Industries Limited
 DAMCAPITAL.NS,Dam Capital Advisors Limited
@@ -495,6 +526,7 @@ DCW.NS,DCW Limited
 DCXINDIA.NS,DCX Systems Limited
 DDEVPLSTIK.NS,Ddev Plastiks Industries Limited
 DECCANCE.NS,Deccan Cements Limited
+DECNGOLD.NS,Deccan Gold Mines Limited
 DEEDEV.NS,DEE Development Engineers Limited
 DEEPAKFERT.NS,Deepak Fertilizers and Petrochemicals Corporation Limited
 DEEPAKNTR.NS,Deepak Nitrite Limited
@@ -513,6 +545,7 @@ DGCONTENT.NS,Digicontent Limited
 DHAMPURSUG.NS,Dhampur Sugar Mills Limited
 DHANBANK.NS,Dhanlaxmi Bank Limited
 DHANUKA.NS,Dhanuka Agritech Limited
+DHARAN.NS,DHARAN INFRA-EPC LIMITED
 DHARMAJ.NS,Dharmaj Crop Guard Limited
 DHRUV.NS,Dhruv Consultancy Services Limited
 DHUNINV.NS,Dhunseri Investments Limited
@@ -525,6 +558,8 @@ DIGIDRIVE.NS,Digidrive Distributors Limited
 DIGISPICE.NS,DiGiSPICE Technologies Limited
 DIGITIDE.NS,Digitide Solutions Limited
 DIGJAMLMTD.NS,Digjam Limited
+DIL.NS,Debock Industries Limited
+DISAQ.NS,Disa India Limited
 DISHTV.NS,Dish TV India Limited
 DIVGIITTS.NS,Divgi Torqtransfer Systems Limited
 DIVISLAB.NS,Divi's Laboratories Limited
@@ -544,6 +579,7 @@ DONEAR.NS,Donear Industries Limited
 DPABHUSHAN.NS,D. P. Abhushan Limited
 DPSCLTD.NS,DPSC Limited
 DPWIRES.NS,D P Wires Limited
+DRAGARWQ.NS,Dr Agarwals Eye Hospital Limited
 DRCSYSTEMS.NS,DRC Systems India Limited
 DREAMFOLKS.NS,Dreamfolks Services Limited
 DREDGECORP.NS,Dredging Corporation of India Limited
@@ -564,6 +600,7 @@ EBGNG.NS,GNG Electronics Limited
 ECLERX.NS,eClerx Services Limited
 ECOSMOBLTY.NS,Ecos (India) Mobility & Hospitality Limited
 EDELWEISS.NS,Edelweiss Financial Services Limited
+EDUCOMP.NS,Educomp Solutions Limited
 EFCIL.NS,EFC (I) Limited
 EICHERMOT.NS,Eicher Motors Limited
 EIDPARRY.NS,EID Parry India Limited
@@ -573,6 +610,8 @@ EIHAHOTELS.NS,EIH Associated Hotels Limited
 EIHOTEL.NS,EIH Limited
 EIMCOELECO.NS,Eimco Elecon (India) Limited
 EKC.NS,Everest Kanto Cylinder Limited
+ELANTAS.NS,Elantas Beck India Limited
+ELCIDIN.NS,EL CID Investments Limited
 ELDEHSG.NS,Eldeco Housing And Industries Limited
 ELECON.NS,Elecon Engineering Company Limited
 ELECTCAST.NS,Electrosteel Castings Limited
@@ -580,15 +619,19 @@ ELECTHERM.NS,Electrotherm (India) Limited
 ELGIEQUIP.NS,Elgi Equipments Limited
 ELGIRUBCO.NS,Elgi Rubber Company Limited
 ELIN.NS,Elin Electronics Limited
+ELITECON.NS,Elitecon International Limited
 ELLEN.NS,Ellenbarrie Industrial Gases Limited
+ELPROINTL.NS,Elpro International Limited
 EMAMILTD.NS,Emami Limited
 EMAMIPAP.NS,Emami Paper Mills Limited
 EMAMIREAL.NS,Emami Realty Limited
+EMBDL.NS,Embassy Developments Limited
 EMCURE.NS,Emcure Pharmaceuticals Limited
 EMIL.NS,Electronics Mart India Limited
 EMKAY.NS,Emkay Global Financial Services Limited
 EMMBI.NS,Emmbi Industries Limited
 EMMVEE.NS,Emmvee Photovoltaic Power Limited
+EMPOWER.NS,Empower India Limited
 EMSLIMITED.NS,EMS Limited
 EMUDHRA.NS,eMudhra Limited
 ENDURANCE.NS,Endurance Technologies Limited
@@ -629,12 +672,15 @@ FACT.NS,Fertilizers and Chemicals Travancore Limited
 FAIRCHEMOR.NS,Fairchem Organics Limited
 FAZE3Q.NS,Faze Three Limited
 FCL.NS,Fineotex Chemical Limited
+FCONSUMER.NS,Future Consumer Limited
 FCSSOFT.NS,FCS Software Solutions Limited
 FDC.NS,FDC Limited
+FEDDERSHOL.NS,Fedders Holding Limited
 FEDERALBNK.NS,The Federal Bank  Limited
 FEDFINA.NS,Fedbank Financial Services Limited
 FEL.NS,Future Enterprises Limited
 FELDVR.NS,Future Enterprises Limited
+FERMENTA.NS,Fermenta Biotech Limited
 FIBERWEB.NS,Fiberweb (India) Limited
 FIEMIND.NS,Fiem Industries Limited
 FILATEX.NS,Filatex India Limited
@@ -659,6 +705,7 @@ FORCEMOT.NS,FORCE MOTORS LTD
 FORTIS.NS,Fortis Healthcare Limited
 FOSECOIND.NS,Foseco India Limited
 FRACTAL.NS,Fractal Analytics Limited
+FRONTSP.NS,Frontier Springs Limited
 FSL.NS,Firstsource Solutions Limited
 FUSION.NS,Fusion Finance Limited
 GABRIEL.NS,Gabriel India Limited
@@ -689,11 +736,13 @@ GEEKAYWIRE.NS,Geekay Wires Limited
 GEMAROMA.NS,Gem Aromatics Limited
 GENCON.NS,Generic Engineering Construction and Projects Limited
 GENESYS.NS,Genesys International Corporation Limited
+GENSOL.NS,Gensol Engineering Limited
 GENUSPAPER.NS,Genus Paper & Boards Limited
 GENUSPOWER.NS,Genus Power Infrastructures Limited
 GEOJITFSL.NS,Geojit Financial Services Limited
 GESHIP.NS,The Great Eastern Shipping Company Limited
 GFLLIMITED.NS,GFL Limited
+GFSTEELS.NS,Grand Foundry Limited
 GHCL.NS,GHCL Limited
 GHCLTEXTIL.NS,GHCL Textiles Limited
 GICHSGFIN.NS,GIC Housing Finance Limited
@@ -725,6 +774,7 @@ GMRAIRPORT.NS,GMR AIRPORTS LIMITED
 GMRP&UI.NS,GMR Power and Urban Infra Limited
 GNA.NS,GNA Axles Limited
 GNFC.NS,Gujarat Narmada Valley Fertilizers and Chemicals Limited
+GNRL.NS,Gujarat Natural Resources Limited
 GOACARBON.NS,Goa Carbon Limited
 GOCLCORP.NS,GOCL Corporation Limited
 GOCOLORS.NS,Go Fashion (India) Limited
@@ -742,15 +792,19 @@ GOLDENTOBC.NS,Golden Tobacco Limited
 GOLDIAM.NS,Goldiam International Limited
 GOLDTECH.NS,AION-TECH SOLUTIONS LIMITED
 GOODLUCK.NS,Goodluck India Limited
+GOODYEAR.NS,Goodyear India Limited
 GOPAL.NS,Gopal Snacks Limited
 GOYALALUM.NS,Goyal Aluminiums Limited
 GPIL.NS,Godawari Power And Ispat limited
 GPPL.NS,Gujarat Pipavav Port Limited
 GPTHEALTH.NS,GPT Healthcare Limited
 GPTINFRA.NS,GPT Infraprojects Limited
+GRANDOAK.NS,Grand Oak Canyons Distillery Limited
 GRANULES.NS,Granules India Limited
 GRAPHITE.NS,Graphite India Limited
 GRASIM.NS,Grasim Industries Limited
+GRAUWEIL.NS,Grauer & Weil India Limited
+GRAVISSHO.NS,Graviss Hospitality Limited
 GRAVITA.NS,Gravita India Limited
 GREAVESCOT.NS,Greaves Cotton Limited
 GREENLAM.NS,Greenlam Industries Limited
@@ -789,6 +843,7 @@ GVPTECH.NS,GVP Infotech Limited
 GVT&D.NS,GE Vernova T&D India Limited
 HAL.NS,Hindustan Aeronautics Limited
 HALDER.NS,Halder Venture Limited
+HALDYNGL.NS,Haldyn Glass Limited
 HALEOSLABS.NS,HALEOS LABS LIMITED
 HAPPSTMNDS.NS,Happiest Minds Technologies Limited
 HAPPYFORGE.NS,Happy Forgings Limited
@@ -800,6 +855,8 @@ HATHWAY.NS,Hathway Cable & Datacom Limited
 HATSUN.NS,Hatsun Agro Product Limited
 HAVELLS.NS,Havells India Limited
 HAVISHA.NS,Sri Havisha Hospitality and Infrastructure Limited
+HAWKINCOOK.NS,Hawkins Cookers Limited
+HBESD.NS,HB Estate Developers Limited
 HBLENGINE.NS,HBL Engineering Limited
 HBSL.NS,HB Stockholdings Limited
 HCC.NS,Hindustan Construction Company Limited
@@ -924,6 +981,7 @@ INDOTECH.NS,Indo Tech Transformers Limited
 INDOTHAI.NS,Indo Thai Securities Limited
 INDOUS.NS,Indo Us Biotech Limited
 INDOWIND.NS,Indowind Energy Limited
+INDPRUD.NS,Industrial & Prudential Investment Company Limited
 INDRAMEDCO.NS,Indraprastha Medical Corporation Limited
 INDSWFTLAB.NS,Ind-Swift Laboratories Limited
 INDTERRAIN.NS,Indian Terrain Fashions Limited
@@ -946,6 +1004,7 @@ INTENTECH.NS,Intense Technologies Limited
 INTERARCH.NS,Interarch Building Solutions Limited
 INTLCONV.NS,International Conveyors Limited
 INVENTURE.NS,Inventure Growth & Securities Limited
+INVPRECQ.NS,Investment & Precision Castings Limited
 IOB.NS,Indian Overseas Bank
 IOC.NS,Indian Oil Corporation Limited
 IOLCP.NS,IOL Chemicals and Pharmaceuticals Limited
@@ -970,6 +1029,7 @@ ITI.NS,ITI Limited
 IVALUE.NS,Ivalue Infosolutions Limited
 IVC.NS,IL&FS Investment Managers Limited
 IVP.NS,IVP Limited
+IWP.NS,The Indian Wood Products Company Limited
 IXIGO.NS,Le Travenues Technology Limited
 IZMO.NS,IZMO Limited
 J&KBANK.NS,The Jammu & Kashmir Bank Limited
@@ -1044,10 +1104,12 @@ KALPATARU.NS,Kalpataru Limited
 KALYANI.NS,Kalyani Commercials Limited
 KALYANIFRG.NS,Kalyani Forge Limited
 KALYANKJIL.NS,Kalyan Jewellers India Limited
+KAMAHOLD.NS,Kama Holdings Limited
 KAMATHOTEL.NS,Kamat Hotels (I) Limited
 KAMDHENU.NS,Kamdhenu Limited
 KAMOPAINTS.NS,Kamdhenu Ventures Limited
 KANANIIND.NS,Kanani Industries Limited
+KANCHI.NS,Kanchi Karpooram Limited
 KANORICHEM.NS,Kanoria Chemicals & Industries Limited
 KANPRPLA.NS,Kanpur Plastipack Limited
 KANSAINER.NS,Kansai Nerolac Paints Limited
@@ -1066,6 +1128,7 @@ KECL.NS,Kirloskar Electric Company Limited
 KEEPLEARN.NS,DSJ Keep Learning Limited
 KEI.NS,KEI Industries Limited
 KELLTONTEC.NS,Kellton Tech Solutions Limited
+KENNAMET.NS,Kennametal India Limited
 KERNEX.NS,Kernex Microsystems (India) Limited
 KESORAMIND.NS,Kesoram Industries Limited
 KEYFINSERV.NS,Keynote Financial Services Limited
@@ -1079,13 +1142,16 @@ KILITCH.NS,Kilitch Drugs (India) Limited
 KIMS.NS,Krishna Institute of Medical Sciences Limited
 KINGFA.NS,Kingfa Science & Technology (India) Limited
 KIOCL.NS,KIOCL Limited
+KIRANVYPAR.NS,Kiran Vyapar Limited
 KIRIINDUS.NS,Kiri Industries Limited
+KIRLFER.NS,Kirloskar Ferrous Industries Limited
 KIRLOSBROS.NS,Kirloskar Brothers Limited
 KIRLOSENG.NS,Kirloskar Oil Engines Limited
 KIRLOSIND.NS,Kirloskar Industries Limited
 KIRLPNU.NS,Kirloskar Pneumatic Company Limited
 KITEX.NS,Kitex Garments Limited
 KKCL.NS,Kewal Kiran Clothing Limited
+KLBRENG-B.NS,Kilburn Engineering Limited
 KMEW.NS,Knowledge Marine & Engineering Works Limited
 KMSUGAR.NS,K.M.Sugar Mills Limited
 KNAGRI.NS,KN Agri Resources Limited
@@ -1098,11 +1164,14 @@ KOTAKBANK.NS,Kotak Mahindra Bank Limited
 KOTARISUG.NS,Kothari Sugars And Chemicals Limited
 KOTHARIPET.NS,Kothari Petrochemicals Limited
 KOTHARIPRO.NS,Kothari Products Limited
+KOTIC.NS,Kothari Industrial Corporation Limited
 KOTYARK.NS,Kotyark Industries Limited
+KOVAI.NS,Kovai Medical Center & Hospital Limited
 KPEL.NS,K.P. Energy Limited
 KPIGREEN.NS,KPI Green Energy Limited
 KPIL.NS,Kalpataru Projects International Limited
 KPITTECH.NS,KPIT Technologies Limited
+KPL.NS,Kwality Pharmaceuticals Limited
 KPRMILL.NS,K.P.R. Mill Limited
 KRBL.NS,KRBL Limited
 KREBSBIO.NS,Krebs Biochemicals and Industries Limited
@@ -1129,6 +1198,7 @@ KTKBANK.NS,The Karnataka Bank Limited
 KUANTUM.NS,Kuantum Papers Limited
 KWIL.NS,Kwality Wall's (India) Limited
 LAGNAM.NS,Lagnam Spintex Limited
+LAHOTIOV.NS,Lahoti Overseas Limited
 LAKPRE.NS,Lakshmi Precision Screws Limited
 LAL.NS,Lorenzini Apparels Limited
 LALPATHLAB.NS,Dr. Lal Path Labs Ltd.
@@ -1190,8 +1260,10 @@ M&MFIN.NS,Mahindra & Mahindra Financial Services Limited
 MAANALU.NS,Maan Aluminium Limited
 MACPOWER.NS,Macpower CNC Machines Limited
 MADHAV.NS,Madhav Marbles and Granites Limited
+MADHAVIPL.NS,Madhav Infra Projects Limited
 MADHUCON.NS,Madhucon Projects Limited
 MADRASFERT.NS,Madras Fertilizers Limited
+MAFATIND.NS,Mafatlal Industries Limited
 MAGADSUGAR.NS,Magadh Sugar & Energy Limited
 MAGNUM.NS,Magnum Ventures Limited
 MAHABANK.NS,Bank of Maharashtra
@@ -1205,6 +1277,7 @@ MAHLOG.NS,Mahindra Logistics Limited
 MAHSCOOTER.NS,Maharashtra Scooters Limited
 MAHSEAMLES.NS,Maharashtra Seamless Limited
 MAITHANALL.NS,Maithan Alloys Limited
+MAJESAUT.NS,Majestic Auto Limited
 MALLCOM.NS,Mallcom (India) Limited
 MALUPAPER.NS,Malu Paper Mills Limited
 MAMATA.NS,Mamata Machinery Limited
@@ -1250,6 +1323,7 @@ MAZDOCK.NS,Mazagon Dock Shipbuilders Limited
 MBAPL.NS,Madhya Bharat Agro Products Limited
 MBEL.NS,M & B Engineering Limited
 MBLINFRA.NS,MBL Infrastructure Limited
+MCCHRLS-B.NS,Mac Charles India Limited
 MCL.NS,Madhav Copper Limited
 MCLEODRUSS.NS,Mcleod Russel India Limited
 MCLOUD.NS,Magellanic Cloud Limited
@@ -1262,9 +1336,12 @@ MEDPLUS.NS,Medplus Health Services Limited
 MEESHO.NS,Meesho Limited
 MEGASTAR.NS,Megastar Foods Limited
 MEIL.NS,Mangal Electrical Industries Limited
+MENNPIS.NS,Menon Pistons Limited
 MENONBE.NS,Menon Bearings Limited
 MEP.NS,MEP Infrastructure Developers Limited
+MERCANTILE.NS,Mercantile Ventures Limited
 METROBRAND.NS,Metro Brands Limited
+METROGLOBL.NS,Metroglobal Limited
 METROPOLIS.NS,Metropolis Healthcare Limited
 MFML.NS,Mahalaxmi Fabric Mills Limited
 MFSL.NS,Max Financial Services Limited
@@ -1285,6 +1362,7 @@ MKPL.NS,M K Proteins Limited
 MMFL.NS,MM Forgings Limited
 MMP.NS,MMP Industries Limited
 MMTC.NS,MMTC Limited
+MMWL.NS,Media Matrix Worldwide Limited
 MOBIKWIK.NS,One Mobikwik Systems Limited
 MODINATUR.NS,Modi Naturals Limited
 MODIRUBBER.NS,Modi Rubber Limited
@@ -1300,6 +1378,7 @@ MOLDTKPAC.NS,Mold-Tek Packaging Limited
 MONARCH.NS,Monarch Networth Capital Limited
 MONEYBOXX.NS,Moneyboxx Finance Limited
 MONTECARLO.NS,Monte Carlo Fashions Limited
+MORARJEE.NS,Morarjee Textiles Limited
 MOREPENLAB.NS,Morepen Laboratories Limited
 MOSCHIP.NS,Moschip Technologies Limited
 MOTHERSON.NS,Samvardhana Motherson International Limited
@@ -1343,6 +1422,7 @@ NATCAPSUQ.NS,Natural Capsules Limited
 NATCOPHARM.NS,Natco Pharma Limited
 NATHBIOGEN.NS,Nath Bio-Genes (India) Limited
 NATIONALUM.NS,National Aluminium Company Limited
+NATIONSTD.NS,National Standard (India) Limited
 NAUKRI.NS,Info Edge (India) Limited
 NAVA.NS,NAVA LIMITED
 NAVINFLUOR.NS,Navin Fluorine International Limited
@@ -1359,6 +1439,7 @@ NDL.NS,Nandan Denim Limited
 NDLVENTURE.NS,NDL Ventures Limited
 NDRAUTO.NS,Ndr Auto Components Limited
 NDTV.NS,New Delhi Television Limited
+NEAGI.NS,Neelamalai Agro Industries Limited
 NECCLTD.NS,North Eastern Carrying Corporation Limited
 NECLIFE.NS,Nectar Lifesciences Limited
 NELCAST.NS,Nelcast Limited
@@ -1369,6 +1450,7 @@ NESCO.NS,Nesco Limited
 NESTLEIND.NS,Nestle India Limited
 NETWEB.NS,Netweb Technologies India Limited
 NETWORK18.NS,Network18 Media & Investments Limited
+NEUEON.NS,Neueon Corporation Limited
 NEULANDLAB.NS,Neuland Laboratories Limited
 NEWGEN.NS,Newgen Software Technologies Limited
 NEXTMEDIA.NS,Next Mediaworks Limited
@@ -1384,15 +1466,18 @@ NIITLTD.NS,NIIT Limited
 NIITMTS.NS,NIIT Learning Systems Limited
 NILAINFRA.NS,Nila Infrastructures Limited
 NILASPACES.NS,Nila Spaces Limited
+NILE.NS,Nile Limited
 NILKAMAL.NS,Nilkamal Limited
 NIMBSPROJ.NS,Nimbus Projects Limited
 NINSYS.NS,NINtec Systems Limited
 NIPPOBATRY.NS,Indo-National Limited
 NIRAJ.NS,Niraj Cement Structurals Limited
 NIRAJISPAT.NS,Niraj Ispat Industries Limited
+NIRLON.NS,Nirlon Limited
 NITCO.NS,Nitco Limited
 NITINSPIN.NS,Nitin Spinners Limited
 NITIRAJ.NS,Nitiraj Engineers Limited
+NITTAGELA.NS,Nitta Gelatin India Limited
 NIVABUPA.NS,Niva Bupa Health Insurance Company Limited
 NKIND.NS,NK Industries Limited
 NLCINDIA.NS,NLC India Limited
@@ -1402,6 +1487,7 @@ NOIDATOLL.NS,Noida Toll Bridge Company Limited
 NORBTEAEXP.NS,Norben Tea & Exports Limited
 NORTHARC.NS,Northern Arc Capital Limited
 NOVAAGRI.NS,Nova Agritech Limited
+NOVARTIND.NS,Novartis India Limited
 NPST.NS,Network People Services Technologies Limited
 NRAIL.NS,N R Agarwal Industries Limited
 NRBBEARING.NS,NRB Bearing Limited
@@ -1515,6 +1601,7 @@ PILANIINVS.NS,Pilani Investment and Industries Corporation Limited
 PILITA.NS,PIL ITALICA LIFESTYLE LIMITED
 PINELABS.NS,Pine Labs Limited
 PIONEEREMB.NS,Pioneer Embroideries Limited
+PIONRINV.NS,Pioneer Investcorp Limited
 PIRAMALFIN.NS,Piramal Finance Limited
 PITTIENG.NS,Pitti Engineering Limited
 PIXTRANS.NS,Pix Transmissions Limited
@@ -1522,6 +1609,7 @@ PKTEA.NS,The Peria Karamalai Tea & Produce Company Limited
 PLASTIBLEN.NS,Plastiblends India Limited
 PLATIND.NS,Platinum Industries Limited
 PLAZACABLE.NS,Plaza Wires Limited
+PML.NS,Paul Merchants Limited
 PNB.NS,Punjab National Bank
 PNBGILTS.NS,PNB Gilts Limited
 PNBHOUSING.NS,PNB Housing Finance Limited
@@ -1546,14 +1634,17 @@ PPAP.NS,PPAP Automotive Limited
 PPL.NS,Prakash Pipes Limited
 PPLPHARMA.NS,Piramal Pharma Limited
 PRABHA.NS,Prabha Energy Limited
+PRADPME.NS,Pradeep Metals Limited
 PRAENG.NS,Prajay Engineers Syndicate Limited
 PRAJIND.NS,Praj Industries Limited
 PRAKASH.NS,Prakash Industries Limited
 PRAKASHSTL.NS,Prakash Steelage Limited
+PRAVEG.NS,Praveg Limited
 PRAXIS.NS,Praxis Home Retail Limited
 PRECAM.NS,Precision Camshafts Limited
 PRECOT.NS,Precot Limited
 PRECWIRE.NS,Precision Wires India Limited
+PREMCO.NS,Premco Global Limited
 PREMEXPLN.NS,Premier Explosives Limited
 PREMIER.NS,Premier Limited
 PREMIERENE.NS,Premier Energies Limited
@@ -1588,6 +1679,8 @@ QPOWER.NS,Quality Power Electrical Equipments Limited
 QUADFUTURE.NS,Quadrant Future Tek Limited
 QUESS.NS,Quess Corp Limited
 QUICKHEAL.NS,Quick Heal Technologies Limited
+QUINT.NS,Quint Digital Limited
+QUINTEGRA.NS,Quintegra Solutions Limited
 RACE.NS,Race Eco Chain Limited
 RACLGEAR.NS,RACL Geartech Limited
 RADAAN.NS,Radaan Mediaworks India Limited
@@ -1601,10 +1694,12 @@ RAINBOW.NS,Rainbow Childrens Medicare Limited
 RAJESHEXPO.NS,Rajesh Exports Limited
 RAJMET.NS,Rajnandini Metal Limited
 RAJOOENG.NS,Rajoo Engineers Limited
+RAJPALAYAM.NS,Rajapalayam Mills Limited
 RAJRATAN.NS,Rajratan Global Wire Limited
 RAJRILTD.NS,Raj Rayon Industries Limited
 RAJSREESUG.NS,Rajshree Sugars & Chemicals Limited
 RAJTV.NS,Raj Television Network Limited
+RAJVIR.NS,Rajvir Industries Limited
 RALLIS.NS,Rallis India Limited
 RAMANEWS.NS,Shree Rama Newsprint Limited
 RAMAPHO.NS,Rama Phosphates Limited
@@ -1638,6 +1733,7 @@ RELCHEMQ.NS,Reliance Chemotex Industries Limited
 RELIABLE.NS,Reliable Data Services Limited
 RELIANCE.NS,Reliance Industries Limited
 RELIGARE.NS,Religare Enterprises Limited
+RELINFRA.NS,Reliance Infrastructure Limited
 RELTD.NS,Ravindra Energy Limited
 REMSONSIND.NS,Remsons Industries Limited
 RENUKA.NS,Shree Renuka Sugars Limited
@@ -1648,6 +1744,7 @@ RESPONIND.NS,Responsive Industries Limited
 RETAIL.NS,JHS Svendgaard Retail Ventures Limited
 RGL.NS,Renaissance Global Limited
 RHETAN.NS,Rhetan TMT Limited
+RHFL.NS,Reliance Home Finance Limited
 RHIM.NS,RHI MAGNESITA INDIA LIMITED
 RHL.NS,Robust Hotels Limited
 RICOAUTO.NS,Rico Auto Industries Limited
@@ -1679,7 +1776,9 @@ RPPINFRA.NS,R.P.P. Infra Projects Limited
 RPPL.NS,Rajshree Polypack Limited
 RPSGVENT.NS,RPSG VENTURES LIMITED
 RPTECH.NS,Rashi Peripherals Limited
+RRIL.NS,RRIL Limited
 RRKABEL.NS,R R Kabel Limited
+RSDFIN.NS,RSD Finance Limited
 RSL.NS,Rajputana Stainless Limited
 RSSOFTWARE.NS,R. S. Software (India) Limited
 RSWM.NS,RSWM Limited
@@ -1700,6 +1799,7 @@ RVNL.NS,Rail Vikas Nigam Limited
 RVTH.NS,Revathi Equipment India Limited
 S&SPOWER.NS,S&S Power Switchgears Limited
 SAATVIKGL.NS,Saatvik Green Energy Limited
+SABEVENTS.NS,Sab Events & Governance Now Media Limited
 SADBHAV.NS,Sadbhav Engineering Limited
 SADBHIN.NS,Sadbhav Infrastructure Project Limited
 SADHNANIQ.NS,Sadhana Nitrochem Limited
@@ -1737,7 +1837,9 @@ SANOFI.NS,Sanofi India Limited
 SANOFICONR.NS,Sanofi Consumer Healthcare India Limited
 SANSERA.NS,Sansera Engineering Limited
 SANSTAR.NS,Sanstar Limited
+SANWARIA.NS,Sanwaria Consumer Limited
 SAPPHIRE.NS,Sapphire Foods India Limited
+SAPPL.NS,Shree Ajit Pulp & Paper Limited
 SARDAEN.NS,Sarda Energy & Minerals Limited
 SAREGAMA.NS,Saregama India Limited
 SARLAPOLY.NS,Sarla Performance Fibers Limited
@@ -1747,6 +1849,7 @@ SASTASUNDR.NS,Sastasundar Ventures Limited
 SATIA.NS,Satia Industries Limited
 SATIN.NS,Satin Creditcare Network Limited
 SAURASHCEM.NS,Saurashtra Cement Limited
+SAYAJIHOTL.NS,Sayaji Hotels Limited
 SBC.NS,SBC Exports Limited
 SBCL.NS,Shivalik Bimetal Controls Limited
 SBFC.NS,SBFC Finance Limited
@@ -1754,6 +1857,7 @@ SBGLP.NS,Suratwwala Business Group Limited
 SBICARD.NS,SBI Cards and Payment Services Limited
 SBILIFE.NS,SBI Life Insurance Company Limited
 SBIN.NS,State Bank of India
+SCANSTL.NS,Scan Steels Limited
 SCHAEFFLER.NS,Schaeffler India Limited
 SCHAND.NS,S Chand And Company Limited
 SCHNEIDER.NS,Schneider Electric Infrastructure Limited
@@ -1766,6 +1870,7 @@ SEAMECLTD.NS,Seamec Limited
 SECMARK.NS,SecMark Consultancy Limited
 SECURKLOUD.NS,SECUREKLOUD TECHNOLOGIES LIMITED
 SEDEMAC.NS,SEDEMAC Mechatronics Limited
+SEIL.NS,Shanti Educational Initiatives Limited
 SEJALLTD.NS,Sejal Glass Limited
 SELMC.NS,SEL Manufacturing Company Limited
 SEMAC.NS,Semac Construction Limited
@@ -1796,11 +1901,14 @@ SHANTIGEAR.NS,Shanthi Gears Limited
 SHANTIGOLD.NS,Shanti Gold International Limited
 SHARDACROP.NS,Sharda Cropchem Limited
 SHARDAMOTR.NS,Sharda Motor Industries Limited
+SHARDUL.NS,Shardul Securities Limited
 SHAREINDIA.NS,Share India Securities Limited
+SHBAJRG.NS,Shri Bajrang Alliance Limited
 SHEKHAWATI.NS,Shekhawati Industries Limited
 SHEMAROO.NS,Shemaroo Entertainment Limited
 SHILCTECH.NS,Shilchar Technologies Limited
 SHILPAMED.NS,Shilpa Medicare Limited
+SHINDL.NS,Sharat Industries Limited
 SHIVALIK.NS,Shivalik Rasayan Limited
 SHIVAMAUTO.NS,Shivam Autotech Limited
 SHIVAMILLS.NS,Shiva Mills Limited
@@ -1816,6 +1924,7 @@ SHREEPUSHK.NS,Shree Pushkar Chemicals & Fertilisers Limited
 SHREERAMA.NS,Shree Rama Multi-Tech Limited
 SHRENIK.NS,Shrenik Limited
 SHREYANIND.NS,Shreyans Industries Limited
+SHRIKRISH.NS,Shri Krishna Devcon Limited
 SHRINGARMS.NS,Shringar House of Mangalsutra Limited
 SHRIPISTON.NS,Shriram Pistons & Rings Limited
 SHRIRAMFIN.NS,Shriram Finance Limited
@@ -1823,6 +1932,7 @@ SHRIRAMPPS.NS,Shriram Properties Limited
 SHYAMCENT.NS,Shyam Century Ferrous Limited
 SHYAMMETL.NS,Shyam Metalics and Energy Limited
 SHYAMTEL.NS,Shyam Telecom Limited
+SICAGEN.NS,Sicagen India Limited
 SICALLOG.NS,Sical Logistics Limited
 SIEMENS.NS,Siemens Limited
 SIGACHI.NS,Sigachi Industries Limited
@@ -1831,6 +1941,7 @@ SIGMA.NS,Sigma Solve Limited
 SIGMAADV.NS,SIGMA ADVANCED SYSTEMS LIMITED
 SIGNATURE.NS,Signatureglobal (India) Limited
 SIGNPOST.NS,Signpost India Limited
+SIKA.NS,Sika Interplant Systems Limited
 SIKKO.NS,Sikko Industries Limited
 SIL.NS,Standard Industries Limited
 SILGO.NS,Silgo Retail Limited
@@ -1851,6 +1962,7 @@ SJS.NS,S.J.S. Enterprises Limited
 SJVN.NS,SJVN Limited
 SKFINDIA.NS,SKF India Limited
 SKFINDUS.NS,SKF India (Industrial) Limited
+SKIL.NS,SKIL Infrastructure Limited
 SKIPPER.NS,Skipper Limited
 SKMEGGPROD.NS,SKM Egg Products Export (India) Limited
 SKYGOLD.NS,SKY GOLD AND DIAMONDS LIMITED
@@ -1871,6 +1983,7 @@ SOMANYCERA.NS,Somany Ceramics Limited
 SOMATEX.NS,Soma Textiles & Industries Limited
 SOMICONVEY.NS,Somi Conveyor Beltings Limited
 SONACOMS.NS,Sona BLW Precision Forgings Limited
+SONAL.NS,Sonal Mercantile Limited
 SONAMLTD.NS,SONAM LIMITED
 SONATSOFTW.NS,Sonata Software Limited
 SOTL.NS,Savita Oil Technologies Limited
@@ -1894,6 +2007,7 @@ SRF.NS,SRF Limited
 SRGHFL.NS,SRG Housing Finance Limited
 SRHHYPOLTD.NS,Sree Rayalaseema Hi-Strength Hypo Limited
 SRM.NS,SRM Contractors Limited
+SRPL.NS,Shree Ram Proteins Limited
 SRTL.NS,Shree Ram Twistex Limited
 SSDL.NS,Saraswati Saree Depot Limited
 SSWL.NS,Steel Strips Wheels Limited
@@ -1952,6 +2066,7 @@ SURAJLTD.NS,Suraj Limited
 SURAKSHA.NS,Suraksha Diagnostic Limited
 SURANASOL.NS,Surana Solar Limited
 SURANAT&P.NS,Surana Telecom and Power Limited
+SURYALA.NS,Suryalata Spinning Mills Limited
 SURYALAXMI.NS,Suryalakshmi Cotton Mills Limited
 SURYAROSNI.NS,Surya Roshni Limited
 SURYODAY.NS,Suryoday Small Finance Bank Limited
@@ -1973,10 +2088,12 @@ SYNCOMF.NS,Syncom Formulations (India) Limited
 SYNGENE.NS,Syngene International Limited
 SYRMA.NS,Syrma SGS Technology Limited
 SYSTMTXC.NS,Systematix Corporate Services Limited
+TAALTECH.NS,Taal Tech Limited
 TAINWALCHM.NS,Tainwala Chemical and Plastic (I) Limited
 TAJGVK.NS,Taj GVK Hotels & Resorts Limited
 TAKE.NS,Take Solutions Limited
 TALBROAUTO.NS,Talbros Automotive Components Limited
+TAMBOLIIN.NS,Tamboli Industries Limited
 TANLA.NS,Tanla Platforms Limited
 TARACHAND.NS,Tara Chand InfraLogistic Solutions Limited
 TARAPUR.NS,Tarapur Transformers Limited
@@ -2008,6 +2125,7 @@ TEAMGTY.NS,Team India Guaranty Limited
 TEAMLEASE.NS,Teamlease Services Limited
 TECHM.NS,Tech Mahindra Limited
 TECHNOE.NS,Techno Electric & Engineering Company Limited
+TECHNVISN.NS,TechNVision Ventures Limited
 TECILCHEM.NS,TECIL Chemicals and Hydro Power Limited
 TEGA.NS,Tega Industries Limited
 TEJASNET.NS,Tejas Networks Limited
@@ -2020,6 +2138,8 @@ TEXRAIL.NS,Texmaco Rail & Engineering Limited
 TFCILTD.NS,Tourism Finance Corporation of India Limited
 TFL.NS,Transwarranty Finance Limited
 TGBHOTELS.NS,TGB Banquets And Hotels Limited
+THACKER.NS,Thacker & Company Limited
+THAKDEV.NS,Thakkers Developers Limited
 THANGAMAYL.NS,Thangamayil Jewellery Limited
 THEINVEST.NS,The Investment Trust Of India Limited
 THEJO.NS,Thejo Engineering Limited
@@ -2037,6 +2157,7 @@ TIINDIA.NS,Tube Investments of India Limited
 TIJARIA.NS,Tijaria Polypipes Limited
 TIL.NS,TIL Limited
 TIMETECHNO.NS,Time Technoplast Limited
+TIMEX.NS,Timex Group India Limited
 TIMKEN.NS,Timken India Limited
 TINNARUBR.NS,Tinna Rubber and Infrastructure Limited
 TIPSFILMS.NS,Tips Films Limited
@@ -2060,6 +2181,7 @@ TOUCHWOOD.NS,Touchwood Entertainment Limited
 TPHQ.NS,Teamo Productions HQ Limited
 TPLPLASTEH.NS,TPL Plastech Limited
 TRACXN.NS,Tracxn Technologies Limited
+TRANSPEK.NS,Transpek Industry Limited
 TRANSRAILL.NS,Transrail Lighting Limited
 TRANSWORLD.NS,TRANSWORLD SHIPPING LINES LIMITED
 TRAVELFOOD.NS,Travel Food Services Limited
@@ -2098,6 +2220,7 @@ UGARSUGAR.NS,The Ugar Sugar Works Limited
 UGROCAP.NS,Ugro Capital Limited
 UJJIVANSFB.NS,Ujjivan Small Finance Bank Limited
 ULTRACEMCO.NS,UltraTech Cement Limited
+ULTRAMAR.NS,Ultramarine & Pigments Limited
 UMAEXPORTS.NS,Uma Exports Limited
 UMESLTD.NS,Usha Martin Education & Solutions Limited
 UMIYA-MRO.NS,UMIYA BUILDCON LIMITED
@@ -2113,6 +2236,7 @@ UNITDSPR.NS,United Spirits Limited
 UNITECH.NS,Unitech Limited
 UNITEDPOLY.NS,United Polyfab Gujarat Limited
 UNITEDTEA.NS,The United Nilgiri Tea Estates Company Limited
+UNIVAFOODS.NS,Univa Foods Limited
 UNIVASTU.NS,Univastu India Limited
 UNIVCABLES.NS,Universal Cables Limited
 UNIVPHOTO.NS,Universus Photo Imagings Limited
@@ -2144,6 +2268,7 @@ VBL.NS,Varun Beverages Limited
 VCL.NS,Vaxtex Cotfab Limited
 VEDL.NS,Vedanta Limited
 VEEDOL.NS,Veedol Corporation Limited
+VELJAN.NS,Veljan Denison Limited
 VENKEYS.NS,Venky's (India) Limited
 VENTIVE.NS,Ventive Hospitality Limited
 VENUSPIPES.NS,Venus Pipes & Tubes Limited
@@ -2213,6 +2338,7 @@ WEL.NS,Wonder Electricals Limited
 WELCORP.NS,Welspun Corp Limited
 WELENT.NS,Welspun Enterprises Limited
 WELINV.NS,Welspun Investments and Commercials Limited
+WELSPLSOL.NS,Welspun Specialty Solutions Limited
 WELSPUNLIV.NS,Welspun Living Limited
 WENDT.NS,Wendt (India) Limited
 WESTLIFE.NS,WESTLIFE FOODWORLD LIMITED
@@ -2221,6 +2347,7 @@ WEWORK.NS,WeWork India Management Limited
 WHEELS.NS,Wheels India Limited
 WHIRLPOOL.NS,Whirlpool of India Limited
 WILLAMAGOR.NS,Williamson Magor & Company Limited
+WIMPLAST.NS,Wim Plast Limited
 WINDLAS.NS,Windlas Biotech Limited
 WINDMACHIN.NS,Windsor Machines Limited
 WINSOME.NS,Winsome Yarns Limited
@@ -2229,6 +2356,7 @@ WIPRO.NS,Wipro Limited
 WOCKPHARMA.NS,Wockhardt Limited
 WONDERLA.NS,Wonderla Holidays Limited
 WORTHPERI.NS,Worth Peripherals Limited
+WPIL.NS,WPIL Limited
 WSI.NS,W S Industries (I) Limited
 WSTCSTPAPR.NS,West Coast Paper Mills Limited
 XCHANGING.NS,Xchanging Solutions Limited
@@ -2249,10 +2377,12 @@ ZENITHSTL.NS,Zenith Steel Pipes & Industries Limited
 ZENSARTECH.NS,Zensar Technologies Limited
 ZENTEC.NS,Zen Technologies Limited
 ZFCVINDIA.NS,ZF Commercial Vehicle Control Systems India Limited
+ZFSTEERING.NS,ZF Steering Gear (India) Limited
 ZIMLAB.NS,Zim Laboratories Limited
 ZODIAC.NS,Zodiac Energy Limited
 ZODIACLOTH.NS,Zodiac Clothing Company Limited
 ZOTA.NS,Zota Health Care LImited
+ZSARACOM.NS,Saraswati Commercial India Limited
 ZUARI.NS,Zuari Agro Chemicals Limited
 ZUARIIND.NS,ZUARI INDUSTRIES LIMITED
 ZYDUSLIFE.NS,Zydus Lifesciences Limited

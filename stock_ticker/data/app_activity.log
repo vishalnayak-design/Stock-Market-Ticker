@@ -115345,3 +115345,385 @@
 2026-04-19 07:54:17,997 - INFO - Analysis Complete. Updating Portfolio History...
 2026-04-19 07:54:18,005 - WARNING - Telegram not configured.
 2026-04-19 07:54:18,328 - INFO - Syncing to GitHub...
+2026-04-20 08:33:33,101 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-20 08:33:33,104 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-20 08:33:33,114 - INFO - Starting Daily Analysis Pipeline...
+2026-04-20 08:33:33,115 - INFO - Mode: Fetch Only
+2026-04-20 08:33:33,115 - INFO - Starting Data Download & Basic Scan...
+2026-04-20 08:33:33,115 - INFO - Starting Analysis...
+2026-04-20 08:33:33,115 - INFO - Attempting to fetch via nsepython...
+2026-04-20 08:33:33,115 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-20 08:33:33,115 - INFO - Attempting direct CSV download...
+2026-04-20 08:33:33,585 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-20 08:33:33,586 - INFO - Direct download fetched 2388 stocks.
+2026-04-20 08:33:33,588 - INFO - Found existing analysis file. Resuming...
+2026-04-20 08:33:33,602 - INFO - Already processed 2259 stocks.
+2026-04-20 08:33:33,603 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-20 08:33:33,605 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-04-20 08:33:33,976 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: LAHOTIOV.NS"}}}
+2026-04-20 08:33:33,977 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SHBAJRG.NS"}}}
+2026-04-20 08:33:34,165 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:34,193 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:35,034 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:35,137 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:37,507 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:38,073 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:38,184 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:38,482 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:40,304 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:41,889 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:42,027 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: LAHOTIOV.NS"}}}
+2026-04-20 08:33:42,739 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:42,868 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TAMBOLIIN.NS"}}}
+2026-04-20 08:33:43,569 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:43,688 - INFO - [10/141] Processed in this batch... Total: 2259
+2026-04-20 08:33:43,708 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:33:43,745 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SONAL.NS"}}}
+2026-04-20 08:33:43,851 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:44,018 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SHBAJRG.NS"}}}
+2026-04-20 08:33:44,330 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:45,887 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:46,385 - INFO - [20/141] Processed in this batch... Total: 2259
+2026-04-20 08:33:46,406 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:33:48,131 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:48,703 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:48,774 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:49,547 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:49,682 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TECHNVISN.NS"}}}
+2026-04-20 08:33:50,357 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:51,327 - INFO - [30/141] Processed in this batch... Total: 2259
+2026-04-20 08:33:51,346 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:33:51,525 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:51,599 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:51,973 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:53,044 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:53,120 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:53,133 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAPPL.NS"}}}
+2026-04-20 08:33:55,188 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:55,337 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:55,967 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:56,098 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RAJPALAYAM.NS"}}}
+2026-04-20 08:33:57,932 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:58,058 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: THACKER.NS"}}}
+2026-04-20 08:33:58,244 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:58,376 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ZFSTEERING.NS"}}}
+2026-04-20 08:33:58,942 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:33:59,873 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:00,003 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NEAGI.NS"}}}
+2026-04-20 08:34:00,313 - INFO - [40/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:00,337 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:00,526 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:00,747 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:01,855 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:34:03,268 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:04,476 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:34:04,530 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:04,604 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:04,735 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: IWP.NS"}}}
+2026-04-20 08:34:06,480 - INFO - [50/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:06,498 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:08,919 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:09,053 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-20 08:34:09,632 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:09,731 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:09,738 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:34:09,867 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MERCANTILE.NS"}}}
+2026-04-20 08:34:10,178 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:10,826 - INFO - [60/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:10,843 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:11,526 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:13,107 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:13,108 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:13,182 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:13,550 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:14,238 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:15,239 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:15,523 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:18,006 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:18,169 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KANCHI.NS"}}}
+2026-04-20 08:34:18,357 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:18,489 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FEDDERSHOL.NS"}}}
+2026-04-20 08:34:18,552 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:18,685 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KIRANVYPAR.NS"}}}
+2026-04-20 08:34:19,530 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:19,654 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HBESD.NS"}}}
+2026-04-20 08:34:19,738 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:20,023 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:20,157 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KOTIC.NS"}}}
+2026-04-20 08:34:20,423 - INFO - [70/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:20,440 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:21,340 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:21,914 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:22,264 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:22,444 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:24,514 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:25,639 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:25,807 - INFO - [80/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:25,825 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:26,418 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:26,634 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:26,765 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BENGALASM.NS"}}}
+2026-04-20 08:34:27,019 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:29,914 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:30,048 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: THAKDEV.NS"}}}
+2026-04-20 08:34:30,219 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:30,347 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SURYALA.NS"}}}
+2026-04-20 08:34:30,528 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:30,925 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:31,057 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PML.NS"}}}
+2026-04-20 08:34:31,354 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:32,167 - INFO - [90/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:32,185 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:33,482 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:33,959 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:35,258 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:36,238 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:36,370 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VELJAN.NS"}}}
+2026-04-20 08:34:36,976 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:37,244 - INFO - [100/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:37,262 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:38,227 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:38,354 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:38,355 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:38,368 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ZSARACOM.NS"}}}
+2026-04-20 08:34:40,429 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:41,031 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:42,712 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:42,809 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:42,877 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PREMCO.NS"}}}
+2026-04-20 08:34:42,963 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BNAGROCHEM.NS"}}}
+2026-04-20 08:34:43,151 - INFO - [110/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:43,169 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:43,876 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:43,939 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:44,182 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:45,958 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:46,089 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABMKNO.NS"}}}
+2026-04-20 08:34:47,244 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:47,314 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:47,412 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:48,797 - INFO - [120/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:48,814 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:48,997 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:49,658 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:49,786 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DAICHI.NS"}}}
+2026-04-20 08:34:50,548 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:51,144 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:52,005 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:52,150 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MCCHRLS-B.NS"}}}
+2026-04-20 08:34:52,720 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:52,849 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INDPRUD.NS"}}}
+2026-04-20 08:34:53,070 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:54,763 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:54,895 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BEEKAY.NS"}}}
+2026-04-20 08:34:55,751 - INFO - [130/141] Processed in this batch... Total: 2259
+2026-04-20 08:34:55,769 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:34:56,189 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:56,329 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABANSENT.NS"}}}
+2026-04-20 08:34:57,098 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:34:57,161 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:00,398 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:01,409 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:01,538 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FRONTSP.NS"}}}
+2026-04-20 08:35:02,487 - INFO - [140/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:02,504 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:05,402 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:06,317 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:06,319 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-20 08:35:06,337 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:07,814 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-20 08:35:07,817 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-20 08:35:07,825 - INFO - Starting Daily Analysis Pipeline...
+2026-04-20 08:35:07,825 - INFO - Mode: Analysis Only
+2026-04-20 08:35:07,826 - INFO - Starting Analysis...
+2026-04-20 08:35:07,826 - INFO - Attempting to fetch via nsepython...
+2026-04-20 08:35:07,826 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-20 08:35:07,826 - INFO - Attempting direct CSV download...
+2026-04-20 08:35:08,403 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-20 08:35:08,403 - INFO - Direct download fetched 2388 stocks.
+2026-04-20 08:35:08,405 - INFO - Found existing analysis file. Resuming...
+2026-04-20 08:35:08,419 - INFO - Already processed 2259 stocks.
+2026-04-20 08:35:08,420 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-20 08:35:08,813 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BEEKAY.NS"}}}
+2026-04-20 08:35:08,826 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FEDDERSHOL.NS"}}}
+2026-04-20 08:35:08,998 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:08,999 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:09,742 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:10,374 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:10,549 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:11,660 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:12,476 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:12,551 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:12,850 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:13,951 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:16,332 - ERROR - $FEDDERSHOL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:16,466 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FEDDERSHOL.NS"}}}
+2026-04-20 08:35:17,274 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:18,099 - ERROR - $KIRANVYPAR.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:18,230 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KIRANVYPAR.NS"}}}
+2026-04-20 08:35:18,285 - ERROR - $FRONTSP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:18,457 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: FRONTSP.NS"}}}
+2026-04-20 08:35:18,544 - ERROR - $BEEKAY.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:18,679 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BEEKAY.NS"}}}
+2026-04-20 08:35:19,526 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:19,601 - ERROR - $KANCHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:19,716 - INFO - [10/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:19,733 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:19,734 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KANCHI.NS"}}}
+2026-04-20 08:35:20,060 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:20,615 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:23,098 - INFO - [20/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:23,115 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:23,291 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:23,357 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:24,274 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:25,088 - ERROR - $PML.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:25,242 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PML.NS"}}}
+2026-04-20 08:35:26,308 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:27,661 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:27,664 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:28,652 - ERROR - $RAJPALAYAM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:28,786 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: RAJPALAYAM.NS"}}}
+2026-04-20 08:35:29,086 - ERROR - $HBESD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:29,250 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: HBESD.NS"}}}
+2026-04-20 08:35:29,990 - INFO - [30/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:30,008 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:30,013 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:30,555 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:32,723 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:32,851 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:32,915 - ERROR - $DAICHI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:33,044 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: DAICHI.NS"}}}
+2026-04-20 08:35:34,669 - ERROR - $MERCANTILE.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:34,803 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MERCANTILE.NS"}}}
+2026-04-20 08:35:35,157 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:35,442 - INFO - [40/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:35,459 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:35,571 - ERROR - $INDPRUD.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:35,684 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: INDPRUD.NS"}}}
+2026-04-20 08:35:35,768 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:36,156 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:38,927 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:39,159 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:39,239 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:40,850 - ERROR - $VELJAN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:40,852 - ERROR - $MCCHRLS-B.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:40,981 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MCCHRLS-B.NS"}}}
+2026-04-20 08:35:41,037 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VELJAN.NS"}}}
+2026-04-20 08:35:41,681 - INFO - [50/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:41,698 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:41,701 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:41,913 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:42,735 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:44,079 - ERROR - $BNAGROCHEM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:44,148 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:44,244 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BNAGROCHEM.NS"}}}
+2026-04-20 08:35:46,029 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:46,921 - ERROR - $BENGALASM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:47,049 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BENGALASM.NS"}}}
+2026-04-20 08:35:47,707 - ERROR - $PREMCO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:47,752 - INFO - [60/141] Processed in this batch... Total: 2259
+2026-04-20 08:35:47,771 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:35:47,850 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PREMCO.NS"}}}
+2026-04-20 08:35:47,941 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:48,848 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:49,923 - ERROR - $SONAL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:50,112 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:50,120 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SONAL.NS"}}}
+2026-04-20 08:35:51,730 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:52,218 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:52,991 - ERROR - $SHBAJRG.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:53,120 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SHBAJRG.NS"}}}
+2026-04-20 08:35:56,124 - ERROR - $THAKDEV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:56,252 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: THAKDEV.NS"}}}
+2026-04-20 08:35:57,903 - ERROR - $TAMBOLIIN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:35:58,034 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TAMBOLIIN.NS"}}}
+2026-04-20 08:36:00,365 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:36:03,669 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:36:06,689 - INFO - [70/141] Processed in this batch... Total: 2259
+2026-04-20 08:36:06,708 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:36:06,779 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:08,734 - ERROR - $BIMETAL.NS: possibly delisted; no price data found  (period=2y)
+2026-04-20 08:36:10,807 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:15,222 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:16,833 - ERROR - $IWP.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:16,963 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: IWP.NS"}}}
+2026-04-20 08:36:18,872 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:23,514 - ERROR - $ZSARACOM.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:23,652 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ZSARACOM.NS"}}}
+2026-04-20 08:36:32,509 - INFO - [80/141] Processed in this batch... Total: 2259
+2026-04-20 08:36:32,526 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:36:33,173 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:36,297 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:41,257 - ERROR - $ARIHANT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:46,637 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:49,348 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:50,326 - INFO - [90/141] Processed in this batch... Total: 2259
+2026-04-20 08:36:50,343 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:36:54,872 - ERROR - $THACKER.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:36:55,000 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: THACKER.NS"}}}
+2026-04-20 08:37:03,043 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:03,456 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:06,218 - INFO - [100/141] Processed in this batch... Total: 2259
+2026-04-20 08:37:06,236 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:37:06,409 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:06,703 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:06,776 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:09,025 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:12,095 - ERROR - $TECHNVISN.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:12,226 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TECHNVISN.NS"}}}
+2026-04-20 08:37:12,841 - ERROR - $SAPPL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:12,970 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAPPL.NS"}}}
+2026-04-20 08:37:14,797 - ERROR - $ABMKNO.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:14,927 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABMKNO.NS"}}}
+2026-04-20 08:37:22,478 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:25,109 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:29,535 - ERROR - $ZFSTEERING.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:29,669 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ZFSTEERING.NS"}}}
+2026-04-20 08:37:32,219 - INFO - [110/141] Processed in this batch... Total: 2259
+2026-04-20 08:37:32,236 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:37:39,317 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:39,505 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:42,253 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:42,439 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:44,722 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:47,677 - ERROR - $KOTIC.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:47,806 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: KOTIC.NS"}}}
+2026-04-20 08:37:48,151 - ERROR - $ABANSENT.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:48,281 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABANSENT.NS"}}}
+2026-04-20 08:37:48,414 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:49,316 - INFO - [120/141] Processed in this batch... Total: 2259
+2026-04-20 08:37:49,333 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:37:49,515 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:52,785 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:54,265 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:54,393 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NEAGI.NS"}}}
+2026-04-20 08:37:57,233 - ERROR - $LAHOTIOV.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:37:57,363 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: LAHOTIOV.NS"}}}
+2026-04-20 08:38:08,575 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:11,034 - INFO - [130/141] Processed in this batch... Total: 2259
+2026-04-20 08:38:11,050 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:11,054 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:38:13,696 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:16,038 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:16,168 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-20 08:38:16,229 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:20,487 - ERROR - $SURYALA.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-20 08:38:20,623 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SURYALA.NS"}}}
+2026-04-20 08:38:29,665 - INFO - [140/141] Processed in this batch... Total: 2259
+2026-04-20 08:38:29,682 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:38:30,004 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:38:30,005 - INFO - Running Forecasting on Top 20...
+2026-04-20 08:38:34,759 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-20 08:38:34,778 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-20 08:38:34,790 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-04-20 08:38:34,790 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-04-20 08:38:35,055 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-04-20 08:38:35,055 - WARNING -   - SalesGrowth3Y
+2026-04-20 08:38:35,055 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-04-20 08:38:35,055 - INFO - Big Bets: Found 3 recommendations.
+2026-04-20 08:38:35,055 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-04-20 08:38:35,100 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-04-20.csv
+2026-04-20 08:38:35,100 - INFO - Analysis Complete. Updating Portfolio History...
+2026-04-20 08:38:35,107 - WARNING - Telegram not configured.
+2026-04-20 08:38:35,445 - INFO - Syncing to GitHub...
