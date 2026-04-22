@@ -115857,3 +115857,125 @@
 2026-04-21 08:18:03,789 - INFO - Analysis Complete. Updating Portfolio History...
 2026-04-21 08:18:03,797 - WARNING - Telegram not configured.
 2026-04-21 08:18:03,895 - INFO - Syncing to GitHub...
+2026-04-22 08:15:07,686 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-22 08:15:07,689 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-22 08:15:07,696 - INFO - Starting Daily Analysis Pipeline...
+2026-04-22 08:15:07,696 - INFO - Mode: Fetch Only
+2026-04-22 08:15:07,697 - INFO - Starting Data Download & Basic Scan...
+2026-04-22 08:15:07,697 - INFO - Starting Analysis...
+2026-04-22 08:15:07,697 - INFO - Attempting to fetch via nsepython...
+2026-04-22 08:15:07,697 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-22 08:15:07,697 - INFO - Attempting direct CSV download...
+2026-04-22 08:15:08,224 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-22 08:15:08,224 - INFO - Direct download fetched 2364 stocks.
+2026-04-22 08:15:08,226 - INFO - Found existing analysis file. Resuming...
+2026-04-22 08:15:08,236 - INFO - Already processed 2259 stocks.
+2026-04-22 08:15:08,237 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-22 08:15:08,238 - INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/runner/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/runner/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2026-04-22 08:15:10,707 - INFO - [10/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:10,720 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:12,895 - INFO - [20/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:12,909 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:14,874 - INFO - [30/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:14,887 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:16,883 - INFO - [40/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:16,896 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:18,865 - INFO - [50/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:18,879 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:20,927 - INFO - [60/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:20,943 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:22,891 - INFO - [70/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:22,913 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:24,961 - INFO - [80/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:24,975 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:27,034 - INFO - [90/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:27,052 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:28,943 - INFO - [100/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:28,956 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:29,535 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:15:29,765 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:31,533 - INFO - [110/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:31,546 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:33,664 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:15:33,839 - INFO - [120/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:33,853 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:33,904 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:34,999 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:36,818 - INFO - [130/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:36,833 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:37,301 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:39,752 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:40,132 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:15:41,065 - INFO - [140/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:41,078 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:42,339 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:42,478 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NEAGI.NS"}}}
+2026-04-22 08:15:43,317 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:43,318 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-22 08:15:43,332 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:44,470 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-22 08:15:44,472 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-22 08:15:44,479 - INFO - Starting Daily Analysis Pipeline...
+2026-04-22 08:15:44,479 - INFO - Mode: Analysis Only
+2026-04-22 08:15:44,479 - INFO - Starting Analysis...
+2026-04-22 08:15:44,479 - INFO - Attempting to fetch via nsepython...
+2026-04-22 08:15:44,479 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-22 08:15:44,479 - INFO - Attempting direct CSV download...
+2026-04-22 08:15:45,095 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-22 08:15:45,096 - INFO - Direct download fetched 2364 stocks.
+2026-04-22 08:15:45,097 - INFO - Found existing analysis file. Resuming...
+2026-04-22 08:15:45,108 - INFO - Already processed 2259 stocks.
+2026-04-22 08:15:45,109 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-22 08:15:46,843 - INFO - [10/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:46,874 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:48,404 - INFO - [20/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:48,418 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:49,978 - INFO - [30/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:49,991 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:51,603 - INFO - [40/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:51,619 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:53,078 - INFO - [50/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:53,097 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:54,116 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:15:54,468 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:54,739 - INFO - [60/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:54,760 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:56,773 - INFO - [70/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:56,787 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:15:58,096 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:15:58,244 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:15:58,823 - INFO - [80/141] Processed in this batch... Total: 2259
+2026-04-22 08:15:58,836 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:00,796 - INFO - [90/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:00,809 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:02,839 - INFO - [100/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:02,853 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:03,891 - ERROR - $SAYAJIHOTL.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:16:04,017 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: SAYAJIHOTL.NS"}}}
+2026-04-22 08:16:04,683 - INFO - [110/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:04,698 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:06,256 - INFO - [120/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:06,272 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:06,814 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:16:07,942 - INFO - [130/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:07,964 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:09,712 - INFO - [140/141] Processed in this batch... Total: 2259
+2026-04-22 08:16:09,726 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:10,621 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:16:15,084 - ERROR - $NEAGI.NS: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-04-22 08:16:15,251 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: NEAGI.NS"}}}
+2026-04-22 08:16:15,806 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:15,807 - INFO - Running Forecasting on Top 20...
+2026-04-22 08:16:20,374 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-22 08:16:20,389 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-22 08:16:20,399 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'Reason', 'Sector', 'Industry', 'Intrinsic_Value', 'Margin_Safety', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth']
+2026-04-22 08:16:20,399 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-04-22 08:16:20,605 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-04-22 08:16:20,605 - WARNING -   - SalesGrowth3Y
+2026-04-22 08:16:20,605 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-04-22 08:16:20,605 - INFO - Big Bets: Found 3 recommendations.
+2026-04-22 08:16:20,605 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-04-22 08:16:20,641 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-04-22.csv
+2026-04-22 08:16:20,641 - INFO - Analysis Complete. Updating Portfolio History...
+2026-04-22 08:16:20,647 - WARNING - Telegram not configured.
+2026-04-22 08:16:20,922 - INFO - Syncing to GitHub...
