@@ -3,11 +3,16 @@ import feedparser
 import logging
 from datetime import datetime, timedelta
 import requests
+import urllib.error
 import io
 import csv
 import random
 import time
 import os
+
+# Suppress yfinance internal errors (like raw 404 prints)
+yf_logger = logging.getLogger('yfinance')
+yf_logger.setLevel(logging.CRITICAL)
 
 try:
     from src.utils import save_to_csv
