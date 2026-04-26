@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# 0. Sync Code (First Principle)
+echo "Syncing with GitHub..."
+git config --global --add safe.directory /app
+git pull origin main || echo "Git pull failed (Network?), proceeding with local code..."
+
 # 1. Start Streamlit Dashboard in the background
 echo "Starting Dashboard..."
 streamlit run stock_ticker/dashboard.py --server.port 8501 --server.address 0.0.0.0 &

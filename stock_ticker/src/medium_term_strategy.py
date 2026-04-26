@@ -201,8 +201,9 @@ class MediumTermEngine:
         # Filter & Select Top 3
         candidates = df[df["ROI_6to12_Score"] >= 9].copy()
         
-        if candidates.empty:
-             # Fallback if strict criteria not met
+        # Ensure at least 3 candidates for allocation
+        if len(candidates) < 3:
+             # Fallback: Just take top scorers regardless of strict threshold
              candidates = df.sort_values("ROI_6to12_Score", ascending=False).head(10)
 
         # Sort by ROI Score then Win Prob
