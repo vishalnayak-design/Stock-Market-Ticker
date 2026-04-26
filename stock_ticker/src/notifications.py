@@ -1,10 +1,25 @@
 import requests
 import logging
+import streamlit as st
 
 class Notifier:
-    def __init__(self, config):
-        self.bot_token = config['telegram'].get('bot_token')
-        self.chat_id = config['telegram'].get('chat_id')
+    def __init__(self, config=None):
+        # Default config init
+        self.bot_token = None
+        self.chat_id = None
+        
+        # 1. Try Streamlit Secrets (Most Secure for Cloud)
+        try:
+            if "telegram" in st.secrets:
+                self.bot_token = st.secrets["telegram"].get("bot_token")
+                self.chat_id = st.secrets["telegram"].get("chat_id")
+        except Exception:
+            pass # Not running in streamlit context or secrets missing
+            
+        # 2. Fallback to Config.yaml (Local usage)
+        if not self.bot_token and config and 'telegram' in config:
+            self.bot_token = config['telegram'].get('bot_token')
+            self.chat_id = config['telegram'].get('chat_id')
 
     def send_message(self, message):
         if not self.bot_token or not self.chat_id or self.bot_token == "YOUR_BOT_TOKEN":

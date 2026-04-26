@@ -10,7 +10,14 @@ sys.path.append(os.path.dirname(__file__))
 import src.state_manager as sm
 from src.medium_term_strategy import MediumTermEngine
 from src.utils import push_to_github
+from src.notifications import Notifier
 import pandas as pd
+import yaml
+
+def load_config():
+    config_path = os.path.join(os.path.dirname(__file__), "config.yaml")
+    with open(config_path, "r", encoding='utf-8') as f:
+        return yaml.safe_load(f)
 
 # Config
 PYTHON_EXE = sys.executable
@@ -111,6 +118,15 @@ def run_big_bets_task():
             logging.info("Pushed All Data results to GitHub.")
         except Exception as ge:
             logging.warning(f"Git Push Failed: {ge}")
+            
+        # Send Telegram Notification
+        try:
+            logging.info("Sending Telegram Notifications...")
+            cfg = load_config()
+            notifier = Notifier(cfg)
+            notifier.send_recommendation(top_picks)
+        except Exception as ne:
+            logging.error(f"Telegram Notification Failed: {ne}")
             
     except Exception as e:
         logging.error(f"Big Bets Task Failed: {e}")

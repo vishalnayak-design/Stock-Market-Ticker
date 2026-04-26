@@ -11,6 +11,8 @@ import re
 import xlsxwriter
 import logging
 import math
+import plotly.express as px
+import plotly.graph_objects as go
 
 # --- Setup Logging to Stdout for Docker Debugging ---
 logging.basicConfig(level=logging.INFO)
@@ -452,10 +454,10 @@ def main():
         return res
 
     # --- TAB NAVIGATION (Persistent) ---
-    # --- TAB NAVIGATION (Persistent) ---
     tabs_map = {
         "Recommendations": "🚀 Recommendations",
         "BigBets": "🎯 Big Bets",
+        "Backtest": "🧪 Backtest",
         "RawData": "📥 Raw Data"
     }
     tabs = list(tabs_map.values())
@@ -553,10 +555,65 @@ def main():
                     st.caption("Top Pick")
                     st.markdown(f"**{active_display[0]['Name']}**")
                 
-                # Table
+                # Format data for display
                 display_cols = ['Name', 'Ticker', 'Sector', 'Close', 'Intrinsic_Value', 'Margin_Safety', 'Qty', 'Allocation', 'Reason']
                 table_data = [{k: row.get(k) for k in display_cols if k in row} for row in active_display]
-                st.dataframe(table_data, use_container_width=True)
+
+                # 1. Plotly Allocation Chart
+                chart_col1, chart_col2 = st.columns(2)
+                with chart_col1:
+                    fig = px.pie(
+                        table_data, 
+                        values='Allocation', 
+                        names='Name', 
+                        hole=0.4, 
+                        title="Recommended Portfolio Allocation",
+                        color_discrete_sequence=px.colors.qualitative.Set3
+                    )
+                    fig.update_layout(margin=dict(t=40, b=0, l=0, r=0))
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                # Radar Chart for Top Pick (If Scores Exist)
+                with chart_col2:
+                    top_stock = active_display[0]
+                    if all(k in top_stock for k in ['Tech_Score', 'Fund_Score', 'Sent_Score']):
+                        categories = ['Technical', 'Fundamental', 'Sentiment']
+                        fig_radar = go.Figure()
+                        fig_radar.add_trace(go.Scatterpolar(
+                            r=[top_stock.get('Tech_Score', 0), top_stock.get('Fund_Score', 0), top_stock.get('Sent_Score', 0)],
+                            theta=categories,
+                            fill='toself',
+                            name=top_stock.get('Name')
+                        ))
+                        fig_radar.update_layout(
+                            polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+                            showlegend=False,
+                            title=f"{top_stock.get('Ticker')} Score Breakdown",
+                            margin=dict(t=40, b=0, l=0, r=0)
+                        )
+                        st.plotly_chart(fig_radar, use_container_width=True)
+                    else:
+                        st.info("Detailed score breakdown not available for this strategy.")
+                
+                # 2. Mobile-Friendly Metric Cards
+                st.markdown("### 📋 Top Picks Details")
+                for row in table_data:
+                    with st.container():
+                        st.markdown(f"#### {row.get('Name')} (`{row.get('Ticker')}`)")
+                        card_col1, card_col2, card_col3 = st.columns(3)
+                        with card_col1:
+                            st.metric("Current Price", f"₹{row.get('Close', 0):.2f}")
+                        with card_col2:
+                            st.metric("Recommended Qty", f"{row.get('Qty', 0)} shares")
+                        with card_col3:
+                            st.metric("Total Allocation", f"₹{row.get('Allocation', 0):.2f}")
+                        
+                        st.caption(f"💡 **Investment Thesis:** {row.get('Reason', 'N/A')}")
+                        st.divider()
+                        
+                with st.expander("Show Raw Data Table"):
+                    st.dataframe(table_data, use_container_width=True)
+
             else:
                 st.warning("No stocks found for this strategy.")
 
@@ -733,6 +790,51 @@ def main():
                  st.dataframe(final_display_df[available_cols].head(20), use_container_width=True)
 
 
+
+    if selected_tab == "🧪 Backtest":
+        st.subheader("🧪 Historical Backtesting Engine")
+        st.info("Simulate the 'Big Bets' strategy using historical point-in-time data snapshots to see real-world performance.")
+        
+        try:
+            from src.backtester import Backtester
+            bt = Backtester(config['data_dir'])
+            snapshots = bt.get_available_snapshots()
+            
+            if not snapshots:
+                st.warning("No historical snapshots found in `data/daily_snapshots/`. Run the pipeline for a few days to build up a history.")
+            else:
+                c1, c2 = st.columns(2)
+                with c1:
+                    selected_date = st.selectbox("Select Historical Snapshot Date", snapshots)
+                with c2:
+                    bt_budget = st.number_input("Hypothetical Investment (₹)", min_value=10000, value=200000, step=10000)
+                    
+                if st.button("Run Simulation 🚀"):
+                    with st.spinner(f"Simulating buys on {selected_date} and fetching today's prices..."):
+                        bt_results = bt.run_backtest(selected_date, amount=bt_budget, strategy="Big Bets")
+                        
+                        if bt_results:
+                            import pandas as pd
+                            df_bt = pd.DataFrame(bt_results)
+                            
+                            # Metrics
+                            total_invested = df_bt['Invested'].sum()
+                            total_current = df_bt['Current_Value'].sum()
+                            total_profit = df_bt['P/L'].sum()
+                            total_roi = (total_profit / total_invested) * 100 if total_invested > 0 else 0
+                            
+                            st.markdown(f"### Results since **{selected_date}**")
+                            m1, m2, m3 = st.columns(3)
+                            m1.metric("Total Invested", f"₹{total_invested:,.2f}")
+                            m2.metric("Current Value", f"₹{total_current:,.2f}", f"₹{total_profit:,.2f}")
+                            m3.metric("Total ROI %", f"{total_roi:.2f}%")
+                            
+                            # Table
+                            st.dataframe(df_bt, use_container_width=True)
+                        else:
+                            st.error("No recommendations were generated on that date.")
+        except Exception as e:
+            st.error(f"Backtesting Error: {e}")
 
     if selected_tab == "📥 Raw Data":
         st.subheader(f"Full Market Scan Data")
