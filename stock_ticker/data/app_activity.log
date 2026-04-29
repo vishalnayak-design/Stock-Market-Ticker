@@ -111096,3 +111096,104 @@
 2026-04-28 08:44:11,490 - INFO - Analysis Complete. Updating Portfolio History...
 2026-04-28 08:44:11,497 - WARNING - Telegram not configured.
 2026-04-28 08:44:11,578 - INFO - Syncing to GitHub...
+2026-04-29 08:37:16,050 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-29 08:37:16,053 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-29 08:37:16,072 - INFO - Starting Daily Analysis Pipeline...
+2026-04-29 08:37:16,073 - INFO - Mode: Fetch Only
+2026-04-29 08:37:16,073 - INFO - Starting Data Download & Basic Scan...
+2026-04-29 08:37:16,073 - INFO - Starting Analysis...
+2026-04-29 08:37:16,073 - INFO - Attempting to fetch via nsepython...
+2026-04-29 08:37:16,073 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-29 08:37:16,073 - INFO - Attempting direct CSV download...
+2026-04-29 08:37:16,962 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-29 08:37:16,962 - INFO - Direct download fetched 2360 stocks.
+2026-04-29 08:37:16,964 - INFO - Found existing analysis file. Resuming...
+2026-04-29 08:37:16,982 - INFO - Already processed 2258 stocks.
+2026-04-29 08:37:16,983 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-29 08:37:19,903 - INFO - [10/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:19,953 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:22,160 - INFO - [20/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:22,181 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:24,357 - INFO - [30/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:24,381 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:26,533 - INFO - [40/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:26,554 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:28,266 - INFO - [50/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:28,288 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:30,318 - INFO - [60/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:30,338 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:32,511 - INFO - [70/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:32,575 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:34,877 - INFO - [80/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:34,897 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:36,993 - INFO - [90/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:37,016 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:38,879 - INFO - [100/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:38,900 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:41,380 - INFO - [110/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:41,400 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:43,741 - INFO - [120/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:43,765 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:45,741 - INFO - [130/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:45,761 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:47,872 - INFO - [140/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:47,893 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:48,150 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:48,151 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-29 08:37:48,172 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:50,039 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-04-29 08:37:50,042 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-04-29 08:37:50,058 - INFO - Starting Daily Analysis Pipeline...
+2026-04-29 08:37:50,058 - INFO - Mode: Analysis Only
+2026-04-29 08:37:50,058 - INFO - Starting Analysis...
+2026-04-29 08:37:50,058 - INFO - Attempting to fetch via nsepython...
+2026-04-29 08:37:50,058 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-04-29 08:37:50,058 - INFO - Attempting direct CSV download...
+2026-04-29 08:37:50,616 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-04-29 08:37:50,616 - INFO - Direct download fetched 2360 stocks.
+2026-04-29 08:37:50,619 - INFO - Found existing analysis file. Resuming...
+2026-04-29 08:37:50,636 - INFO - Already processed 2258 stocks.
+2026-04-29 08:37:50,636 - INFO - Scanning 141 remaining stocks (Parallel Mode)...
+2026-04-29 08:37:52,591 - INFO - [10/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:52,641 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:54,134 - INFO - [20/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:54,154 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:56,019 - INFO - [30/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:56,047 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:57,268 - INFO - [40/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:57,293 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:37:58,695 - INFO - [50/141] Processed in this batch... Total: 2258
+2026-04-29 08:37:58,736 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:00,449 - INFO - [60/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:00,477 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:01,972 - INFO - [70/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:01,994 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:03,566 - INFO - [80/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:03,587 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:05,092 - INFO - [90/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:05,112 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:06,619 - INFO - [100/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:06,647 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:08,065 - INFO - [110/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:08,087 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:09,689 - INFO - [120/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:09,709 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:11,350 - INFO - [130/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:11,370 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:12,895 - INFO - [140/141] Processed in this batch... Total: 2258
+2026-04-29 08:38:12,916 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:13,288 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:13,289 - INFO - Running Forecasting on Top 20...
+2026-04-29 08:38:19,571 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-04-29 08:38:19,602 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-04-29 08:38:19,616 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Sector', 'Industry', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'Intrinsic_Value', 'Margin_Safety', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth', 'Reason']
+2026-04-29 08:38:19,616 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-04-29 08:38:19,908 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-04-29 08:38:19,908 - WARNING -   - SalesGrowth3Y
+2026-04-29 08:38:19,908 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-04-29 08:38:19,908 - INFO - Big Bets: Found 3 recommendations.
+2026-04-29 08:38:19,908 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-04-29 08:38:19,974 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-04-29.csv
+2026-04-29 08:38:19,974 - INFO - Analysis Complete. Updating Portfolio History...
+2026-04-29 08:38:19,980 - WARNING - Telegram not configured.
+2026-04-29 08:38:20,333 - INFO - Syncing to GitHub...
