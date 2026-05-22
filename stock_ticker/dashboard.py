@@ -803,36 +803,72 @@ def main():
             if not snapshots:
                 st.warning("No historical snapshots found in `data/daily_snapshots/`. Run the pipeline for a few days to build up a history.")
             else:
-                c1, c2 = st.columns(2)
-                with c1:
-                    selected_date = st.selectbox("Select Historical Snapshot Date", snapshots)
-                with c2:
-                    bt_budget = st.number_input("Hypothetical Investment (₹)", min_value=10000, value=200000, step=10000)
+                import datetime as dt_module
+                parsed_dates = []
+                for s in snapshots:
+                    try:
+                        parsed_dates.append(dt_module.datetime.strptime(s, "%Y-%m-%d").date())
+                    except Exception:
+                        pass
+                
+                if not parsed_dates:
+                    st.warning("No valid snapshot dates could be parsed.")
+                else:
+                    # Sort parsed dates to get bounds
+                    parsed_dates = sorted(parsed_dates)
+                    min_date = parsed_dates[0]
+                    max_date = parsed_dates[-1]
                     
-                if st.button("Run Simulation 🚀"):
-                    with st.spinner(f"Simulating buys on {selected_date} and fetching today's prices..."):
-                        bt_results = bt.run_backtest(selected_date, amount=bt_budget, strategy="Big Bets")
-                        
-                        if bt_results:
-                            import pandas as pd
-                            df_bt = pd.DataFrame(bt_results)
+                    c1, c2 = st.columns(2)
+                    with c1:
+                        # Display calendar date input, default to max_date
+                        selected_date_obj = st.date_input(
+                            "Select Historical Snapshot Date",
+                            value=max_date,
+                            min_value=min_date,
+                            max_value=max_date
+                        )
+                    with c2:
+                        bt_budget = st.number_input("Hypothetical Investment (₹)", min_value=10000, value=200000, step=10000)
+                    
+                    # Convert selected date back to YYYY-MM-DD string
+                    selected_date_str = selected_date_obj.strftime("%Y-%m-%d")
+                    
+                    # Determine target date for simulation (exact or closest available)
+                    if selected_date_str in snapshots:
+                        resolved_date = selected_date_str
+                        st.success(f"✅ Exact snapshot available for **{selected_date_str}**")
+                    else:
+                        # Find the closest date
+                        diffs = [(abs(selected_date_obj - d), d) for d in parsed_dates]
+                        closest_date_obj = min(diffs, key=lambda x: x[0])[1]
+                        resolved_date = closest_date_obj.strftime("%Y-%m-%d")
+                        st.info(f"📅 No snapshot found for **{selected_date_str}**. Automatically resolved to the closest available date: **{resolved_date}**")
+                    
+                    if st.button("Run Simulation 🚀"):
+                        with st.spinner(f"Simulating buys on {resolved_date} and fetching today's prices..."):
+                            bt_results = bt.run_backtest(resolved_date, amount=bt_budget, strategy="Big Bets")
                             
-                            # Metrics
-                            total_invested = df_bt['Invested'].sum()
-                            total_current = df_bt['Current_Value'].sum()
-                            total_profit = df_bt['P/L'].sum()
-                            total_roi = (total_profit / total_invested) * 100 if total_invested > 0 else 0
-                            
-                            st.markdown(f"### Results since **{selected_date}**")
-                            m1, m2, m3 = st.columns(3)
-                            m1.metric("Total Invested", f"₹{total_invested:,.2f}")
-                            m2.metric("Current Value", f"₹{total_current:,.2f}", f"₹{total_profit:,.2f}")
-                            m3.metric("Total ROI %", f"{total_roi:.2f}%")
-                            
-                            # Table
-                            st.dataframe(df_bt, use_container_width=True)
-                        else:
-                            st.error("No recommendations were generated on that date.")
+                            if bt_results:
+                                import pandas as pd
+                                df_bt = pd.DataFrame(bt_results)
+                                
+                                # Metrics
+                                total_invested = df_bt['Invested'].sum()
+                                total_current = df_bt['Current_Value'].sum()
+                                total_profit = df_bt['P/L'].sum()
+                                total_roi = (total_profit / total_invested) * 100 if total_invested > 0 else 0
+                                
+                                st.markdown(f"### Results since **{resolved_date}**")
+                                m1, m2, m3 = st.columns(3)
+                                m1.metric("Total Invested", f"₹{total_invested:,.2f}")
+                                m2.metric("Current Value", f"₹{total_current:,.2f}", f"₹{total_profit:,.2f}")
+                                m3.metric("Total ROI %", f"{total_roi:.2f}%")
+                                
+                                # Table
+                                st.dataframe(df_bt, use_container_width=True)
+                            else:
+                                st.error("No recommendations were generated on that date.")
         except Exception as e:
             st.error(f"Backtesting Error: {e}")
 
