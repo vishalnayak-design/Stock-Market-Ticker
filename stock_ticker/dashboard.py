@@ -555,64 +555,82 @@ def main():
                     st.caption("Top Pick")
                     st.markdown(f"**{active_display[0]['Name']}**")
                 
-                # Format data for display
-                display_cols = ['Name', 'Ticker', 'Sector', 'Close', 'Intrinsic_Value', 'Margin_Safety', 'Qty', 'Allocation', 'Reason']
-                table_data = [{k: row.get(k) for k in display_cols if k in row} for row in active_display]
-
-                # 1. Plotly Allocation Chart
-                chart_col1, chart_col2 = st.columns(2)
-                with chart_col1:
-                    fig = px.pie(
-                        table_data, 
-                        values='Allocation', 
-                        names='Name', 
-                        hole=0.4, 
-                        title="Recommended Portfolio Allocation",
-                        color_discrete_sequence=px.colors.qualitative.Set3
-                    )
-                    fig.update_layout(margin=dict(t=40, b=0, l=0, r=0))
-                    st.plotly_chart(fig, use_container_width=True)
+                # High-Density Tabular View for Recommendations
+                import pandas as pd
+                df_rec = pd.DataFrame(active_display)
                 
-                # Radar Chart for Top Pick (If Scores Exist)
-                with chart_col2:
-                    top_stock = active_display[0]
-                    if all(k in top_stock for k in ['Tech_Score', 'Fund_Score', 'Sent_Score']):
-                        categories = ['Technical', 'Fundamental', 'Sentiment']
-                        fig_radar = go.Figure()
-                        fig_radar.add_trace(go.Scatterpolar(
-                            r=[top_stock.get('Tech_Score', 0), top_stock.get('Fund_Score', 0), top_stock.get('Sent_Score', 0)],
-                            theta=categories,
-                            fill='toself',
-                            name=top_stock.get('Name')
-                        ))
-                        fig_radar.update_layout(
-                            polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
-                            showlegend=False,
-                            title=f"{top_stock.get('Ticker')} Score Breakdown",
-                            margin=dict(t=40, b=0, l=0, r=0)
+                # Dynamic display columns logically ordered
+                desired_cols = ['Ticker', 'Name', 'Sector', 'Close', 'Qty', 'Allocation', score_key, 'Margin_Safety', 'Intrinsic_Value', 'Reason']
+                display_cols = [c for c in desired_cols if c in df_rec.columns]
+                df_display = df_rec[display_cols]
+                
+                st.markdown("### 📋 Recommended Picks (Tabular View)")
+                st.dataframe(
+                    df_display,
+                    use_container_width=True,
+                    column_config={
+                        "Allocation": st.column_config.NumberColumn("Allocation", format="₹%d"),
+                        "Close": st.column_config.NumberColumn("Close Price", format="₹%.2f"),
+                        "Intrinsic_Value": st.column_config.NumberColumn("Intrinsic Value", format="₹%.2f"),
+                        "Margin_Safety": st.column_config.NumberColumn("Margin of Safety (%)", format="%.1f%%") if "Margin_Safety" in display_cols else None,
+                        score_key: st.column_config.NumberColumn("Score", format="%.2f"),
+                        "Qty": st.column_config.NumberColumn("Qty (Shares)", format="%d"),
+                    }
+                )
+                
+                # Collapse all visual charts and detailed card views to make page small & high-density by default
+                with st.expander("📊 View Visual Charts & Detailed Cards"):
+                    # 1. Plotly Allocation Chart
+                    chart_col1, chart_col2 = st.columns(2)
+                    with chart_col1:
+                        fig = px.pie(
+                            df_rec, 
+                            values='Allocation', 
+                            names='Name', 
+                            hole=0.4, 
+                            title="Recommended Portfolio Allocation",
+                            color_discrete_sequence=px.colors.qualitative.Set3
                         )
-                        st.plotly_chart(fig_radar, use_container_width=True)
-                    else:
-                        st.info("Detailed score breakdown not available for this strategy.")
-                
-                # 2. Mobile-Friendly Metric Cards
-                st.markdown("### 📋 Top Picks Details")
-                for row in table_data:
-                    with st.container():
-                        st.markdown(f"#### {row.get('Name')} (`{row.get('Ticker')}`)")
-                        card_col1, card_col2, card_col3 = st.columns(3)
-                        with card_col1:
-                            st.metric("Current Price", f"₹{row.get('Close', 0):.2f}")
-                        with card_col2:
-                            st.metric("Recommended Qty", f"{row.get('Qty', 0)} shares")
-                        with card_col3:
-                            st.metric("Total Allocation", f"₹{row.get('Allocation', 0):.2f}")
-                        
-                        st.caption(f"💡 **Investment Thesis:** {row.get('Reason', 'N/A')}")
-                        st.divider()
-                        
-                with st.expander("Show Raw Data Table"):
-                    st.dataframe(table_data, use_container_width=True)
+                        fig.update_layout(margin=dict(t=40, b=0, l=0, r=0))
+                        st.plotly_chart(fig, use_container_width=True)
+                    
+                    # Radar Chart for Top Pick (If Scores Exist)
+                    with chart_col2:
+                        top_stock = active_display[0]
+                        if all(k in top_stock for k in ['Tech_Score', 'Fund_Score', 'Sent_Score']):
+                            categories = ['Technical', 'Fundamental', 'Sentiment']
+                            fig_radar = go.Figure()
+                            fig_radar.add_trace(go.Scatterpolar(
+                                r=[top_stock.get('Tech_Score', 0), top_stock.get('Fund_Score', 0), top_stock.get('Sent_Score', 0)],
+                                theta=categories,
+                                fill='toself',
+                                name=top_stock.get('Name')
+                            ))
+                            fig_radar.update_layout(
+                                polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+                                showlegend=False,
+                                title=f"{top_stock.get('Ticker')} Score Breakdown",
+                                margin=dict(t=40, b=0, l=0, r=0)
+                            )
+                            st.plotly_chart(fig_radar, use_container_width=True)
+                        else:
+                            st.info("Detailed score breakdown not available for this strategy.")
+                    
+                    # 2. Detailed Metric Cards
+                    st.markdown("### 📋 Top Picks Details (Mobile Friendly)")
+                    for row in active_display:
+                        with st.container():
+                            st.markdown(f"#### {row.get('Name')} (`{row.get('Ticker')}`)")
+                            card_col1, card_col2, card_col3 = st.columns(3)
+                            with card_col1:
+                                st.metric("Current Price", f"₹{row.get('Close', 0):.2f}")
+                            with card_col2:
+                                st.metric("Recommended Qty", f"{row.get('Qty', 0)} shares")
+                            with card_col3:
+                                st.metric("Total Allocation", f"₹{row.get('Allocation', 0):.2f}")
+                            
+                            st.caption(f"💡 **Investment Thesis:** {row.get('Reason', 'N/A')}")
+                            st.divider()
 
             else:
                 st.warning("No stocks found for this strategy.")
