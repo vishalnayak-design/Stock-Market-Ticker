@@ -49,27 +49,25 @@ def check_password():
     # Default to "admin" if no secrets are configured yet
     expected_password = st.secrets.get("password", "admin")
     
-    def password_entered():
-        if st.session_state["password"] == expected_password:
-            st.session_state["password_correct"] = True
-            del st.session_state["password"]  # Don't store password in session state
-        else:
-            st.session_state["password_correct"] = False
-
-    if "password_correct" not in st.session_state:
-        # First run, show input for password
-        st.title("🔒 Login Required")
-        st.text_input("Enter Dashboard Password", type="password", on_change=password_entered, key="password")
-        return False
-    elif not st.session_state["password_correct"]:
-        # Password incorrect
-        st.title("🔒 Login Required")
-        st.text_input("Enter Dashboard Password", type="password", on_change=password_entered, key="password")
-        st.error("😕 Password incorrect")
-        return False
-    else:
-        # Password correct
+    if st.session_state.get("password_correct", False):
         return True
+
+    st.title("🔒 Login Required")
+    
+    # Form layout allows both pressing 'Enter' on keyboard and clicking the visible 'Submit' button
+    with st.form(key="login_form"):
+        password_input = st.text_input("Enter Dashboard Password", type="password")
+        submit_button = st.form_submit_button("Login 🚀", use_container_width=True)
+        
+        if submit_button:
+            if password_input == expected_password:
+                st.session_state["password_correct"] = True
+                st.rerun()
+            else:
+                st.session_state["password_correct"] = False
+                st.error("😕 Password incorrect")
+                
+    return False
 
 if not check_password():
     st.stop()  # Do not render the rest of the app if password is not correct
