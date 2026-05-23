@@ -2,14 +2,55 @@ name: Keep Streamlit App Awake
 
 on:
   schedule:
-    # Runs every 2 days at midnight UTC
-    - cron: "0 0 */2 * *"
+    # Runs every 12 hours (at 00:00 and 12:00 UTC)
+    - cron: "0 */12 * * *"
   workflow_dispatch: # Allows manual triggering from GitHub UI
 
 jobs:
   ping-app:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Streamlit URL
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Playwright
         run: |
-          curl -s -o /dev/null -w "%{http_code}" https://stock-market-ticker-personal-india.streamlit.app/
+          pip install playwright
+          playwright install chromium
+
+      - name: Load Streamlit App and Wait
+        run: |
+          python -c "
+          from playwright.sync_api import sync_playwright
+          import time
+          
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page()
+              print('Navigating to Streamlit app...')
+              page.goto('https://stock-market-ticker-personal-india.streamlit.app/')
+              
+              # Wait 15 seconds to ensure the app fully loads and establishes a WebSocket session
+              time.sleep(15)
+              
+              # Check for any 'awake' or 'get this app back up' buttons if it was sleeping
+              try:
+                  buttons = page.locator('button')
+                  button_count = buttons.count()
+                  print(f'Total buttons found on page: {button_count}')
+                  for i in range(button_count):
+                      btn_text = buttons.nth(i).inner_text()
+                      print(f'Button index {i}: \"{btn_text}\"')
+                      if any(w in btn_text.lower() for w in ['yes', 'get this app', 'back up', 'wake']):
+                          print(f'App was sleeping! Clicking awake button: \"{btn_text}\"...')
+                          buttons.nth(i).click()
+                          time.sleep(30) # Wait for Streamlit to spin up
+                          break
+              except Exception as e:
+                  print('Error checking/clicking awake buttons:', e)
+                  
+              print('Final Page Title:', page.title())
+              browser.close()
+          "
