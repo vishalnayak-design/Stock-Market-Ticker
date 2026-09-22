@@ -1,9 +1,9 @@
 {
     "status": "COMPLETED",
     "stage": "MODEL",
-    "last_heartbeat": 1789996430.301648,
-    "total_scanned": 2436,
-    "pid": 2298,
+    "last_heartbeat": 1790078360.667385,
+    "total_scanned": 2437,
+    "pid": 2430,
     "flags": {
         "fetch_complete": true,
         "model_complete": true,
