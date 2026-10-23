@@ -391,6 +391,7 @@ BNALTD.NS,B & A Limited
 BODALCHEM.NS,Bodal Chemicals Limited
 BOHRAIND.NS,Bohra Industries Limited
 BOMDYEING.NS,Bombay Dyeing & Mfg Company Limited
+BONFIG.NS,Bonfiglioli Transmissions Limited
 BONLON.NS,Bonlon Industries Limited
 BORANA.NS,Borana Weaves Limited
 BOROLTD.NS,Borosil Limited
@@ -911,7 +912,6 @@ HALDER.NS,Halder Venture Limited
 HALDYNGL.NS,Haldyn Glass Limited
 HALEOSLABS.NS,HALEOS LABS LIMITED
 HAMPTON.NS,Hampton Sky Realty Limited
-HAMPTON.NS,Hampton Sky Realty Limited
 HAPPSTMNDS.NS,Happiest Minds Technologies Limited
 HAPPYFORGE.NS,Happy Forgings Limited
 HARDWYN.NS,Hardwyn India Limited
@@ -1005,7 +1005,7 @@ ICEMAKE.NS,Ice Make Refrigeration Limited
 ICICIAMC.NS,ICICI Prudential Asset Management Company Limited
 ICICIBANK.NS,ICICI Bank Limited
 ICICIGI.NS,ICICI Lombard General Insurance Company Limited
-ICICIPRULI.NS,ICICI Prudential Life Insurance Company Limited
+ICICILIFE.NS,ICICI Life Insurance Limited
 ICIL.NS,Indo Count Industries Limited
 ICRA.NS,ICRA Limited
 IDBI.NS,IDBI Bank Limited
@@ -1705,7 +1705,6 @@ PARKHOSPS.NS,Park Medi World Limited
 PARKHOTELS.NS,Apeejay Surrendra Park Hotels Limited
 PARNAXLAB.NS,Parnax Lab Limited
 PARSVNATH.NS,Parsvnath Developers Limited
-PARSVNATH.NS,Parsvnath Developers Limited
 PASHUPATI.NS,Pashupati Cotspin Limited
 PASUPTAC.NS,Pasupati Acrylon Limited
 PATANJALI.NS,Patanjali Foods Limited
@@ -2142,6 +2141,7 @@ SMCGLOBAL.NS,SMC Global Securities Limited
 SMLMAH.NS,SML Mahindra Limited
 SMLT.NS,Sarthak Metals Limited
 SMSPHARMA.NS,SMS Pharmaceuticals Limited
+SMT.NS,Sahajanand Medical Technologies Limited
 SNOWMAN.NS,Snowman Logistics Limited
 SOBHA.NS,Sobha Limited
 SOFTTECH.NS,Softtech Engineers Limited
@@ -2367,6 +2367,7 @@ TNPL.NS,Tamil Nadu Newsprint & Papers Limited
 TNTELE.NS,Tamilnadu Telecommunication Limited
 TOKYOPLAST.NS,Tokyo Plast International Limited
 TOLINS.NS,Tolins Tyres Limited
+TONBO.NS,Tonbo Imaging India Limited
 TORNTPHARM.NS,Torrent Pharmaceuticals Limited
 TORNTPOWER.NS,Torrent Power Limited
 TOTAL.NS,Total Transport Systems Limited
@@ -2599,6 +2600,7 @@ ZENITHEXPO.NS,Zenith Exports Limited
 ZENITHSTL.NS,Zenith Steel Pipes & Industries Limited
 ZENSARTECH.NS,Zensar Technologies Limited
 ZENTEC.NS,Zen Technologies Limited
+ZETWERK.NS,Zetwerk Manufacturing Businesses Limited
 ZFCVINDIA.NS,ZF Commercial Vehicle Control Systems India Limited
 ZFSTEERING.NS,ZF Steering Gear (India) Limited
 ZIMLAB.NS,Zim Laboratories Limited
