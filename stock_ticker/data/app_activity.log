@@ -131896,3 +131896,92 @@
 2026-11-22 14:48:19,539 - INFO - Analysis Complete. Updating Portfolio History...
 2026-11-22 14:48:19,547 - WARNING - Telegram not configured.
 2026-11-22 14:48:20,068 - INFO - Syncing to GitHub...
+2026-11-23 18:36:40,608 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-11-23 18:36:40,610 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-11-23 18:36:40,624 - INFO - Starting Daily Analysis Pipeline...
+2026-11-23 18:36:40,624 - INFO - Mode: Fetch Only
+2026-11-23 18:36:40,624 - INFO - Starting Data Download & Basic Scan...
+2026-11-23 18:36:40,624 - INFO - Starting Analysis...
+2026-11-23 18:36:40,624 - INFO - Attempting to fetch via nsepython...
+2026-11-23 18:36:40,624 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-11-23 18:36:40,624 - INFO - Attempting direct CSV download...
+2026-11-23 18:36:42,311 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-11-23 18:36:42,311 - INFO - Direct download fetched 2643 stocks.
+2026-11-23 18:36:42,313 - INFO - Found existing analysis file. Resuming...
+2026-11-23 18:36:42,325 - INFO - Already processed 2630 stocks.
+2026-11-23 18:36:42,326 - INFO - Scanning 61 remaining stocks (Parallel Mode)...
+2026-11-23 18:36:45,268 - INFO - [10/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:45,288 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:36:47,961 - INFO - [20/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:48,078 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:36:50,567 - INFO - [30/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:50,582 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:36:53,691 - INFO - [40/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:53,707 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:36:56,810 - INFO - [50/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:56,824 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:36:59,749 - INFO - [60/61] Processed in this batch... Total: 2630
+2026-11-23 18:36:59,764 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:02,150 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:02,152 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-11-23 18:37:02,167 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:03,890 - INFO - Logging Initialized. Writing to: /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/app_activity.log
+2026-11-23 18:37:03,892 - INFO - DataIngestor v2: Session Removed (Fix Verified)
+2026-11-23 18:37:03,914 - INFO - Starting Daily Analysis Pipeline...
+2026-11-23 18:37:03,914 - INFO - Mode: Analysis Only
+2026-11-23 18:37:03,914 - INFO - Starting Analysis...
+2026-11-23 18:37:03,914 - INFO - Attempting to fetch via nsepython...
+2026-11-23 18:37:03,914 - WARNING - nsepython fetch failed: No module named 'nsepython'
+2026-11-23 18:37:03,914 - INFO - Attempting direct CSV download...
+2026-11-23 18:37:04,944 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/equity_master.csv
+2026-11-23 18:37:04,944 - INFO - Direct download fetched 2643 stocks.
+2026-11-23 18:37:04,946 - INFO - Found existing analysis file. Resuming...
+2026-11-23 18:37:04,959 - INFO - Already processed 2630 stocks.
+2026-11-23 18:37:04,960 - INFO - Scanning 61 remaining stocks (Parallel Mode)...
+2026-11-23 18:37:07,456 - INFO - [10/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:07,472 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:09,490 - INFO - [20/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:09,506 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:11,468 - INFO - [30/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:11,530 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:14,037 - INFO - [40/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:14,061 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:16,195 - INFO - [50/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:16,211 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:18,743 - INFO - [60/61] Processed in this batch... Total: 2630
+2026-11-23 18:37:18,758 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:22,230 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:22,232 - INFO - Running Forecasting on Top 20...
+2026-11-23 18:37:22,520 - ERROR - Prediction error: Input y contains NaN.
+2026-11-23 18:37:22,716 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:22,905 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:23,123 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:23,331 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:23,578 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:23,831 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:24,092 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:24,294 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:24,581 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:24,847 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:25,093 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:25,276 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:25,500 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:25,679 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:25,964 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:26,284 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:26,500 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:26,711 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:26,909 - ERROR - Prediction error: This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2026-11-23 18:37:26,911 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/recommendations.csv
+2026-11-23 18:37:26,928 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/full_analysis.csv
+2026-11-23 18:37:26,951 - INFO - DEBUG: full_df columns: ['Ticker', 'Name', 'Sector', 'Industry', 'Close', 'Final_Score', 'Tech_Score', 'Fund_Score', 'Sent_Score', 'Pre_Score', 'Forecast_Score', 'Intrinsic_Value', 'Margin_Safety', 'PE_Ratio', 'ROE', 'Debt_to_Equity', 'PEG_Ratio', 'Market_Cap', 'Div_Yield', 'ROCE', 'OPM', 'FreeCashFlow', 'SalesGrowth3Y', 'ProfitGrowth3Y', 'QtrSalesGrowth', 'QtrProfitGrowth', 'Reason']
+2026-11-23 18:37:26,951 - INFO - Running Big Bets (Medium Term) Strategy...
+2026-11-23 18:37:27,138 - WARNING - ⚠️ Missing Data Warning: The following columns were not found in your data. The model assumed 0/Neutral for them.
+2026-11-23 18:37:27,138 - WARNING -   - SalesGrowth3Y
+2026-11-23 18:37:27,139 - WARNING - Please add these columns to your CSV for better accuracy.
+2026-11-23 18:37:27,139 - INFO - Big Bets: Found 3 recommendations.
+2026-11-23 18:37:27,139 - INFO - Saved Big Bets to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/big_bets_results.csv
+2026-11-23 18:37:27,198 - INFO - Saved data to /home/runner/work/Stock-Market-Ticker/Stock-Market-Ticker/stock_ticker/data/daily_snapshots/recommendations_2026-11-23.csv
+2026-11-23 18:37:27,198 - INFO - Analysis Complete. Updating Portfolio History...
+2026-11-23 18:37:27,207 - WARNING - Telegram not configured.
+2026-11-23 18:37:27,691 - INFO - Syncing to GitHub...
